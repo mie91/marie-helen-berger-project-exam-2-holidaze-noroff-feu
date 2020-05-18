@@ -1,0 +1,26 @@
+/***************
+ *Footer Styling*
+ ***************/
+.footercontent {
+    background-color: $purple;
+    padding: 10px;
+    margin-top: 12vh;
+    text-align: center;
+    color: rgba($color: $orange, $alpha: 0.3);
+
+    p:hover {
+        color: $pink;
+    }
+}
+
+
+/***************
+ * Media Quiries*
+ ***************/
+@media screen and (min-width: 577px) {
+
+}
+
+@media screen and (max-width: 577px) {
+
+}

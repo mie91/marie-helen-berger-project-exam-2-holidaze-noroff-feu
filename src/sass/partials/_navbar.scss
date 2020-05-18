@@ -1,0 +1,57 @@
+/***************
+ *Navigation Bar Styling*
+ ***************/
+.navbar {
+    background-color: $white;
+
+   
+}
+
+//Navbar - Links//
+    #nav-link {
+        color: $dark;
+        letter-spacing: 5px;
+        margin: 15px;
+        font-weight: 600;
+
+
+        &.active {
+            color: $pink;
+        }
+
+        &:hover {
+            color: $orange;
+            text-decoration: none;
+
+        }
+    }
+
+
+
+
+
+
+
+
+/***************
+ * Media Quiries*
+ ***************/
+@media screen and (min-width: 577px) {
+    .second-brand {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 577px) {
+    span.navbar-brand {
+        display: none;
+    }
+
+
+
+
+    .dropdown-menu.show {
+        background-color: transparent;
+    }
+
+}

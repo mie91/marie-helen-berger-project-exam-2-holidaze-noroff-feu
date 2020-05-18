@@ -10,14 +10,17 @@ import Establishments from "./components/admin/manager/Establishments";
 import AddEstablishment from "./components/admin/manager/AddEstablishment";
 import EditEstablishment from "./components/admin/manager/EditEstablishment";
 import Dashboard from "./components/admin/dashboard/Dashboard";
-import Navigation from "./components/layout/navigation/Navigation";
 import Accomodations from "./components/accomodations/Accomodations";
 import Contact from "./components/contact/Contact";
+import Navigation from "./components/layout/navigation/Navigation";
+import Footer from "./components/layout/navigation/Footer";
+
 import "./sass/style.scss";
 
 
 function App() {
   return (
+    <>
     <AuthContextProvider>
       <Router>
         <Navigation />
@@ -38,6 +41,8 @@ function App() {
         </Container>
       </Router>
     </AuthContextProvider>
+    <Footer/>
+    </>
   );
 }
 
