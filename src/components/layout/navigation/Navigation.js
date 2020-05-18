@@ -9,40 +9,48 @@ import NavLogo from "../../../assets/logo/logoDark_s.png";
 function Navigation() {
     const { user } = useContext(AuthContext);
     return (
-        <Navbar collapseOnSelect expand="sm">
+        <Navbar collapseOnSelect expand="md">
             <Navbar.Toggle aria-controls="responsive-navbar-nav "/>
             <NavLink to="/" exact>
-                <img alt="" src={NavLogo} width="120" height="80" className="second-brand" />
+                <img alt="" src={NavLogo} className="second-brand" />
             </NavLink>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <NavLink to="/" exact>
-                    <Navbar.Brand> <img alt="Bad Pony logo" src={NavLogo} width="120" height="80"
+                    <Navbar.Brand> <img alt="Holidaze logo" src={NavLogo} 
                         className="d-inline-block align-top" />
                     </Navbar.Brand>
                 </NavLink>
-            <Nav className="navbar-nav ml-auto theNavlinks">
-            <NavLink id="nav-link" to="/" exact>
-                Home
-            </NavLink>
-            <NavLink id="nav-link" to="/accomodations" exact>
-                Accomodations
-            </NavLink>
-            <NavLink id="nav-link" to="/contact" exact>
-                Contact
-            </NavLink>
+                <Nav className="navbar-nav .container__navLinks">
+                    <NavLink id="nav-link" to="/" exact>
+                        Home
+                    </NavLink>
+                    <NavLink id="nav-link" to="/accomodations" exact>
+                        Accomodations
+                    </NavLink>
+                    <NavLink id="nav-link" to="/contact" exact>
+                        Contact Us
+                    </NavLink>
+                    </Nav>
+                <Nav className="navbar-nav ml-auto flex-column container__navLinksAdmin">
+                    {user ? (
+                        <>
+                            <NavLink id="nav-link__admin" to="/admin">Manage</NavLink>
+                            <LogOut />
+                            
+                        </>
+                    ) : (
 
-            {user ? (
-                <>
-                    <NavLink id="nav-link" to="/admin">Admin Page</NavLink>
-                    <LogOut />
-                </>
-            ) : (
-                    <NavLink id="nav-link" to="/register">Register</NavLink>
-                )}
-            </Nav>
+                        <>
+                            <NavLink id="nav-link__admin" to="/login">Login</NavLink>
+
+                            <NavLink id="nav-link__admin" to="/register">Register</NavLink>
+
+                            </>
+                        )}    
+                
+     </Nav>
             </Navbar.Collapse>
         </Navbar>
-
     );
 }
 

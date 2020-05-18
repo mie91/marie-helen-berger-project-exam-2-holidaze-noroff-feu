@@ -1,31 +1,34 @@
 /***************
  *Navigation Bar Styling*
  ***************/
+
+ //General Navbar Syles//
 .navbar {
     background-color: $white;
-
-   
 }
 
+.container__navLinks {
+    
+}
+
+//The Admin part of navbar//
+.container__navLinksAdmin {
+    text-align: right;
+}
 //Navbar - Links//
-    #nav-link {
-        color: $dark;
-        letter-spacing: 5px;
-        margin: 15px;
-        font-weight: 600;
+#nav-link {
+    @include basic-link;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 5px 15px;
+}
 
-
-        &.active {
-            color: $pink;
-        }
-
-        &:hover {
-            color: $orange;
-            text-decoration: none;
-
-        }
-    }
-
+ #nav-link__admin {
+     @include basic-link;
+     text-transform: uppercase;
+     font-size: 0.8em;
+ }
+    
 
 
 
@@ -36,13 +39,13 @@
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 577px) {
+@media screen and (min-width: 770px) {
     .second-brand {
         display: none;
     }
 }
 
-@media screen and (max-width: 577px) {
+@media screen and (max-width: 769px) {
     span.navbar-brand {
         display: none;
     }

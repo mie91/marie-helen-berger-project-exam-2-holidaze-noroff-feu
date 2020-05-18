@@ -1,0 +1,25 @@
+/***************
+ * Mixins*
+ ***************/
+
+
+
+ /***************
+ * Buttons*
+ ***************/
+
+ @mixin basic-link {
+     color: $dark;
+     letter-spacing: 5px;
+     font-weight: 600;
+     font-family: $headerFont;
+
+     &.active {
+         color: $pink;
+     }
+
+     &:hover {
+         color: $orange;
+         text-decoration: none;
+     }
+ }

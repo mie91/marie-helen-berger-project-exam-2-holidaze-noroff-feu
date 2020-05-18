@@ -33,9 +33,10 @@ function Accomodations() {
                         <>
                         <Container>
                             <Row>
-                                <Col>
-                                <Card key={establishment.id}>
+                                <Col className="col-sm-6"  key={establishment.id}>
+                                <Card>
                                     <h1>{establishment.name}</h1>
+
                                 </Card>
                                 </Col>
                             </Row>
