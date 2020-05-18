@@ -3,24 +3,25 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import {Navbar, Nav} from "react-bootstrap";
 import LogOut from "../../admin/login/LogOut";
-
-import NavLogo from "../../../assets/logo/logoDark_s.png";
+import NavLogoText from "../../../assets/logo/textLogo_m.png";
+import NavLogo from "../../../assets/logo/logoDark_m.png";
 
 function Navigation() {
     const { user } = useContext(AuthContext);
     return (
-        <Navbar collapseOnSelect expand="md">
+        <Navbar collapseOnSelect expand="lg">
             <Navbar.Toggle aria-controls="responsive-navbar-nav "/>
             <NavLink to="/" exact>
                 <img alt="" src={NavLogo} className="second-brand" />
             </NavLink>
             <Navbar.Collapse id="responsive-navbar-nav">
+
                 <NavLink to="/" exact>
-                    <Navbar.Brand> <img alt="Holidaze logo" src={NavLogo} 
-                        className="d-inline-block align-top" />
+                    <Navbar.Brand> <img alt="Holidaze logo" src={NavLogo}
+                    />
                     </Navbar.Brand>
                 </NavLink>
-                <Nav className="navbar-nav .container__navLinks">
+                <Nav className="navbar-nav ml-auto container__navLinks">
                     <NavLink id="nav-link" to="/" exact>
                         Home
                     </NavLink>

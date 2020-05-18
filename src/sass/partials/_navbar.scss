@@ -30,10 +30,11 @@
  }
     
 
+//Navbar - Brand//
 
-
-
-
+.navbar-brand img{
+    max-width: 200px;
+}
 
 
 /***************
@@ -46,8 +47,12 @@
 }
 
 @media screen and (max-width: 769px) {
-    span.navbar-brand {
+    .navbar-brand {
         display: none;
+    }
+
+    .second-brand {
+        max-width: 150px;
     }
 
 
