@@ -1,18 +1,28 @@
 /***************
  *Footer Styling*
  ***************/
-.footercontent {
+footer {
     background-color: $dark;
     padding: 10px;
     margin-top: 12vh;
-    text-align: center;
-    color: rgba($color: $orange, $alpha: 0.3);
-
-    p:hover {
-        color: $pink;
-    }
 }
 
+.footer-newsletter {
+
+}
+
+.footer-socialmedia {}
+
+.footer-contact {}
+
+.footer-bottom {
+    text-align: center;
+    color: $pink;
+
+    &__logo {
+        max-width: 150px;
+    }
+}
 
 /***************
  * Media Quiries*

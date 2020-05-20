@@ -44,7 +44,7 @@ function Home() {
                     <Col className="col-sm-6">
                         <div className="text-content text-content--light">
                             <MainHeader title="Experience Bergen"/>
-                            <SubHeader title="Gateway of the Fjords"/>
+                            <SubHeader title="Gateway to the Fjords"/>
                             <p>Est nulla non do magna et consectetur elit aliquip eu aliqua reprehenderit tempor. Pariatur ullamco incididunt sunt sit ipsum velit ex ut ipsum irure. Mollit officia cillum Lorem exercitation ad in non. Commodo reprehenderit consectetur laborum nisi eiusmod esse minim quis laborum exercitation tempor dolor reprehenderit.
                         </p>
                         </div>
