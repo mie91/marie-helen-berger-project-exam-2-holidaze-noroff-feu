@@ -9,8 +9,14 @@
      font-family: $headerFont;
      text-transform: uppercase;
      font-size: 2.3em;
+     letter-spacing: 3px;
  }
 
+
+  .subHeader {
+      font-family: $headerFont;
+      font-size: 1.8em;
+  }
 
 
 

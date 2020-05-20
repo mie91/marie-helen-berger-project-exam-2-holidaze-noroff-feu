@@ -2,7 +2,7 @@
  *Header Images*
  ***************/
 
-.headerImage {
+.header-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,14 +15,16 @@
     }
 
 
-    &__textBox {
-        background-color: rgba($color: $white, $alpha: 0.6);
+    &__text-box {
+        background-color: rgba($color: $white, $alpha: 0.3);
         text-align: center;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(4px);
+        padding: 20px;
+        border-radius: 20px;
 
         &--dark {
             color:$dark;
@@ -37,14 +39,18 @@
         letter-spacing: 3px;
         margin: 20px;
 
-
-
         &--dark a{
             background-color: $purple;
             color: $pink;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
+            filter: drop-shadow(5px 6px 8px $purple);
             
+            &:hover {
+                text-decoration: none;
+                filter: none;
+                transition: $basic-transition;
+            }
         }
     }
 

@@ -1,0 +1,74 @@
+
+ /***************
+ * Buttons*
+ ***************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /***************
+ * Other Buttons*
+ ***************/
+
+
+//The "Back To Top" Button//
+.toTop {
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+
+
+    &__button {
+        background-color: rgba($color: $white, $alpha: 0.5);
+        padding: 5px;
+        border: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+
+
+
+        &:visited {
+            background-color: rgba($color: $white, $alpha: 0.5);
+        }
+
+        &:hover {
+            background-color: rgba($color: $white, $alpha: 0.9);
+            animation-name: beat;
+            animation-duration: 800ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        &:focus {
+            outline: none;
+            background-color: rgba($color: $white, $alpha: 0.9);
+        }
+
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+
+
+}

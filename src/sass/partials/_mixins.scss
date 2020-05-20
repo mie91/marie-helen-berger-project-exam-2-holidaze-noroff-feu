@@ -23,3 +23,39 @@
          text-decoration: none;
      }
  }
+
+
+ //Box Shadow effect//
+ @mixin basic-shadow {
+     filter: drop-shadow(7px 7px 7px #000000);
+     -webkit-filter: drop-shadow(7px 7px 7px #000000);
+ }
+
+
+
+ //Animations//
+ //Animated size increased
+ @keyframes bigger {
+     0% {
+         transform: scale(0.05);
+     }
+
+     100% {
+         transform: scale(1.0);
+     }
+ }
+
+ //Animated Beat
+ @keyframes beat {
+     0% {
+         transform: scale(1.0);
+     }
+
+     30% {
+         transform: scale(1.2);
+     }
+
+     70% {
+         transform: scale(1.0);
+     }
+ }
