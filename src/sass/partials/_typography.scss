@@ -1,0 +1,40 @@
+/***************
+ * Typography*
+ ***************/
+
+
+ //Main Header//
+
+ .mainHeader {
+     font-family: $headerFont;
+     text-transform: uppercase;
+     font-size: 2.3em;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /***************
+ * Media Quiries*
+ ***************/
+ @media screen and (min-width: 770px) {
+ 
+ }
+
+ @media screen and (max-width: 769px) {
+     .mainHeader {
+         font-size: 1.7em;
+     }
+ }

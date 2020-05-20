@@ -24,8 +24,6 @@ function App() {
     <AuthContextProvider>
       <Router>
         <Navigation />
-
-        <Container>
           <Switch>
             <Route path="/"exact component={Home}/>
             <Route path="/accomodations"exact component={Accomodations}/>
@@ -38,7 +36,6 @@ function App() {
             <ProtectedRoute path="/admin/establishments/edit/:id" exact component={EditEstablishment} />
             <Redirect to="/" />
           </Switch>
-        </Container>
       </Router>
     </AuthContextProvider>
     <Footer/>

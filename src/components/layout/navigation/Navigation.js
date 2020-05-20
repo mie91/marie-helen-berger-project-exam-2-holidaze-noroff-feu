@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
-import {Navbar, Nav} from "react-bootstrap";
+import {Navbar, Nav, Container} from "react-bootstrap";
 import LogOut from "../../admin/login/LogOut";
 import NavLogoText from "../../../assets/logo/textLogo_m.png";
 import NavLogo from "../../../assets/logo/logoDark_m.png";
@@ -9,8 +9,10 @@ import NavLogo from "../../../assets/logo/logoDark_m.png";
 function Navigation() {
     const { user } = useContext(AuthContext);
     return (
+        
         <Navbar collapseOnSelect expand="lg">
             <Navbar.Toggle aria-controls="responsive-navbar-nav "/>
+            <Container>
             <NavLink to="/" exact>
                 <img alt="" src={NavLogo} className="second-brand" />
             </NavLink>
@@ -51,7 +53,9 @@ function Navigation() {
                 
      </Nav>
             </Navbar.Collapse>
+            </Container>
         </Navbar>
+        
     );
 }
 
