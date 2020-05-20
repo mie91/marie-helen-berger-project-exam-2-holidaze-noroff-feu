@@ -24,6 +24,22 @@
      }
  }
 
+  /***************
+ * Typography*
+ ***************/
+
+ //Header Styling// 
+ @mixin header-style-1 {
+        font-family: $headerFont;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+ }
+
+  @mixin header-style-2 {
+      font-family: $textFont;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+  }
 
  //Box Shadow effect//
  @mixin basic-shadow {

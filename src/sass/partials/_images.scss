@@ -25,9 +25,14 @@
         backdrop-filter: blur(4px);
         padding: 20px;
         border-radius: 20px;
+        
 
         &--dark {
             color:$dark;
+        }
+
+        .mainHeader {
+            font-family: $textFont;
         }
         
     }
@@ -41,15 +46,16 @@
 
         &--dark a{
             background-color: $purple;
-            color: $pink;
+            color: $white;
             padding: 15px;
             text-align: center;
-            filter: drop-shadow(5px 6px 8px $purple);
+           @include basic-shadow;
             
             &:hover {
                 text-decoration: none;
                 filter: none;
                 transition: $basic-transition;
+                background-color: $pink;
             }
         }
     }

@@ -51,6 +51,7 @@
 
         &:hover {
             background-color: rgba($color: $white, $alpha: 0.9);
+            transition: $basic-transition;
             animation-name: beat;
             animation-duration: 800ms;
             animation-iteration-count: infinite;
