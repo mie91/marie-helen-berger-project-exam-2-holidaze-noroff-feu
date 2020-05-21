@@ -14,6 +14,10 @@
         background-image: url("../../assets/images/gradient/momentista-reR1qazgsBM-unsplash_2.jpg");
     }
 
+    &--accomodations {
+        background-image: url("../../assets/images/gradient/fredrik-bedsvaag-JsjUVS_V2R8-unsplash.jpg");
+    }
+
 
     &__text-box {
         background-color: rgba($color: $white, $alpha: 0.5);
@@ -43,19 +47,37 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         margin: 20px;
+        
+        text-align: center;
+        
 
         &--dark a{
             background-color: $purple;
             color: $white;
             padding: 15px;
-            text-align: center;
-           @include basic-shadow;
+            @include basic-shadow;
+            
             
             &:hover {
                 text-decoration: none;
                 filter: none;
                 transition: $basic-transition;
                 background-color: $pink;
+            }
+        }
+
+        &--pink a {
+            background-color: $pink;
+            color: $dark;
+            padding: 15px;
+            @include basic-shadow;
+
+            &:hover {
+                text-decoration: none;
+                filter: none;
+                transition: $basic-transition;
+                background-color: $dark;
+                color: $pink;
             }
         }
     }
