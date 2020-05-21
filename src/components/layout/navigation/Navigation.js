@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import {Navbar, Nav, Container} from "react-bootstrap";
 import LogOut from "../../admin/login/LogOut";
-import NavLogoText from "../../../assets/logo/textLogo_m.png";
 import NavLogo from "../../../assets/logo/logoDark_m.png";
 
 function Navigation() {
@@ -13,9 +12,7 @@ function Navigation() {
         <Navbar collapseOnSelect expand="lg">
             <Navbar.Toggle aria-controls="responsive-navbar-nav "/>
             <Container>
-            <NavLink to="/" exact>
-                <img alt="" src={NavLogo} className="second-brand" />
-            </NavLink>
+            
             <Navbar.Collapse id="responsive-navbar-nav">
 
                 <NavLink to="/" exact>
@@ -53,6 +50,11 @@ function Navigation() {
                 
      </Nav>
             </Navbar.Collapse>
+            < NavLink className = "ml-auto"
+            to = "/"
+            exact >
+                <img alt="" src={NavLogo} className="second-brand" />
+            </NavLink>
             </Container>
         </Navbar>
         

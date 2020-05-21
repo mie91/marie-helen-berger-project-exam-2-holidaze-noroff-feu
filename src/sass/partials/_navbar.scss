@@ -5,6 +5,7 @@
  //General Navbar Syles//
 .navbar {
     background-color: $white;
+    z-index: 999;
 }
 
 //The Admin part of navbar//
@@ -44,26 +45,30 @@
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 992px) {
     .second-brand {
         display: none;
     }
+
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 991px) {
     .navbar-brand {
         display: none;
     }
 
     .second-brand {
-        max-width: 150px;
+        max-width: 250px;
     }
 
+    .container__navLinksAdmin {
+        float: left;
+        text-align: left;
+        margin-top: 4vw;
+    }
 
-
-
-    .dropdown-menu.show {
-        background-color: transparent;
+    #nav-link {
+        margin: 5px 0px;
     }
 
 }
