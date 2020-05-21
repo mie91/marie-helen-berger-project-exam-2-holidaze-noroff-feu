@@ -7,24 +7,71 @@ footer {
     margin-top: 3vh;
 }
 
-
-.__newsletter {
-    border: solid green 20px;
-}
-
-.newsletter {
+.footer-newsletter {
     
-    border:$test;
 
-    .__newsletter-header {
-        border:$test;
+    .newsletter {
+        text-align: center;
+
+        &__header {
+            color:$pink;
+            @include header-style-1;
+            font-size: 1.2em;
+        }
+
+         &__form {
+        display: inline-block;
+       
+        
     }
 
-    
+     &__input {
+         border: none;
+         border-radius: 0%;
+         height: 50px;
+     }
+
+     &__btn {
+         border: none;
+         border-radius: 0%;
+        @include header-style-1;
+        font-size: 1em;
+        background-color: $pink;
+        color: $dark;
+        height: 50px;
+
+        &:visited {
+            background-color: rgba($color: $dark, $alpha: 0.5);
+        }
+
+        &:hover {
+            background-color: rgba($color: $orange, $alpha: 0.9);
+            transition: $basic-transition;
+        }
+
+        &:focus {
+            background-color: rgba($color: $orange, $alpha: 0.9);
+        }
+     }
+
+     &__validated,
+     &__error {
+         margin-top: 1vw;
+         transition: $basic-transition;
+         animation-name: bigger;
+         animation-duration: 350ms;
+         animation-iteration-count: 1;
+         max-width: 400px;
+         margin-left: auto;
+         margin-right: auto;
+         font-size: 1em;
+         color: $orange;
+         
+         
+         
+         }
+    }
 }
-
-
-
 
 
 .footer-socialmedia {
@@ -38,6 +85,15 @@ footer {
 
     &__icons {
         margin: 10px;
+    }
+
+    &__link a {
+        color: $pink;
+        text-decoration: underline;
+
+        &:hover {
+            color: $orange;
+        }
     }
 }
 

@@ -16,7 +16,7 @@ function Footer() {
                 <Row>
                     <Col className="col-sm-4">
                     <div className="footer-newsletter">
-                        <Newsletter mainheader="Join our newsletter!" subheader="Sign up today"/>
+                        <Newsletter mainheader="Join our newsletter!"/>
                     </div>
                     </Col>
                     <Col className="col-sm-4">

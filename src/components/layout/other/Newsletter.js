@@ -27,21 +27,19 @@ function Newsletter({mainheader, subheader}) {
 
     return (
         <>
-            
-                        <div className="__newsletter">
-
-                            <h2 className="__newsletter-header">{mainheader}</h2>
-                            <h3 className="__newsletter-subheader">{subheader}</h3>
-                                <Form className="__newsletter-form" inline onSubmit={handleSubmit(onSubmit)}>
+                        <div className="newsletter">
+                            <h2 className="newsletter__header">{mainheader}</h2>
+                            <h3 className="newsletter__subheader">{subheader}</h3>
+                                <Form className="newsletter__form" inline onSubmit={handleSubmit(onSubmit)}>
                                         
-                                    <Form.Control className="__newsletter-input" name="email" placeholder="Enter your E-mail" ref={register} />
+                                    <Form.Control className="newsletter__input" name="email" placeholder="Enter your E-mail" ref={register} />
 
-                                    <Button className="__newsletter-btn" type="submit">Sign up!</Button>
+                                    <Button className="newsletter__btn" type="submit">Sign up</Button>
    
                                     </Form>
-                                    {errors.email && <div className="__newsletter-error">{errors.email.message}</div>}
+                                    {errors.email && <div className="newsletter__error">{errors.email.message}</div>}
 
-                                    {validated && <div className="__newsletter-validated">You are now signed up successfully!</div>}
+                                    {validated && <div className="newsletter__validated">You are now signed up successfully!</div>}
                         </div>
                   
         </>
