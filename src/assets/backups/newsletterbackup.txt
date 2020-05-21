@@ -1,0 +1,16 @@
+/* <MainHeader title="Sign up for our newsletter"/>
+                            <SubHeader title="Get the latest news, and unique deals!"/>
+                            
+                                <Form className="newsletter-home__form" inline onSubmit={handleSubmit(onSubmit)}>
+                                        
+                                    <Form.Control className="newsletter-home__input" name="email" placeholder="Enter your E-mail" ref={register} />
+
+                                    <Button className="newsletter-home__btn" type="submit">Sign up!</Button>
+   
+                                    </Form>
+                                    {errors.email && <div className="newsletter-home__error">{errors.email.message}</div>}
+
+                                    {validated && <div className="newsletter-home__validated">You are now signed up successfully!</div>} 
+
+
+                                    */

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Container, Row, Col, Form, Image} from "react-bootstrap";
+import {Container, Row, Col, Image} from "react-bootstrap";
 import FooterLogo from "../../../assets/logo/logoLight_m.png";
 import FacebookIcon from "../../../assets/icons/white/social-006_facebook.png";
 import TwitterIcon from "../../../assets/icons/white/social-003_twitter.png";
@@ -14,12 +14,12 @@ function Footer() {
         <footer className="footer">
             <Container>
                 <Row>
-                    <Col className="col-sm-4">
+                    <Col className="col-md-4">
                     <div className="footer-newsletter">
                         <Newsletter mainheader="Join our newsletter!"/>
                     </div>
                     </Col>
-                    <Col className="col-sm-4">
+                    <Col className="col-md-4">
                     <div className="footer-socialmedia">
                         <h2 className="footer-socialmedia__header">Follow us on:</h2>
                         <a target="blank" href="https://facebook.com">
@@ -39,7 +39,7 @@ function Footer() {
 
                     </div>
                     </Col>
-                    <Col className="col-sm-4">
+                    <Col className="col-md-4">
                     <div className="footer-contact">
                         <h2 className="footer-contact__header">Find us here:</h2>
                         <ul className="footer-contact__list">
@@ -47,7 +47,7 @@ function Footer() {
                             <li className="footer-contact__item">Torgalmenningen 1</li>
                             <li className="footer-contact__list-item">5020 Bergen</li>
                             <br></br>
-                            <li className="footer-contact__item">holidaze@emailaddress.com</li>
+                            <li className="footer-contact__item">holidaze@mail.com</li>
                             <li className="footer-contact__list-item">+47 12345678</li>
                         </ul>
 

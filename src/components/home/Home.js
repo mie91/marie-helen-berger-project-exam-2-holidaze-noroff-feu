@@ -1,35 +1,12 @@
-import React, { useState } from "react";
-import {Container, Col, Row, Form, Button} from "react-bootstrap";
+import React from "react";
+import {Container, Col, Row,} from "react-bootstrap";
 import BackToTop from "../layout/other/BackToTop";
 import MainHeader from "../layout/headers/MainHeader";
 import SubHeader from "../layout/headers/SubHeader";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import Newsletter from '../layout/other/Newsletter';
 
-
-const schema = yup.object().shape({
-
-    email: yup
-        .string()
-        .email("Please enter a valid email")
-        .required("Email address is required")
-
-});
-
 function Home() {
-
-    const [validated, setValidated] = useState(false);
-    const { register, handleSubmit, errors } = useForm({
-        validationSchema: schema
-    });
-
-    function onSubmit(data) {
-        console.log("data", data);
-        setValidated(true);
-    }
-
     return (
         <>
             <div className="header-image header-image--home">
@@ -62,19 +39,7 @@ function Home() {
                     <Row className="justify-content-md-center">
                     <Col className="col-sm-12">
                         <div className="newsletter-home">
-                            <MainHeader title="Sign up for our newsletter"/>
-                            <SubHeader title="Get the latest news, and unique deals!"/>
-                            
-                                <Form className="newsletter-home__form" inline onSubmit={handleSubmit(onSubmit)}>
-                                        
-                                    <Form.Control className="newsletter-home__input" name="email" placeholder="Enter your E-mail" ref={register} />
-
-                                    <Button className="newsletter-home__btn" type="submit">Sign up!</Button>
-   
-                                    </Form>
-                                    {errors.email && <div className="newsletter-home__error">{errors.email.message}</div>}
-
-                                    {validated && <div className="newsletter-home__validated">You are now signed up successfully!</div>}
+                            <Newsletter mainheader="Sign up for our Newsletter" subheader="Get the latest news and unique deals!"/>
                 
                         </div>
                     </Col>

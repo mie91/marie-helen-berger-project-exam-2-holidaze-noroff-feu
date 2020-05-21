@@ -8,74 +8,69 @@ footer {
 }
 
 .footer-newsletter {
-    
 
     .newsletter {
         text-align: center;
 
         &__header {
-            color:$pink;
+            color: $pink;
             @include header-style-1;
             font-size: 1.2em;
         }
 
-         &__form {
-        display: inline-block;
-       
-        
-    }
-
-     &__input {
-         border: none;
-         border-radius: 0%;
-         height: 50px;
-     }
-
-     &__btn {
-         border: none;
-         border-radius: 0%;
-        @include header-style-1;
-        font-size: 1em;
-        background-color: $pink;
-        color: $dark;
-        height: 50px;
-
-        &:visited {
-            background-color: rgba($color: $dark, $alpha: 0.5);
+        &__form {
+            display: inline-block;
         }
 
-        &:hover {
-            background-color: rgba($color: $orange, $alpha: 0.9);
+        &__input {
+            border: none;
+            border-radius: 0%;
+            height: 50px;
+        }
+
+        &__btn {
+            border: none;
+            border-radius: 0%;
+            @include header-style-1;
+            font-size: 1em;
+            background-color: $pink;
+            color: $dark;
+            height: 50px;
+
+            &:visited {
+                background-color: rgba($color: $dark, $alpha: 0.5);
+            }
+
+            &:hover {
+                background-color: rgba($color: $orange, $alpha: 0.9);
+                transition: $basic-transition;
+            }
+
+            &:focus {
+                background-color: rgba($color: $orange, $alpha: 0.9);
+            }
+        }
+
+        &__validated,
+        &__error {
+            margin-top: 1vw;
             transition: $basic-transition;
+            animation-name: bigger;
+            animation-duration: 350ms;
+            animation-iteration-count: 1;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1em;
+            color: $orange;
         }
-
-        &:focus {
-            background-color: rgba($color: $orange, $alpha: 0.9);
-        }
-     }
-
-     &__validated,
-     &__error {
-         margin-top: 1vw;
-         transition: $basic-transition;
-         animation-name: bigger;
-         animation-duration: 350ms;
-         animation-iteration-count: 1;
-         max-width: 400px;
-         margin-left: auto;
-         margin-right: auto;
-         font-size: 1em;
-         color: $orange;
-         
-         
-         
-         }
     }
 }
 
 
 .footer-socialmedia {
     text-align: center;
+    margin: 0px 20px;
 
     &__header {
         color: $orange;
@@ -110,14 +105,14 @@ footer {
     &__list {
         list-style: none;
         color: $orange;
-        
+
     }
 }
 
 .footer-bottom {
     text-align: center;
     color: $pink;
-    
+
 
     &__logo {
         max-width: 150px;
@@ -128,10 +123,65 @@ footer {
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 577px) {
+@media screen and (min-width: 577px) {}
 
+@media screen and (max-width: 1200px){
+    .footer-newsletter {
+        .newsletter {
+
+            &__btn {
+                margin-top: 20px;
+            }
+            &__validated,
+            &__error {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .footer-bottom {
+        margin: 30px 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer-contact {
+        margin: 30px 0px;
+        text-align: center;
+
+        &__header {
+            color: $pink;
+            @include header-style-1;
+            font-size: 1.2em;
+        }
+
+        &__list {
+            list-style: none;
+            color: $orange;
+            margin: 0px;
+            padding: 0px;
+
+        }
+    }
+
+    .footer-socialmedia {
+        margin: 30px 0px;
+
+        &__icons {
+            margin: 10px;
+        }
+    }
+
+    
 }
 
 @media screen and (max-width: 577px) {
+    .footer-newsletter {
 
+        .newsletter {
+            margin: 30px;
+        }
+    }
+
+    
 }
