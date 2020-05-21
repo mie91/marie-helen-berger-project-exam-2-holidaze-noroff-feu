@@ -4,23 +4,68 @@
 footer {
     background-color: $dark;
     padding: 10px;
-    margin-top: 12vh;
+    margin-top: 3vh;
 }
 
-.footer-newsletter {
 
+.__newsletter {
+    border: solid green 20px;
 }
 
-.footer-socialmedia {}
+.newsletter {
+    
+    border:$test;
 
-.footer-contact {}
+    .__newsletter-header {
+        border:$test;
+    }
+
+    
+}
+
+
+
+
+
+.footer-socialmedia {
+    text-align: center;
+
+    &__header {
+        color: $orange;
+        @include header-style-1;
+        font-size: 1.2em;
+    }
+
+    &__icons {
+        margin: 10px;
+    }
+}
+
+.footer-contact {
+
+    text-align: right;
+
+    &__header {
+        color: $pink;
+        @include header-style-1;
+        font-size: 1.2em;
+    }
+
+    &__list {
+        list-style: none;
+        color: $orange;
+        
+    }
+}
 
 .footer-bottom {
     text-align: center;
     color: $pink;
+    
 
     &__logo {
         max-width: 150px;
+        margin-bottom: 1vw;
     }
 }
 

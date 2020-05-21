@@ -36,9 +36,10 @@ function App() {
             <ProtectedRoute path="/admin/establishments/edit/:id" exact component={EditEstablishment} />
             <Redirect to="/" />
           </Switch>
+          <Footer/>
       </Router>
     </AuthContextProvider>
-    <Footer/>
+    
     </>
   );
 }

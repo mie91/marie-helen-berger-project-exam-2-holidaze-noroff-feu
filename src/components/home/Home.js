@@ -6,6 +6,7 @@ import SubHeader from "../layout/headers/SubHeader";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import Newsletter from '../layout/other/Newsletter';
 
 
 const schema = yup.object().shape({
