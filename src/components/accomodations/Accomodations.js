@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
-import {Container, Row, Col, Button, Spinner, Card} from "react-bootstrap";
+import {Container, Row, Col, Button, Spinner, Card, Image} from "react-bootstrap";
 import BackToTop from "../layout/other/BackToTop";
 import MainHeader from "../layout/headers/MainHeader";
 import SubHeader from "../layout/headers/SubHeader";
@@ -74,20 +74,7 @@ function Accomodations() {
 
     return (
         <>
-            <Search doSearch={handleSearch} />
-            <Row>
-                {filteredResults.map(function (establishments) {
-                    return (
-                        <Col key={establishments.id} lg={4} md={6} sm={12}>
-                            <Card>
-                                <h1>{establishments.name}</h1>
-
-                            </Card>
-                        </Col>
-                    );
-                })}
-            </Row>
-
+            
 
 
 
@@ -113,6 +100,23 @@ function Accomodations() {
                <div id="tag1">
                         <section ref={refA} />
                </div>
+
+
+                    <Search doSearch={handleSearch} />
+                    <Row>
+                        {filteredResults.map(function (establishments) {
+                            return (
+                                <Col key={establishments.id} lg={4} md={6} sm={12}>
+                                    <Card>
+                                        <Card.Title>{establishments.name}</Card.Title>
+                                        <Image src={establishments.image}/>
+                                        <p>{establishments.description}</p>
+                                        <p>Price:{establishments.price}</p>
+                                    </Card>
+                                </Col>
+                            );
+                        })}
+                    </Row>
             </Container>
             
             </div>
