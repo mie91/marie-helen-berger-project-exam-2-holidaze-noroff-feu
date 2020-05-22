@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Spinner, Image } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Image, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
 
@@ -28,15 +28,42 @@ function AccomodationDetail() {
 
     return (
         <Container>
-            <Row>
-                <Col>
-                    <h1>{detail.name}</h1>
-                    <p>{detail.description}</p>
-                </Col>
-                <Col>
-                    <Image src={detail.image}/>
-                </Col>
-            </Row>
+            
+                
+                <div className="accomodation-detail">
+                <Row>
+                    <Col className="col-md-6">
+                        <h1 className="accomodation-detail__header">{detail.name}</h1>
+                        <p className="accomodation-detail__description">{detail.description}</p>
+                        <div className="accomodation-detail__details">
+                            <p>
+                                Max Guests: {detail.maxGuests}
+                            </p>
+                        </div>
+                        <div className="accomodation-detail__details">
+                            <p>
+                                Self Catering: {detail.maxGuests}
+                            </p>
+                        </div>
+                        <div className="accomodation-detail__details">
+                            <p>
+                                Price: {detail.maxGuests}
+                            </p>
+                        </div>
+
+                    </Col>
+                    <Col className="col-md-6">
+                        <Image fluid className="accomodation-detail__image"src={detail.image} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="col-md-12">
+                        <Button>Send Inquiry</Button>
+                    </Col>
+                </Row>
+                </div>
+                
+            
         </Container>   
     );
 }
