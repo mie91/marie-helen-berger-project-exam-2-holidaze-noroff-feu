@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import Home from "./components/home/Home";
@@ -11,6 +10,7 @@ import AddEstablishment from "./components/admin/manager/AddEstablishment";
 import EditEstablishment from "./components/admin/manager/EditEstablishment";
 import Dashboard from "./components/admin/dashboard/Dashboard";
 import Accomodations from "./components/accomodations/Accomodations";
+import AccomodationDetail from "./components/accomodations/AccomodationDetail";
 import Contact from "./components/contact/Contact";
 import Navigation from "./components/layout/navigation/Navigation";
 import Footer from "./components/layout/navigation/Footer";
@@ -27,6 +27,7 @@ function App() {
           <Switch>
             <Route path="/"exact component={Home}/>
             <Route path="/accomodations"exact component={Accomodations}/>
+            <Route path="/accomodations/:id" component={AccomodationDetail} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>

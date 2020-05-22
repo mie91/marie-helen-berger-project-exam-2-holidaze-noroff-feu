@@ -1,0 +1,27 @@
+/***************
+ * Accomodation Cards*
+ ***************/
+.accomodation-card {
+    max-width: 500px;
+    max-height: 500px;
+    color: $white;
+    border: $test;
+
+    &__image {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+
+ /***************
+ * Accomodation Search*
+ ***************/
+
+
+/***************
+ * Media Quiries*
+ ***************/
+@media screen and (min-width: 770px) {}
+
+@media screen and (max-width: 769px) {}

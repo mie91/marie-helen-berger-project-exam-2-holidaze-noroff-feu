@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
-import {Container, Row, Col, Button, Spinner, Card, Image} from "react-bootstrap";
+import {Container, Row, Col, Spinner} from "react-bootstrap";
 import BackToTop from "../layout/other/BackToTop";
 import MainHeader from "../layout/headers/MainHeader";
 import SubHeader from "../layout/headers/SubHeader";
 import { Link } from "react-router-dom";
 import Search from "./search/Search";
+import AccomodationItem from "./AccomodationItem";
 
 function Accomodations() {
     const refA = useRef(null);
@@ -36,7 +36,6 @@ function Accomodations() {
 
     function handleSearch(inputValue) {
         const lowerCaseInput = inputValue.toLowerCase();
-
         const filteredArray = establishments.filter(function (establishments) {
             const lowercaseName = establishments.name.toLowerCase();
 
@@ -50,23 +49,18 @@ function Accomodations() {
         setFilteredResults(filteredArray);
     }
 
-    // if loading is true, display some kind of loading indicator
-    // if you are using the React Bootstrap library you could use a spinner https://react-bootstrap.netlify.com/components/spinners/#spinners
     if (loading) {
-        return <div>Loading...</div>;
+        return <Spinner animation="grow" variant="light" className="spinner"/>;
     }
 
-    // if the filtered results array is empty (what the user typed in doesn't match any results), display a message
     if (filteredResults.length === 0) {
         return (
             <>
-                <Search doSearch={handleSearch} />
-                <div>No results</div>
+                <Search doSearch={handleSearch}></Search>
+                <div className="no-search-results">Your search gave no results</div>
             </>
         );
     }
-
-
 
     if (loading) {
 		return <Spinner animation="grow" variant="light"className="spinner"/>;
@@ -74,15 +68,11 @@ function Accomodations() {
 
     return (
         <>
-            
-
-
-
             <div className="header-image header-image--accomodations">
                 <div className="header-image__text-box header-image__text-box--dark">
                     <MainHeader title="Hotel? B&B? Apartment?"/>
 
-                    <div className="header-image__btn header-image__btn--pink"  ><Link onClick={() => scrollToSection(refA)}>See all</Link></div>
+                    <div className="header-image__btn header-image__btn--pink"  ><Link onClick={() => scrollToSection(refA)}>Take a look!</Link></div>
                 </div>
             </div>
             <div className="main-container main-container--dark-pink">
@@ -97,22 +87,15 @@ function Accomodations() {
                         </div>
                     </Col>
                     </Row>
-               <div id="tag1">
-                        <section ref={refA} />
-               </div>
+                    <div id="tag1"><section ref={refA}/></div>
 
-
-                    <Search doSearch={handleSearch} />
+                    <Search doSearch={handleSearch}/>
                     <Row>
                         {filteredResults.map(function (establishments) {
+                            const {id, name, image, price, description } = establishments;
                             return (
                                 <Col key={establishments.id} lg={4} md={6} sm={12}>
-                                    <Card>
-                                        <Card.Title>{establishments.name}</Card.Title>
-                                        <Image src={establishments.image}/>
-                                        <p>{establishments.description}</p>
-                                        <p>Price:{establishments.price}</p>
-                                    </Card>
+                                   <AccomodationItem id={id} name={name} image={image} price={price} description={description}/>
                                 </Col>
                             );
                         })}

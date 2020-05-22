@@ -3,13 +3,17 @@ import PropTypes from "prop-types";
 
 function Search({ doSearch }) {
 	return (
+		<>
+		<div className="search">
 		<input
-			className="search"
+			className="search__field"
 			placeholder="Search establishments"
 			onChange={function (e) {
 				doSearch(e.target.value);
 			}}
 		/>
+		</div>
+		</>
 	);
 }
 
