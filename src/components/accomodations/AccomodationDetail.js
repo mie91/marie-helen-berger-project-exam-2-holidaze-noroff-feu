@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Spinner, Image, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
+import Maps from "./maps/Maps";
+
 
 function AccomodationDetail() {
     const [detail, setDetail] = useState(null);
@@ -28,8 +30,7 @@ function AccomodationDetail() {
 
     return (
         <Container>
-            
-                
+                <Maps/>
                 <div className="accomodation-detail">
                 <Row>
                     <Col className="col-md-6">
@@ -42,12 +43,12 @@ function AccomodationDetail() {
                         </div>
                         <div className="accomodation-detail__details">
                             <p>
-                                Self Catering: {detail.maxGuests}
+                                Self Catering: {detail.selfCatering}
                             </p>
                         </div>
                         <div className="accomodation-detail__details">
                             <p>
-                                Price: {detail.maxGuests}
+                                Price: {detail.price}
                             </p>
                         </div>
 
@@ -58,7 +59,13 @@ function AccomodationDetail() {
                 </Row>
                 <Row>
                     <Col className="col-md-12">
+                        <div className="accomodation-detail__details">
+                            <p>
+                                email: {detail.email}
+                            </p>
+                        </div>
                         <Button>Send Inquiry</Button>
+
                     </Col>
                 </Row>
                 </div>
