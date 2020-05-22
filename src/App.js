@@ -11,6 +11,7 @@ import EditEstablishment from "./components/admin/manager/EditEstablishment";
 import Dashboard from "./components/admin/dashboard/Dashboard";
 import Accomodations from "./components/accomodations/Accomodations";
 import AccomodationDetail from "./components/accomodations/AccomodationDetail";
+import AccomodationInquiry from "./components/accomodations/inquiries/AccomodationInquiry";
 import Contact from "./components/contact/Contact";
 import Navigation from "./components/layout/navigation/Navigation";
 import Footer from "./components/layout/navigation/Footer";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/"exact component={Home}/>
             <Route path="/accomodations"exact component={Accomodations}/>
             <Route path="/accomodations/:id" component={AccomodationDetail} />
+            <Route path="/establishments/inquiry/:id" component={AccomodationInquiry} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>

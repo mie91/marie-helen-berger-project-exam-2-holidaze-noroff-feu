@@ -3,6 +3,7 @@ import { Container, Row, Col, Spinner, Image, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
 import Maps from "./maps/Maps";
+import { Link } from "react-router-dom";
 
 
 function AccomodationDetail() {
@@ -30,7 +31,13 @@ function AccomodationDetail() {
 
     return (
         <Container>
-                <Maps/>
+                <Maps latitude={detail.lat} longitude={detail.lng}/>
+
+
+
+
+
+                
                 <div className="accomodation-detail">
                 <Row>
                     <Col className="col-md-6">
@@ -64,8 +71,10 @@ function AccomodationDetail() {
                                 email: {detail.email}
                             </p>
                         </div>
-                        <Button>Send Inquiry</Button>
-
+                        
+                        <li key={detail.id}>
+                            <Link to={`/establishments/inquiry/${detail.id}`}><Button variant="secondary" block>View</Button></Link>
+                        </li>
                     </Col>
                 </Row>
                 </div>

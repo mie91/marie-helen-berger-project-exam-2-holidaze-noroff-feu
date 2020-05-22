@@ -1,17 +1,24 @@
 import React from 'react'
 import GoogleMaps from "simple-react-google-maps"
+import PropTypes from "prop-types";
 
-function Maps () {
+function Maps ({latitude, longitude}) {
   return (
     <GoogleMaps
       apiKey = {"AIzaSyDTskY6b9_cd1FJRLqqSGBYwRmajQjN1kg"}
-      style={{height: "400px", width: "100%"}}
+      style={{height: "300px", width: "300px"}}
       zoom={6}
-      center={{lat: 37.4224764, lng: -122.0842499}}
-      markers={{lat: 37.4224764, lng: -122.0842499}} //optional
+      center={{lat: {latitude}, lng:{longitude}}}
+     /* markers={{lat: {latitude}, lng: {longitude}}} */
     />
   );
 }
+
+    Maps.propTypes = {
+      latitude: PropTypes.number.isRequired,
+      longitude: PropTypes.number.isRequired
+    };
+
 
 export default Maps;
 
