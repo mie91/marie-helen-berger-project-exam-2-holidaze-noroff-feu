@@ -17,7 +17,7 @@ function Establishments() {
                 setEstablishments(json);
             })
             .catch((error) => console.log(error));
-    }, []);
+    }, [options, url]);
 
     return (
         <>

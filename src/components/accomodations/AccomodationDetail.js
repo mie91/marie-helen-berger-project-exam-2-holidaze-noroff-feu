@@ -4,18 +4,20 @@ import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
 
 function AccomodationDetail() {
-   const [detail, setDetail] = useState(null);
+    const [detail, setDetail] = useState(null);
     const [loading, setLoading] = useState(true);
 
     let { id } = useParams();
-
-    const url = BASE_URL + "accomodations/" + id;
+    const url = BASE_URL + "establishments/" + id;
     const options = { headers };
 
     useEffect(() => {
         fetch(url, options )
             .then(response => response.json())
-            .then(json => console.log(json))
+            .then((json) => {
+                console.log(json);
+                setDetail(json);
+            })
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
     }, []);
@@ -24,9 +26,6 @@ function AccomodationDetail() {
         return <Spinner animation="border" className="spinner" />;
     }
 
-
-    return null
-    /*
     return (
         <Container>
             <Row>
@@ -38,10 +37,8 @@ function AccomodationDetail() {
                     <Image src={detail.image}/>
                 </Col>
             </Row>
-        </Container>
-        
-        
-    );*/
+        </Container>   
+    );
 }
 
 export default AccomodationDetail;
