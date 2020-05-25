@@ -13,10 +13,10 @@ function Dashboard() {
                     <NavLink to="/admin/establishments/add">Add Establishment</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/admin/establishments/inquiries/all">See Inquiries</NavLink>
+                    <NavLink to="/admin/enquiries">See Enquiries</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/admin/messages/all">See messages</NavLink>
+                    <NavLink to="/admin/messages">See messages</NavLink>
                 </li>
             </ul>
         </>

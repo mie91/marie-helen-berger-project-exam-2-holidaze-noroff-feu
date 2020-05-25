@@ -39,8 +39,8 @@ function App() {
             <ProtectedRoute path="/admin/establishments" exact component={Establishments} />
             <ProtectedRoute path="/admin/establishments/add" exact component={AddEstablishment} />
             <ProtectedRoute path="/admin/establishments/edit/:id" exact component={EditEstablishment} />
-            <ProtectedRoute path="/admin/establishments/inquiries/all" exact component={InquiriesList} />
-            <ProtectedRoute path="/admin/messages/all" exact component={Messages} />
+            <ProtectedRoute path="/admin/enquiries" exact component={InquiriesList} />
+            <ProtectedRoute path="/admin/messages" exact component={Messages} />
             <Redirect to="/" />
           </Switch>
           <Footer/>

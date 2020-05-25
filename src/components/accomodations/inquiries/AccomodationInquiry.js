@@ -31,7 +31,17 @@ function AccomodationDetail() {
     }
 
      async function onSubmit(data) {
-        console.log("data", data);
+        
+
+        const url = BASE_URL + "enquiries";
+
+        const options = { headers, method: "POST", body: JSON.stringify(data) };
+
+        fetch(url, options)
+            .then((r) => r.json())
+            .then((j) => console.log(j));
+
+           console.log("data", data);
 
         }
 
@@ -39,16 +49,21 @@ function AccomodationDetail() {
         <Container>
             <h1>{detail.name}</h1>
                 <Form onSubmit={handleSubmit(onSubmit)}>
-                     <Form.Group>
+                <Form.Group>
                     <Form.Label>Name</Form.Label>
                     <Form.Control disabled name="name" defaultValue={detail.name} placeholder="Enter an name" ref={register}/>
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control name="email" defaultValue={detail.email} placeholder="Enter an email address" ref={register}/>
+                    <Form.Label>establishmentId</Form.Label>
+                    <Form.Control disabled name="establishmentId" defaultValue={detail.id} ref={register}/>
                 </Form.Group>
-                <Button type="submit">Update</Button>
+
+                <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control name="email" placeholder="Enter an email address" ref={register}/>
+                </Form.Group>
+                <Button type="submit">Send</Button>
                 </Form>
                 
             

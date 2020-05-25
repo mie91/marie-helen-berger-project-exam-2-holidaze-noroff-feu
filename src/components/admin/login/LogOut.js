@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
         history.push("/");
     }
 
-    return <button onClick={doLogout}>Log Out</button>;
+    return <Link id="nav-link__admin" onClick={doLogout}>Log Out</Link>;
 }
 
 export default Login;
