@@ -33,11 +33,6 @@ function AccomodationDetail() {
         <Container>
                 <Maps latitude={detail.lat} longitude={detail.lng}/>
 
-
-
-
-
-                
                 <div className="accomodation-detail">
                 <Row>
                     <Col className="col-md-6">
@@ -50,12 +45,12 @@ function AccomodationDetail() {
                         </div>
                         <div className="accomodation-detail__details">
                             <p>
-                                Self Catering: {detail.selfCatering}
+                                Self Catering: {detail.selfCatering ? 'Yes' : 'No'}
                             </p>
                         </div>
                         <div className="accomodation-detail__details">
                             <p>
-                                Price: {detail.price}
+                                Price: {detail.price} $
                             </p>
                         </div>
 
@@ -73,7 +68,7 @@ function AccomodationDetail() {
                         </div>
                         
                         <li key={detail.id}>
-                            <Link to={`/establishments/inquiry/${detail.id}`}><Button variant="secondary" block>View</Button></Link>
+                            <Link to={`/establishments/inquiry/${detail.id}`}><Button variant="secondary" block>Send Inquiry</Button></Link>
                         </li>
                     </Col>
                 </Row>
@@ -81,6 +76,8 @@ function AccomodationDetail() {
                 
             
         </Container>   
+
+        
     );
 }
 
