@@ -67,9 +67,9 @@ function AccomodationDetail() {
                             </p>
                         </div>
                         
-                        <li key={detail.id}>
+                        <div key={detail.id}>
                             <Link to={`/establishments/inquiry/${detail.id}`}><Button variant="secondary" block>Send Inquiry</Button></Link>
-                        </li>
+                        </div>
                     </Col>
                 </Row>
                 </div>
