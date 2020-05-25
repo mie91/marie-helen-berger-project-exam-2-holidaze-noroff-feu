@@ -26,8 +26,7 @@ function InquiriesList() {
                     {enquiries.map((enquiry) => {
                     return (
                         <li key={enquiry.id}>
-                            <p>Name: {enquiry.name}</p>
-                            <p>Email: {enquiry.email}</p>
+                            <NavLink to={`/admin/enquiries/${enquiry.id}`}>{enquiry.name}</NavLink>
                         </li>
                     );
                 })}
