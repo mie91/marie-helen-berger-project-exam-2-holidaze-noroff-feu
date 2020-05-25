@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Dashboard() {
     return (
         <>
-            <h1>Establishment Manager</h1>
+            <h1>Admin Dashboard</h1>
             <ul>
                 <li>
                     <NavLink to="/admin/establishments">See Establishments</NavLink>

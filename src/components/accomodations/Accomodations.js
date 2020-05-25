@@ -90,13 +90,13 @@ function Accomodations() {
                     <div id="tag1"><section ref={refA}/></div>
 
                     <Search doSearch={handleSearch}/>
-                    <Row>
+                    <Row  >
                         {filteredResults.map(function (establishments) {
                             const {id, name, image, price, description } = establishments;
                             return (
-                                <Col key={establishments.id} lg={4} md={6} sm={12}>
-                                   <AccomodationItem id={id} name={name} image={image} price={price} description={description}/>
-                                </Col>
+                                
+                                <AccomodationItem key={establishments.id} id={id} name={name} image={image} price={price} description={description}/>
+
                             );
                         })}
                     </Row>

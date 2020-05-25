@@ -2,15 +2,53 @@
  * Accomodation Cards*
  ***************/
 .accomodation-card {
-    max-width: 500px;
-    max-height: 500px;
+
+    height: 430px;
     color: $white;
-    border: $test;
+    padding: 20px;
+    text-align: center;
+    margin: 2vw 1vw;
+    //@include basic-shadow;
+    background-color: rgba($color: $white, $alpha: 0.07);
+    border-radius: 10px;
+    text-decoration: none;
+
+
+    &__header {
+        @include header-style-1;   
+    }
 
     &__image {
-        max-width: 300px;
-        max-height: 300px;
+        height: 150px;
     }
+
+    &__description {
+        text-align: left;
+        margin-top: 5px;
+        height: 100px;
+    }
+
+    &__price {
+        margin-bottom: 20px;
+        background-color: $orange;
+        color: $dark;
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        @include header-style-1;
+    }
+
+    &__btn {
+        @include basic-button-pink;
+        padding: 10px 50px;
+        @include basic-shadow;
+
+        &:hover {
+            transition: $basic-transition;
+            filter: none;
+        }
+    }
+    
 }
 
 

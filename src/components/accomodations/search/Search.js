@@ -7,7 +7,7 @@ function Search({ doSearch }) {
 		<div className="search">
 		<input
 			className="search__field"
-			placeholder="Search establishments"
+			placeholder="Search accomodations"
 			onChange={function (e) {
 				doSearch(e.target.value);
 			}}
