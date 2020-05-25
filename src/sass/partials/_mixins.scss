@@ -43,6 +43,24 @@
      }
  }
 
+ @mixin basic-button-dark {
+     color: $pink;
+     background-color: $dark;
+     padding: 10px;
+     letter-spacing: 5px;
+     font-family: $headerFont;
+
+     &.active {
+         color: $pink;
+     }
+
+     &:hover {
+         background-color: $pink;
+         color: $dark;
+         text-decoration: none;
+     }
+ }
+
   /***************
  * Typography*
  ***************/

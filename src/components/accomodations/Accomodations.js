@@ -13,7 +13,12 @@ function Accomodations() {
 
     function scrollToSection(ref) {
         window.scrollTo({ behavior: "smooth", top: ref.current.offsetTop });
-    }
+    };
+
+    function refreshPage() {
+        window.location.reload();
+    };
+
 
     const [establishments, setEstablishments] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
@@ -56,8 +61,25 @@ function Accomodations() {
     if (filteredResults.length === 0) {
         return (
             <>
-                <Search doSearch={handleSearch}></Search>
-                <div className="no-search-results">Your search gave no results</div>
+            <div className="main-container main-container--dark-pink">
+            <Container>
+                <Row>
+                    <Col className="col-sm-12">
+                        <div className="text-content text-content--light">
+                            <SubHeader title="Whoops!"/>
+                           
+                        </div>
+                        <Search doSearch={handleSearch}></Search>
+                         <div className="search__no-results">Your search gave no results
+                         </div>
+                         
+
+                                <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
+
+                         </Col>
+                         </Row>
+                         </Container>
+                         </div>
             </>
         );
     }
@@ -89,8 +111,9 @@ function Accomodations() {
                     </Row>
                     <div id="tag1"><section ref={refA}/></div>
 
-                    <Search doSearch={handleSearch}/>
-                    <Row  >
+                    <Search doSearch={handleSearch} />
+                    <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
+                    <Row>
                         {filteredResults.map(function (establishments) {
                             const {id, name, image, price, description } = establishments;
                             return (

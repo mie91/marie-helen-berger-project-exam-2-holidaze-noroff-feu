@@ -84,10 +84,71 @@
 
 }
 
+.search {
+    text-align: center;
+
+    &__field {
+        padding: 10px;
+        width:100%;
+        background-color: transparent;
+        border: none;
+        border-left: $basic-border-pink;
+        border-bottom: $basic-border-pink;
+        color: $orange;
+       font-size: 1.2em;
+
+       &::placeholder {
+           color: rgba($color: $orange, $alpha: 1);
+       }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            border-left: $basic-border-white;
+            border-bottom: $basic-border-white;
+            transition: $basic-transition;
+        }
+        
+    }
+
+    &__no-results {
+        color: $orange;
+        text-align: right;
+        border-right: $basic-border-pink;
+        padding: 5px;
+    }
+
+    &__btn {
+        margin: 2vw;
+        text-align: center;
+        a {
+        @include basic-button-pink;
+        @include basic-shadow;
+        transition: $basic-transition;
+        }
+    }
+
+    
+}
+
+
 
 /***************
  * Media Quiries*
  ***************/
 @media screen and (min-width: 770px) {}
 
-@media screen and (max-width: 769px) {}
+@media screen and (max-width: 769px) {
+    .header-image {
+    
+     &__text-box {
+         margin-top: 20vw;
+     }
+    
+    &__btn {
+        
+        font-size: 1em;
+        }
+
+    }
+}

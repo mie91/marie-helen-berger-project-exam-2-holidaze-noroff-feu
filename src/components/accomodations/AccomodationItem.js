@@ -10,7 +10,6 @@ function AccomodationItem({ id, name, image, price, description }) {
                 <h4 className="accomodation-card__header">{name}</h4>
 
                 <Image fluid className="accomodation-card__image" src={image}></Image>
-
                 <p className="accomodation-card__description">{description}</p>
                 <div className="accomodation-card__price">From: {price} $</div>
 
