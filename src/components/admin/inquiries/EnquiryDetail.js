@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useParams, useHistory } from "react-router-dom";
-import { Button, Form } from "react-bootstrap";
-import { BASE_URL, headers, PATCH } from "../../../constants/api";
+import { useParams } from "react-router-dom";
+import { BASE_URL, headers } from "../../../constants/api";
 import DeleteEnquiry from "./DeleteEnquiry";
 
 function AddEstablishment() {
@@ -29,8 +27,11 @@ function AddEstablishment() {
 
     return (
         <>
-            <p>Establishment: {enquiry.name}</p>
-            <p>Establishment: {enquiry.email}</p>
+            <p>Name: {enquiry.name}</p>
+            <p>Email: {enquiry.email}</p>
+            <p>Check In: {enquiry.checkIn}</p>
+            <p>Check Out: {enquiry.checkOut}</p>
+            <p>Sent: {enquiry.createdAt}</p>
             <DeleteEnquiry id={id} />
         </>
     );
