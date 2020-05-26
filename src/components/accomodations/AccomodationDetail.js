@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Spinner, Image, Button } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Image, Button, Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
 import Maps from "./maps/Maps";
@@ -13,6 +13,7 @@ function AccomodationDetail() {
     let { id } = useParams();
     const url = BASE_URL + "establishments/" + id;
     const options = { headers };
+    
 
     useEffect(() => {
         fetch(url, options )
@@ -30,8 +31,12 @@ function AccomodationDetail() {
     }
 
     return (
-        <div className="main-container main-container--dark-pink">
+        <div className="main-container main-container--dark-pink main-container__accomodation-detail">
+            
             <Container>
+                <div className="basic-btn basic-btn--dark">
+                    <Link to={"/accomodations"}>back</Link>
+                </div>
                 <div className="accomodation-detail">
                     <Row className="justify-content-md-center">
                         <Col className="col-md-12">
@@ -46,8 +51,9 @@ function AccomodationDetail() {
                             <h4 className="accomodation-detail__header accomodation-detail__header--sub">Description</h4>
                         <p className="accomodation-detail__description">{detail.description}</p>
                             <div className="accomodation-detail__details accomodation-detail__details--email">
+                                <u><p>Email:</p></u>
                                 <p>
-                                    Email: {detail.email}
+                                   {detail.email}
                                 </p>
                             </div>
                             <h4 className="accomodation-detail__header accomodation-detail__header--sub">Details</h4>
@@ -65,9 +71,12 @@ function AccomodationDetail() {
                             </div>
                                     <div className="accomodation-detail__details accomodation-detail__details--price">
                                 <p>
-                                    Price: {detail.price} $
+                                    Price: {detail.price} $*
                                 </p>
                             </div>
+                                    <div className="accomodation-detail__details accomodation-detail__details--email">
+                                        <p>*per night</p>
+                                    </div>
                                     
 
                             </Col>
@@ -86,17 +95,17 @@ function AccomodationDetail() {
                         <Col className="col-md-12">
 
 
-                        <div key={detail.id}>
-                            <Link to={`/establishments/inquiry/${detail.id}`}> <Button variant="secondary" block>Send
-                            Inquiry</Button></Link>
-                        </div>
+                            <div className="basic-btn basic-btn--dark accomodation-detail__btn">
+                                <Link to={`/establishments/inquiry/${detail.id}`}>Send
+                            Enquiry</Link>
+                            </div>
+                            
+                        
                         </Col>
                     </Row>
                 </div>
 
-            
             </Container>
-            
         </div>
 
         

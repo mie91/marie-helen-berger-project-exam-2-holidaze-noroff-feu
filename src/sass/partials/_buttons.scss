@@ -2,31 +2,48 @@
  /***************
  * Buttons*
  ***************/
+//Basic Buttons//
+/*
+.basic-btn {
+    max-width: 200px;
+    cursor: pointer;
+    &--dark {
+        @include basic-button-dark;
 
+        a {
+            color: $pink;
+        }
+    }
 
+    &--pink {
+        @include basic-button-pink;
 
+        a {
+            color: $dark;
+        }
 
+        :hover {
+            color: $pink;
+        }
+    
+    }
+}*/
 
+.basic-btn {
+    max-width: 250px;
+    margin: 20px 0px;
+    cursor: pointer;
+        a {
+        @include basic-button-pink;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /***************
- * Other Buttons*
- ***************/
-
-
+    &--dark {
+        a{
+            @include basic-button-dark;
+        }
+    }
+   
+}
 //The "Back To Top" Button//
 .toTop {
     display: block;
@@ -69,10 +86,25 @@
         width: 40px;
         height: 40px;
     }
-    
-
 
 }
+
+/***************
+ * Breadcrumbs*
+ ***************/
+
+/* .breadcrumb {
+     background-color: transparent;
+     @include header-style-1;
+     padding: 2px;
+     
+    
+     a {
+          color: rgba($color: $white, $alpha: 1);
+     }
+ }
+
+ */
 
 /***************
  * Media Quiries*

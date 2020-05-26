@@ -106,62 +106,102 @@
  /***************
  * Accomodation Detail Page*
  ***************/
+.main-container {
+    &__accomodation-detail {
+        padding-bottom: 30px;
+    }
+}
+
 .accomodation-detail {
     color: white;
     padding: 3vw;
     margin: 2vw 1vw;
     background: linear-gradient(180deg, rgba($dark, 1.0) 50%, rgba($white, 0) 100%);
     text-align: center;
+    box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
+    
+    
 
     &__header {
         color: $orange;
         @include header-style-1;
         letter-spacing: 5px;
+        margin: 10px 0px;
 
         &--sub {
-            border-bottom: $basic-border-pink;
-            
-            
+            border-bottom: $basic-border-pink;      
         }
     }
 
     &__image {
-      
+      @include basic-shadow;
+      border-radius: 5px;
     }
 
     &__description {
         text-align: left;
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     &__details {
         @include header-style-1;
+        @include basic-shadow;
         background-color: $pink;
         color: $dark;
-        border-radius: 10px;
         text-transform: none;
+        
         
 
         p {
             padding: 3px;
-            margin: 5px;
+            margin: 20px 5px;
         }
 
         &--email {
-           
             text-align: left;
             color: rgba($white, 0.3);
             text-transform: none;
             background-color: transparent;
             font-family: $textFont;
             
+            
+
+            &:hover {
+                color: rgba($white, 1);
+            }
+            
+            p{
+                margin: 0px;
+                padding: 0px;
+                 word-break: break-all;
+                
+            } 
         }
 
         &--price {
             background-color: $orange;
             font-size: 1.5em;
             margin-top: 10px;
+            text-transform: uppercase;
         }
+        
+    }
+
+    &__btn {
+        margin: 50px 10px;
+        margin-left: auto;
+        margin-right: auto;
+
+        a {
+            padding: 20px;
+        }
+    }
+
+    &__map {
+        padding: 10px;
+        margin: auto;
+        @include basic-shadow;
+        
     }
 }
 

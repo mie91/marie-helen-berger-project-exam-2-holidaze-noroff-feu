@@ -16,8 +16,7 @@ function Accomodations() {
     };
 
     function refreshPage() {
-        window.location.reload(true);
-        
+        window.location.reload();
     };
 
 
@@ -113,7 +112,7 @@ function Accomodations() {
                     <div id="tag1"><section ref={refA}/></div>
 
                     <Search doSearch={handleSearch} />
-                    <div className="search__btn"><Link onClick={refreshPage} to="/accomodations">Refresh</Link></div>
+                    <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
                     <Row>
                         {filteredResults.map(function (establishments) {
                             const {id, name, image, price, description } = establishments;
