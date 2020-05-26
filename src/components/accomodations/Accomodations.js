@@ -16,7 +16,8 @@ function Accomodations() {
     };
 
     function refreshPage() {
-        window.location.reload();
+        window.location.reload(true);
+        
     };
 
 
@@ -99,7 +100,7 @@ function Accomodations() {
             </div>
             <div className="main-container main-container--dark-pink">
             <Container>
-                < Row className = "justify-content-md-center" >
+                <Row>
                     <Col className="col-sm-12">
                         <div className="text-content text-content--light">
                             <MainHeader title="Experience Bergen"/>
@@ -112,8 +113,8 @@ function Accomodations() {
                     <div id="tag1"><section ref={refA}/></div>
 
                     <Search doSearch={handleSearch} />
-                    <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
-                    < Row className = "justify-content-md-center" >
+                    <div className="search__btn"><Link onClick={refreshPage} to="/accomodations">Refresh</Link></div>
+                    <Row>
                         {filteredResults.map(function (establishments) {
                             const {id, name, image, price, description } = establishments;
                             return (
