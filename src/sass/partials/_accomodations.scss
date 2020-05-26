@@ -56,11 +56,122 @@
  /***************
  * Accomodation Search*
  ***************/
+.search {
+    text-align: center;
+
+    &__field {
+        padding: 10px;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-left: $basic-border-pink;
+        border-bottom: $basic-border-pink;
+        color: $orange;
+        font-size: 1.2em;
+
+        &::placeholder {
+            color: rgba($color: $orange, $alpha: 1);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            border-left: $basic-border-white;
+            border-bottom: $basic-border-white;
+            transition: $basic-transition;
+        }
+
+    }
+
+    &__no-results {
+        color: $orange;
+        text-align: right;
+        border-right: $basic-border-pink;
+        padding: 5px;
+    }
+
+    &__btn {
+        margin: 2vw;
+        text-align: center;
+
+        a {
+            @include basic-button-pink;
+            @include basic-shadow;
+            transition: $basic-transition;
+        }
+    }
+
+}
+
+ /***************
+ * Accomodation Detail Page*
+ ***************/
+.accomodation-detail {
+    color: white;
+    padding: 3vw;
+    margin: 2vw 1vw;
+    background: linear-gradient(180deg, rgba($dark, 1.0) 50%, rgba($white, 0) 100%);
+    text-align: center;
+
+    &__header {
+        color: $orange;
+        @include header-style-1;
+        letter-spacing: 5px;
+
+        &--sub {
+            border-bottom: $basic-border-pink;
+            
+            
+        }
+    }
+
+    &__image {
+      
+    }
+
+    &__description {
+        text-align: left;
+        font-size: 1.2em;
+    }
+
+    &__details {
+        @include header-style-1;
+        background-color: $pink;
+        color: $dark;
+        border-radius: 10px;
+        text-transform: none;
+        
+
+        p {
+            padding: 3px;
+            margin: 5px;
+        }
+
+        &--email {
+           
+            text-align: left;
+            color: rgba($white, 0.3);
+            text-transform: none;
+            background-color: transparent;
+            font-family: $textFont;
+            
+        }
+
+        &--price {
+            background-color: $orange;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+    }
+}
+
 
 
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 770px) {}
+@media screen and (min-width: 770px) {
+    
+}
 
 @media screen and (max-width: 769px) {}

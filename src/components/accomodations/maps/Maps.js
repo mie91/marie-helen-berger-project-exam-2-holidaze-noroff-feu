@@ -8,7 +8,7 @@ function Maps ({latitude, longitude}) {
   return (
     <GoogleMaps
       apiKey = {"AIzaSyDTskY6b9_cd1FJRLqqSGBYwRmajQjN1kg"}
-      style={{height: "300px", width: "300px"}}
+      style={{height: "200px", width: "200px"}}
       zoom={12}
       center={{lat: (latitude), lng:(longitude)}}
       markers={{lat: (latitude), lng: (longitude)}}

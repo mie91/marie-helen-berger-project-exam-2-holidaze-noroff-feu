@@ -99,7 +99,7 @@ function Accomodations() {
             </div>
             <div className="main-container main-container--dark-pink">
             <Container>
-                <Row>
+                < Row className = "justify-content-md-center" >
                     <Col className="col-sm-12">
                         <div className="text-content text-content--light">
                             <MainHeader title="Experience Bergen"/>
@@ -113,7 +113,7 @@ function Accomodations() {
 
                     <Search doSearch={handleSearch} />
                     <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
-                    <Row>
+                    < Row className = "justify-content-md-center" >
                         {filteredResults.map(function (establishments) {
                             const {id, name, image, price, description } = establishments;
                             return (

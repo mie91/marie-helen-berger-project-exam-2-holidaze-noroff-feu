@@ -30,52 +30,74 @@ function AccomodationDetail() {
     }
 
     return (
-        <Container>
-                <Maps latitude={detail.lat} longitude={detail.lng}/>
-
+        <div className="main-container main-container--dark-pink">
+            <Container>
                 <div className="accomodation-detail">
-                <Row>
-                    <Col className="col-md-6">
-                        <h1 className="accomodation-detail__header">{detail.name}</h1>
+                    <Row className="justify-content-md-center">
+                        <Col className="col-md-12">
+                            <h1 className="accomodation-detail__header">{detail.name}</h1>
+                            
+                        </Col>
+                        <Col lg={6} md={12} sm={12}>
+                            <Image fluid className="accomodation-detail__image" src={detail.image} />
+                            
+                        </Col>
+                        <Col>
+                            <h4 className="accomodation-detail__header accomodation-detail__header--sub">Description</h4>
                         <p className="accomodation-detail__description">{detail.description}</p>
-                        <div className="accomodation-detail__details">
-                            <p>
-                                Max Guests: {detail.maxGuests}
-                            </p>
-                        </div>
-                        <div className="accomodation-detail__details">
-                            <p>
-                                Self Catering: {detail.selfCatering ? 'Yes' : 'No'}
-                            </p>
-                        </div>
-                        <div className="accomodation-detail__details">
-                            <p>
-                                Price: {detail.price} $
-                            </p>
-                        </div>
+                            <div className="accomodation-detail__details accomodation-detail__details--email">
+                                <p>
+                                    Email: {detail.email}
+                                </p>
+                            </div>
+                            <h4 className="accomodation-detail__header accomodation-detail__header--sub">Details</h4>
+                            <Row className="justify-content-md-center">
+                            <Col lg={6} md={6} sm={6} xs={12}>
+                                    <div className="accomodation-detail__details accomodation-detail__details--guests">
+                                <p>
+                                    Max Guests: {detail.maxGuests}
+                                </p>
+                            </div>
+                                    <div className="accomodation-detail__details accomodation-detail__details--catering">
+                                <p>
+                                            Self Catering: <u> {detail.selfCatering ? 'Yes' : 'No'}</u> 
+                                </p>
+                            </div>
+                                    <div className="accomodation-detail__details accomodation-detail__details--price">
+                                <p>
+                                    Price: {detail.price} $
+                                </p>
+                            </div>
+                                    
 
-                    </Col>
-                    <Col className="col-md-6">
-                        <Image fluid className="accomodation-detail__image"src={detail.image} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className="col-md-12">
-                        <div className="accomodation-detail__details">
-                            <p>
-                                email: {detail.email}
-                            </p>
-                        </div>
-                        
+                            </Col>
+                            <Col lg={6} md={6} sm={6} xs={12}>
+                            <div className="accomodation-detail__map">
+                                <Maps latitude={detail.lat} longitude={detail.lng} />
+                            </div>
+                            </Col>
+                        </Row>
+
+
+                        </Col>
+
+                    </Row>
+                    <Row>
+                        <Col className="col-md-12">
+
+
                         <div key={detail.id}>
-                            <Link to={`/establishments/inquiry/${detail.id}`}><Button variant="secondary" block>Send Inquiry</Button></Link>
+                            <Link to={`/establishments/inquiry/${detail.id}`}> <Button variant="secondary" block>Send
+                            Inquiry</Button></Link>
                         </div>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
                 </div>
-                
+
             
-        </Container>   
+            </Container>
+            
+        </div>
 
         
     );
