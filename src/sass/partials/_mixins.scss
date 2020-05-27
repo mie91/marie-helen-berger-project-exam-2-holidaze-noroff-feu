@@ -1,9 +1,6 @@
 /***************
  * Mixins*
  ***************/
-
-
-
  /***************
  * Buttons*
  ***************/
@@ -92,7 +89,31 @@
      -webkit-filter: drop-shadow(7px 7px 7px #000000);
  }
 
- //Animations//
+  /***************
+ * Forms*
+ ***************/
+
+  //Fix Chrome autofill input background
+  @mixin autofillFix {
+      &:-webkit-autofill {
+          -webkit-text-fill-color: $white;
+          transition: background-color 5000s ease-in-out 0s;
+      }
+  }
+
+  @mixin form-base {
+      background-color: transparent;
+      border: none;
+      border-radius: 0%;
+      border-bottom: $basic-border-pink;
+      border-left: $basic-border-pink;
+      color: $white;
+      padding: 3px;
+  }
+
+  /***************
+ * Animations*
+ ***************/
  //Animated size increased
  @keyframes bigger {
      0% {
@@ -118,3 +139,5 @@
          transform: scale(1.0);
      }
  }
+
+

@@ -22,7 +22,7 @@ const schema = yup.object().shape({
     email: yup
         .string()
         .email("Please enter a valid email")
-        .required("Required"),
+        .required("A valid email is required"),
 
     checkIn: yup
         .date()
@@ -32,8 +32,6 @@ const schema = yup.object().shape({
         .date()
         .required("Please select a date for check-out")
 });
-
-
 
 
 function AccomodationDetail() {
@@ -49,9 +47,6 @@ function AccomodationDetail() {
     const options = { headers };
 
     const history = useHistory();
-
-    
-    
     
     useEffect(() => {
         fetch(url, options )
@@ -83,44 +78,45 @@ function AccomodationDetail() {
         
         }
 
-        
-
     return (
-        <div className="main-container main-container--dark-pink">
+        <div className="main-container main-container--dark-pink main-container--enquiry-form">
             <Container>
                 <div className="form-box">
                     <h1 className="form-box__header">Send Enquiry</h1>
+                    <p className="form-box__info-text">
+                        Qui proident mollit cillum id dolore non. Lorem duis mollit ipsum officia. Eu do cupidatat veniam nisi sint esse officia Lorem est non. Voluptate aute qui fugiat voluptate. Duis cillum minim proident ipsum non enim elit deserunt proident. 
+                    </p>
                     <Form onSubmit={handleSubmit(onSubmit)}>
-                        <Row>
+                        <Row className="justify-content-md-center">
                             <Col lg={6} md={12} sm={12}>
-
-                            <Form.Group>
-                                <Form.Control disabled hidden name="establishmentId" defaultValue={detail.id}ref={register} />
+                            <Form.Group className="form-box__group">
+                                <Form.Control className="form-box__field" disabled hidden name="establishmentId" defaultValue={detail.id}ref={register} />
                                 {errors.establishmentId && <ErrorMessage>{errors.establishmentId.message}</ErrorMessage>}
                             </Form.Group>
 
                             </Col>
                         </Row>
-                        <Row>
+                        <Row className="justify-content-md-center">
                             <Col lg={4} md={6} sm={12}>
-                            <Form.Group>
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control name="name" placeholder="Enter Your full name" ref={register} />
+                            <Form.Group className="form-box__group">
+                                <Form.Label className="form-box__label">Name</Form.Label>
+                                <Form.Control className="form-box__field" name="name" placeholder="Enter Your full name" ref={register} />
                                 {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
                             </Form.Group>
                             </Col>
                             <Col lg={4} md={6} sm={12}>
-                            <Form.Group>
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control name="email" placeholder="Enter an email address" ref={register} />
+                            <Form.Group className="form-box__group">
+                                <Form.Label className="form-box__label">Email</Form.Label>
+                                <Form.Control className="form-box__field" name="email" placeholder="Enter an email address" ref={register} />
                                 {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
                             </Form.Group>
                             </Col>
                         </Row>
-                        <Row>
-                            <Col lg={4} md={6} sm={12}>
-                            <Form.Group>
-                                <Controller as={DatePicker} control={control}   valueName="selected"
+                        <Row className="justify-content-md-center">
+                            <Col lg={4} md={6} sm={6}>
+                            <Form.Label className="form-box__label">Check-in: </Form.Label>
+                            <Form.Group className="form-box__group">   
+                                    <Controller autoComplete="none" as={DatePicker} control={control}   valueName="selected"
                                     onChange={([selected])=> selected}
                                     name="checkIn"
                                     className="form-control form-box__datepicker form-box__datepicker--check-in"
@@ -132,9 +128,10 @@ function AccomodationDetail() {
                                     {errors.checkIn && <ErrorMessage>{errors.checkIn.message}</ErrorMessage>}
                             </Form.Group>
                             </Col>
-                            <Col lg={4} md={6} sm={12}>
-                            <Form.Group>
-                                <Controller as={DatePicker} control={control} valueName="selected"
+                            <Col lg={4} md={6} sm={6}>
+                            <Form.Label className="form-box__label">Check-out: </Form.Label>
+                            <Form.Group className="form-box__group">
+                                    <Controller autoComplete="none" as={DatePicker} control={control} valueName="selected"
                                     onChange={([selected])=> selected}
                                     name="checkOut"
                                     className="form-control form-box__datepicker form-box__datepicker--check-out"
@@ -148,8 +145,12 @@ function AccomodationDetail() {
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center">
-                            <Col className="col-md-6">
+                            <Col lg={6} md={6} sm={12}>
                                 {validated && <div className="form-box__validation">Your inquiry has been sent successfully!</div>}
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-md-center">
+                            <Col lg={4} md={6} sm={12}>
                                 <Button className="form-box__submit-btn" type="submit">Send</Button>
                             </Col>
                         </Row>
