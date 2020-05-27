@@ -85,7 +85,7 @@ function Accomodations() {
     }
 
     if (loading) {
-		return <Spinner animation="grow" variant="light"className="spinner"/>;
+		return <Spinner animation="grow" variant="light" className="spinner"/>;
 	}
 
     return (

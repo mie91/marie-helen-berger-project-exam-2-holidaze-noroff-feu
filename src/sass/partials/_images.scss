@@ -84,52 +84,11 @@
 
 }
 
-.search {
-    text-align: center;
 
-    &__field {
-        padding: 10px;
-        width:100%;
-        background-color: transparent;
-        border: none;
-        border-left: $basic-border-pink;
-        border-bottom: $basic-border-pink;
-        color: $orange;
-       font-size: 1.2em;
+/***************
+ *Loading Spinner*
+ ***************/
 
-       &::placeholder {
-           color: rgba($color: $orange, $alpha: 1);
-       }
-
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            border-left: $basic-border-white;
-            border-bottom: $basic-border-white;
-            transition: $basic-transition;
-        }
-        
-    }
-
-    &__no-results {
-        color: $orange;
-        text-align: right;
-        border-right: $basic-border-pink;
-        padding: 5px;
-    }
-
-    &__btn {
-        margin: 2vw;
-        text-align: center;
-        a {
-        @include basic-button-pink;
-        @include basic-shadow;
-        transition: $basic-transition;
-        }
-    }
-
-    
-}
 
 
 

@@ -27,7 +27,7 @@ function AccomodationDetail() {
     }, []);
 
     if (loading) {
-        return <Spinner animation="border" className="spinner" />;
+        return <Spinner animation="grow" type="warning" className="spinner" />;
     }
 
     return (
