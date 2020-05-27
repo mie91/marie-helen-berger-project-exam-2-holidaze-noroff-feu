@@ -1,17 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
+import * as yup from "yup";
+import ErrorMessage from "../../layout/other/ErrorMessage";
+
+const schema = yup.object().shape({
+
+    establishmentId: yup
+        .string()
+        .required("The id of the establishment is required"),
+
+    name: yup
+        .string()
+        .required("A name is required")
+        .min(2, "The name is to short"),
+
+    email: yup
+        .string()
+        .email("Please enter a valid email")
+        .required("Required"),
+
+    checkIn: yup
+        .date()
+        .required("Please select a date for check-in"),
+
+    checkOut: yup
+        .date()
+        .required("Please select a date for check-out")
+});
+
 
 
 
 function AccomodationDetail() {
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [validated, setValidated] = useState(false);
+    const { register, handleSubmit, errors, control } = useForm({
+        validationSchema: schema});
     
     const [detail, setDetail] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -19,7 +47,10 @@ function AccomodationDetail() {
     let { id } = useParams();
     const url = BASE_URL + "establishments/" + id;
     const options = { headers };
-    const { register, handleSubmit, control } = useForm();
+
+    const history = useHistory();
+
+    
     
     
     useEffect(() => {
@@ -34,83 +65,98 @@ function AccomodationDetail() {
     }, []);
 
     if (loading) {
-        return <Spinner animation="border" className="spinner" />;
+        return <div className="spinner-container"><Spinner animation="grow" className="spinner "/>;</div>
     }
 
      async function onSubmit(data) {
-        
-
         const url = BASE_URL + "enquiries";
-
         const options = { headers, method: "POST", body: JSON.stringify(data) };
 
         fetch(url, options)
             .then((r) => r.json())
             .then((j) => console.log(j));
-
-           console.log("data", data);
-           console.log (startDate);
-
+         setValidated(true);
+         setTimeout(() => {
+            history.push("/");
+         }, 1000)
+        console.log("data", data);
+        
         }
 
         
 
     return (
-        <Container>
-            <h1>{detail.name} - Enquiry</h1>
-                <Form onSubmit={handleSubmit(onSubmit)}>
-                <Form.Group>
-                    
-                    <Form.Control disabled hidden name="establishmentId" defaultValue={detail.id} ref={register}/>
-                </Form.Group>
+        <div className="main-container main-container--dark-pink">
+            <Container>
+                <div className="form-box">
+                    <h1 className="form-box__header">Send Enquiry</h1>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                        <Row>
+                            <Col lg={6} md={12} sm={12}>
 
-                <Form.Group>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control name="name" placeholder="Enter Your full name" ref={register} />
-                </Form.Group>
+                            <Form.Group>
+                                <Form.Control disabled hidden name="establishmentId" defaultValue={detail.id}ref={register} />
+                                {errors.establishmentId && <ErrorMessage>{errors.establishmentId.message}</ErrorMessage>}
+                            </Form.Group>
 
-                <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control name="email" placeholder="Enter an email address" ref={register}/>
-                </Form.Group>
-
-                
-                    <Form.Label>Select days</Form.Label>
-                <Form.Group> 
-                    <Controller
-                        as={DatePicker}
-                        control={control}
-                        valueName="selected" 
-                        onChange={([selected]) => selected}
-                        name="checkIn"
-                        className="form-control"
-                        placeholderText="Select check-in date"
-                        isClearable
-                        
-                        dateFormat="MMMM d yyyy"
-                    />
-                    <Controller
-                        as={DatePicker}
-                        control={control}
-                        valueName="selected"
-                        onChange={([selected]) => selected}
-                        name="checkOut"
-                        className="form-control"
-                        placeholderText="Select check-out date"
-                        isClearable
-                        
-                        dateFormat="MMMM d yyyy"
-                    />
-                        
-                        
-                </Form.Group>
-
-
-                <Button type="submit">Send</Button>
-                </Form>
-                
-            
-        </Container>   
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={4} md={6} sm={12}>
+                            <Form.Group>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control name="name" placeholder="Enter Your full name" ref={register} />
+                                {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
+                            </Form.Group>
+                            </Col>
+                            <Col lg={4} md={6} sm={12}>
+                            <Form.Group>
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control name="email" placeholder="Enter an email address" ref={register} />
+                                {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+                            </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={4} md={6} sm={12}>
+                            <Form.Group>
+                                <Controller as={DatePicker} control={control}   valueName="selected"
+                                    onChange={([selected])=> selected}
+                                    name="checkIn"
+                                    className="form-control form-box__datepicker form-box__datepicker--check-in"
+                                    placeholderText="Select check-in date"
+                                    isClearable
+                                    dateFormat="MMMM d yyyy"
+                                    minDate={new Date()}
+                                    />
+                                    {errors.checkIn && <ErrorMessage>{errors.checkIn.message}</ErrorMessage>}
+                            </Form.Group>
+                            </Col>
+                            <Col lg={4} md={6} sm={12}>
+                            <Form.Group>
+                                <Controller as={DatePicker} control={control} valueName="selected"
+                                    onChange={([selected])=> selected}
+                                    name="checkOut"
+                                    className="form-control form-box__datepicker form-box__datepicker--check-out"
+                                    placeholderText="Select check-out date"
+                                    isClearable
+                                    dateFormat="MMMM d yyyy"
+                                    minDate={new Date()}
+                                    />
+                                    {errors.checkOut && <ErrorMessage>{errors.checkOut.message}</ErrorMessage>}
+                            </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-md-center">
+                            <Col className="col-md-6">
+                                {validated && <div className="form-box__validation">Your inquiry has been sent successfully!</div>}
+                                <Button className="form-box__submit-btn" type="submit">Send</Button>
+                            </Col>
+                        </Row>
+                    </Form>
+                </div>
+            </Container>
+        </div>
     )
 }
 
