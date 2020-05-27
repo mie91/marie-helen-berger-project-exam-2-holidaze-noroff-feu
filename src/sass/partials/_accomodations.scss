@@ -214,4 +214,11 @@
     
 }
 
-@media screen and (max-width: 769px) {}
+@media screen and (max-width: 769px) {
+.accomodation-detail {
+        &__btn {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

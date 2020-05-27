@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { BASE_URL, headers } from "../../../constants/api";
 
 function InquiriesList() {
@@ -23,7 +23,7 @@ function InquiriesList() {
     }, []);
 
     if (loading) {
-        return <Spinner animation="grow" variant="light" className="spinner" />;
+        return <div className="spinner-container"><Spinner animation="grow" className="spinner "/>;</div>
     }
 
         return (

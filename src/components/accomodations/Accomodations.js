@@ -55,7 +55,7 @@ function Accomodations() {
     }
 
     if (loading) {
-        return <Spinner animation="grow" variant="light" className="spinner"/>;
+        return <div className="spinner-container"><Spinner animation="grow" className="spinner "/>;</div>
     }
 
     if (filteredResults.length === 0) {
@@ -83,10 +83,6 @@ function Accomodations() {
             </>
         );
     }
-
-    if (loading) {
-		return <Spinner animation="grow" variant="light" className="spinner"/>;
-	}
 
     return (
         <>

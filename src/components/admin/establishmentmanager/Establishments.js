@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
+import { Spinner } from "react-bootstrap";
 
 function Establishments() {
     const [establishments, setEstablishments] = useState([]);
-
+    const [loading, setLoading] = useState(true);
     const url = BASE_URL + "establishments";
 
     const options = { headers };
@@ -16,8 +17,13 @@ function Establishments() {
                 console.log(json);
                 setEstablishments(json);
             })
-            .catch((error) => console.log(error));
+            .catch((error) => console.log(error))
+            .finally(() => setLoading(false));
     }, []);
+
+    if (loading) {
+        return <div className="spinner-container"><Spinner animation="grow" className="spinner "/>;</div>
+    }
 
     return (
         <>

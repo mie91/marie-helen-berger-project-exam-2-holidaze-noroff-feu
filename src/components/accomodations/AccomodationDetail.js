@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Spinner, Image, Button, Breadcrumb, BreadcrumbItem } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Image} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
 import Maps from "./maps/Maps";
@@ -27,7 +27,7 @@ function AccomodationDetail() {
     }, []);
 
     if (loading) {
-        return <Spinner animation="grow" type="warning" className="spinner" />;
+        return <div className="spinner-container"><Spinner animation="grow" className="spinner "/>;</div>
     }
 
     return (

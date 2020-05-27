@@ -89,6 +89,16 @@
  *Loading Spinner*
  ***************/
 
+ .spinner-container {
+     text-align: center;
+     margin-top: 5%;
+ }
+.spinner {
+    text-align: center;
+    color: $pink;
+    width: 6rem;
+    height: 6rem;
+}
 
 
 
