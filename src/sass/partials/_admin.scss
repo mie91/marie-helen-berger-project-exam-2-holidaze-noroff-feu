@@ -1,0 +1,60 @@
+ .main-container--dashboard {
+     padding-bottom: 2vw;
+ }
+ 
+ .admin-box {
+     color: $white;
+     padding: 3vw;
+     margin-top: 1vw;
+     background: $dark;
+     box-shadow: (7px 7px 50px 0px rgba(black, 0.95));
+     text-align: center;
+     
+
+     &__header{
+        @include header-style-1;
+        color: $pink;
+     }
+
+     &__sub-header {
+         @include header-style-2;
+         text-transform: none;
+     }
+
+     &__image {
+         max-width: 300px;   
+     }
+
+     &__content-list {
+         text-align: left;
+         ul {
+             list-style: none;
+             padding: 0px;
+         }
+     }
+
+     &__content-item {
+         @include header-style-1;
+         box-shadow: (7px 7px 30px 0px rgba(black, 1));
+         font-size: 1.2em;
+         background-color: $dark;
+         margin: 30px 0px;
+         padding: 5px;
+         border-radius: 5px;
+         text-align: center;
+          transition: $basic-transition;
+         
+
+         a {
+             color: $pink;
+             text-decoration: none;
+         }
+
+         &:hover {
+             box-shadow: none;
+             background: $purple;
+         }
+     }
+
+
+ }

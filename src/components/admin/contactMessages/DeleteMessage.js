@@ -28,7 +28,7 @@ function DeleteEnquiry(props) {
         const url = BASE_URL + "messages/" + id;
         const options = { headers, method: "DELETE" };
         await fetch(url, options);
-        history.push("/admin/messages");
+        history.push("/admin/contacts");
     }
 
     return (

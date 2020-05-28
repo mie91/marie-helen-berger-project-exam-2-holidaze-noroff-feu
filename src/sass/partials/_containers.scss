@@ -6,6 +6,11 @@
         background-color: $dark;
         background: linear-gradient(180deg, rgba(11, 0, 29, 1) 30%, rgba(247, 41, 85, 0.4) 100%);
     }
+
+    &--white-purple{
+        background-color: $dark;
+        background: linear-gradient(180deg, rgba($purple, 1) 0%, rgba($dark, 0.4) 60%);
+    }
 }
 
 
