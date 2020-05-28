@@ -9,24 +9,39 @@
 
 }
  .form-box {
-     color: white;
+     color: $white;
      padding: 3vw;
      margin: 2vw 1vw;
      background: linear-gradient(180deg, rgba($dark, 1.0) 50%, rgba($white, 0) 100%);
      box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
+     
 
      &__header {
          text-align: center;
-         color: $pink;
+         color: $orange;
          @include header-style-1;
+     }
+
+     &__sub-header {
+         text-align: center;
+         color: $pink;
+         @include header-style-2;
+         text-transform: none;
      }
 
      &__info-text {
          color: $orange;
+         text-align: center;
+     }
+
+     &__image {
+         max-width: 200px;
+         opacity: 0.7;
      }
 
      &__label {
          @include header-style-1;
+         color: $white;
      }
 
      &__field, input {
@@ -44,6 +59,53 @@
          &::placeholder {
              color: rgba($color: $white, $alpha: 0.5)
          }
+         
+     }
+
+     &__validation {
+             margin: 10px;
+             text-align: center;
+             font-size: 1.2em;
+             color: $orange;
+             border-bottom: $basic-border-pink;
+             border-top: $basic-border-pink;
+
+             font-family: $textFont;
+             transition: $basic-transition;
+             animation-name: bigger;
+             animation-duration: 250ms;
+             animation-iteration-count: 1;
+             animation-timing-function: linear;
+
+         }
+
+     &__error-message {
+        color: $orange;
+        text-align: right;
+        padding: 5px;
+        border-right: $basic-border-pink;
+        border-top: $basic-border-pink;
+        margin-top: 5px;
+
+        font-family: $headerFont;
+        transition: $basic-transition;
+        animation-name: bigger;
+        animation-duration: 250ms;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+     
+     }
+
+     &__btn-container {
+         text-align: center;
+     }
+
+     &__submit-btn {
+         @include basic-button-dark;
+         border: none;
+         width: 200px;
+         padding: 10px;
+         margin: 20px 0px;
      }
 
  }
@@ -53,10 +115,13 @@
  ***************/
 
   .form-box {
-      &__datepicker {
+      &__datepicker input {
         @include form-base;
         color: $pink;
-
+        width: 100%;
+        
+    
+        
 
         &__month {
             color: $pink;

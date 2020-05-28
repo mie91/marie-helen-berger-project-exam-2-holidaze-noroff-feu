@@ -8,10 +8,14 @@
     padding: 20px;
     text-align: center;
     margin: 2vw 1vw;
-    //@include basic-shadow;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
     border-radius: 10px;
     text-decoration: none;
+
+    &:hover {
+        box-shadow: (7px 7px 50px 0px rgba($pink, 0.05));
+    }
 
 
     &__header {

@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as yup from "yup";
 import ErrorMessage from "../../layout/other/ErrorMessage";
+import { Link } from "react-router-dom";
 
 const schema = yup.object().shape({
 
@@ -25,12 +26,12 @@ const schema = yup.object().shape({
         .required("A valid email is required"),
 
     checkIn: yup
-        .date()
-        .required("Please select a date for check-in"),
+        .date("Please select a valid date")
+        .required("Select check-in date"),
 
     checkOut: yup
-        .date()
-        .required("Please select a date for check-out")
+        .date("Please select a valid date")
+        .required("Select check-out date")
 });
 
 
@@ -73,7 +74,7 @@ function AccomodationDetail() {
          setValidated(true);
          setTimeout(() => {
             history.push("/");
-         }, 1000)
+         }, 3000)
         console.log("data", data);
         
         }
@@ -81,11 +82,23 @@ function AccomodationDetail() {
     return (
         <div className="main-container main-container--dark-pink main-container--enquiry-form">
             <Container>
+                <div className="basic-btn basic-btn--dark">
+                    <Link to={"/accomodations"}>back</Link>
+                </div>
                 <div className="form-box">
+                    <Row className="justify-content-md-center">
+                        <Col lg={8} md={10} sm={12}>
+                    <div className="form-box__info-text">
+                        <Image className="form-box__image" fluid src={detail.image} rounded></Image>
+                    </div>
                     <h1 className="form-box__header">Send Enquiry</h1>
-                    <p className="form-box__info-text">
-                        Qui proident mollit cillum id dolore non. Lorem duis mollit ipsum officia. Eu do cupidatat veniam nisi sint esse officia Lorem est non. Voluptate aute qui fugiat voluptate. Duis cillum minim proident ipsum non enim elit deserunt proident. 
-                    </p>
+                    <h3 className="form-box__sub-header">{detail.name}</h3>
+                    <div className="form-box__info-text">
+                        <p>Sunt qui in excepteur dolore do cupidatat culpa. Culpa aliquip elit commodo commodo tempor ea nisi. </p>
+                    </div>
+                    </Col>
+                    </Row>
+                    
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Row className="justify-content-md-center">
                             <Col lg={6} md={12} sm={12}>
@@ -146,12 +159,15 @@ function AccomodationDetail() {
                         </Row>
                         <Row className="justify-content-md-center">
                             <Col lg={6} md={6} sm={12}>
-                                {validated && <div className="form-box__validation">Your inquiry has been sent successfully!</div>}
+                                {validated && <div className="form-box__validation"><h4>Your enquiry has been sent successfully!</h4><i><p>You will be redirected.</p></i></div>}
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center">
-                            <Col lg={4} md={6} sm={12}>
-                                <Button className="form-box__submit-btn" type="submit">Send</Button>
+                            <Col lg={3} md={6} sm={12}>
+                                <div className="form-box__btn-container">
+                                    <Button className="form-box__submit-btn" type="submit">Send</Button>
+                                </div>
+                                
                             </Col>
                         </Row>
                     </Form>
