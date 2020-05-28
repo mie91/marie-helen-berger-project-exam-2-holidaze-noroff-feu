@@ -16,7 +16,7 @@ function Dashboard() {
                     <NavLink to="/admin/enquiries">See Enquiries</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/admin/messages">See messages</NavLink>
+                    <NavLink to="/admin/contacts">See messages</NavLink>
                 </li>
             </ul>
         </>
