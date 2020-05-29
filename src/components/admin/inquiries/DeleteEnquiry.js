@@ -32,7 +32,7 @@ function DeleteEnquiry(props) {
 
     return (
         <>
-        <Button variant="danger" onClick={checkDelete}>
+        <Button className="__delete-btn" variant="danger" onClick={checkDelete}>
             Delete
         </Button>
         </>

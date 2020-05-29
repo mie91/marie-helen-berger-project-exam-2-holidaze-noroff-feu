@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
+import { IoIosLogOut } from 'react-icons/io';
+
 
 function Login() {
     const { logout } = useContext(AuthContext);
@@ -11,7 +13,9 @@ function Login() {
         history.push("/");
     }
 
-    return <Link id="nav-link__admin" onClick={doLogout}>Log Out</Link>;
+    return <Link id="nav-link__admin" onClick={doLogout}>Log Out<IoIosLogOut /></Link>;
 }
 
 export default Login;
+
+

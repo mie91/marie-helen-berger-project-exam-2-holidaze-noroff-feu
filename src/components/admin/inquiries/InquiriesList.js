@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import Logo from "../../../assets/logo/logoLight_m.png"
 import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstrap";
+import Moment from "react-moment";
+
 
 function InquiriesList() {
     const [enquiries, setEnquiries] = useState([]);
@@ -59,10 +61,17 @@ function InquiriesList() {
                                  {enquiries.map((enquiry) => {
                                  return (
                                  <div li key={enquiry.id} className="admin-box__card">
-                                     <p className="admin-box__card-subheader">Sent: {enquiry.createdAt}</p>
+                                     <p className="admin-box__card-subheader">
+                                         <Moment format="DD MMMM YYYY">
+                                             {enquiry.createdAt}
+                                         </Moment> / 
+                                     <Moment fromNow>
+                                                 {enquiry.createdAt}
+                                             </Moment></p>
+
                                      <h3 className="admin-box__card-header">From: {enquiry.name}</h3>
-                                     <Link className="admin-box__card-button" to={`/admin/enquiries/${enquiry.id}`}>Read </Link> 
-                                </div> ); })} 
+                                     <Link className="admin-box__card-button" to={`/admin/enquiries/${enquiry.id}`}>Read
+                                         </Link> </div> ); })}
 
                             </div>
                         </Col>

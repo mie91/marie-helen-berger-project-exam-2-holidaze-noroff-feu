@@ -75,12 +75,19 @@
           background-color: $purple;
           text-align: left;
           @include header-style-1;
+          margin-bottom: 20px;
       }
 
       &__card-subheader {
-          background-color: $purple;
-          text-align: left;
+          text-align: right;
+          
           @include header-style-2;
+          
+      }
+
+      &__card-button {
+          @include basic-button-pink;
+          
       }
 
      

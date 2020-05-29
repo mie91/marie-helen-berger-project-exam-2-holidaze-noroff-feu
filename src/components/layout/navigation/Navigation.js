@@ -4,6 +4,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import {Navbar, Nav, Container} from "react-bootstrap";
 import LogOut from "../../admin/login/LogOut";
 import NavLogo from "../../../assets/logo/logoDark_m.png";
+import { GrUserAdmin } from 'react-icons/gr';
 
 function Navigation() {
     const { user } = useContext(AuthContext);
@@ -30,12 +31,12 @@ function Navigation() {
                     <Nav className="navbar-nav ml-auto flex-column container__navLinksAdmin">
                         {user ? (
                             <>
-                                <NavLink id="nav-link__admin" to="/admin">Manage</NavLink>
+                                <NavLink id="nav-link__admin" to="/admin">Manage  <GrUserAdmin /></NavLink>
                                 <LogOut />  
                             </>
                         ) : (
                             <>
-                                <NavLink id="nav-link__admin" to="/login">Login</NavLink>
+                                <NavLink id="nav-link__admin" to="/login">Login  <GrUserAdmin /></NavLink>
                                 <NavLink id="nav-link__admin" to="/register">Register</NavLink>
                             </>
                             )}    
