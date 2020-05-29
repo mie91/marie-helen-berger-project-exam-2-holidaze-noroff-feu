@@ -6,11 +6,11 @@ import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstr
 function Dashboard() {
     return (
         <>
-            <div className="main-container main-container--white-purple main-container main-container--dashboard">
+            <div className="main-container main-container--white-purple main-container main-container--admin">
                 <div>hello</div>
                 <Container>
                     
-                    <div className="admin-box">
+                    <div className="admin-box admin-box--dashboard">
                         <Row className="justify-content-md-center">
                             <Col lg={3} md={10} sm={12}>
                         <div className="admin-box__image">
@@ -28,16 +28,16 @@ function Dashboard() {
                             </div>
                             <div className="admin-box__content-list">
                                 <ul>
-                                        <li className="admin-box__content-item admin-box__content-item--enquiries">
+                                        <li className="admin-box__content-list-item admin-box__content-item--enquiries">
                                             <Link to="/admin/enquiries">See Enquiries</Link>
                                         </li>
-                                        <li className="admin-box__content-item admin-box__content-item--messages">
+                                        <li className="admin-box__content-list-item admin-box__content-item--messages">
                                             <Link to="/admin/contacts">See messages</Link>
                                         </li>
-                                        <li className="admin-box__content-item admin-box__content-item--establishments">
+                                        <li className="admin-box__content-list-item admin-box__content-item--establishments">
                                             <Link to="/admin/establishments">See Establishments</Link>
                                         </li>
-                                        <li className="admin-box__content-item admin-box__content-item--establishments">
+                                        <li className="admin-box__content-list-item admin-box__content-item--establishments">
                                             <Link to="/admin/establishments/add">Add Establishment</Link>
                                         </li>
                                         

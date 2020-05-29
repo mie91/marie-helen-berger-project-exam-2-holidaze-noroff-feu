@@ -1,4 +1,4 @@
- .main-container--dashboard {
+ .main-container--admin {
      padding-bottom: 2vw;
  }
  
@@ -9,6 +9,7 @@
      background: $dark;
      box-shadow: (7px 7px 50px 0px rgba(black, 0.95));
      text-align: center;
+     border-radius: 5px;
      
 
      &__header{
@@ -33,7 +34,7 @@
          }
      }
 
-     &__content-item {
+     &__content-list-item {
          @include header-style-1;
          box-shadow: (7px 7px 30px 0px rgba(black, 1));
          font-size: 1.2em;
@@ -42,7 +43,7 @@
          padding: 5px;
          border-radius: 5px;
          text-align: center;
-          transition: $basic-transition;
+         transition: $basic-transition;
          
 
          a {
@@ -55,6 +56,34 @@
              background: $purple;
          }
      }
+     &__card-container {
+         text-align: left;        
+     }
+
+     &__card {
+          color: $white;
+          padding: 20px;
+          text-align: center;
+          margin: 2vw 1vw;
+          
+          box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
+          border-radius: 10px;
+          text-decoration: none;
+     }
+
+      &__card-header {
+          background-color: $purple;
+          text-align: left;
+          @include header-style-1;
+      }
+
+      &__card-subheader {
+          background-color: $purple;
+          text-align: left;
+          @include header-style-2;
+      }
+
+     
 
 
  }
