@@ -10,7 +10,7 @@ function DeleteEnquiry(props) {
 
     function checkDelete() {
         confirmAlert({
-            title: "Are you sure you want to delete?",
+            title: "Are you sure you want to delete the enquiry?",
             buttons: [
                 {
                     label: "Yes",

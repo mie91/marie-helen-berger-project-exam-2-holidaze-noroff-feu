@@ -7,7 +7,7 @@ import {
   Row,
   Col,
   Spinner,
-  Image,
+  Image
 } from "react-bootstrap";
 import Moment from "react-moment";
 import BackToTop from "../../layout/other/BackToTop";

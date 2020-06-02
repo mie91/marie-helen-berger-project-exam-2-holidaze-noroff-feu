@@ -66,6 +66,25 @@ function EnquiryDetail() {
                 </Col>
                 <Col lg={5} md={10} sm={12}>
                   <div className="admin-box__message-content">
+                    <p className="admin-box__message-detail">Sent:</p>
+                    <p className="admin-box__message-detail admin-box__message-detail--pink">
+                      <Moment fromNow>{enquiry.createdAt}</Moment>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                <Col lg={5} md={10} sm={12}>
+                  <div className="admin-box__message-content">
+                    <p className="admin-box__message-detail">Enquiry Id:</p>
+                    <p className="admin-box__message-detail admin-box__message-detail--pink">
+                      {enquiry.id}
+                    </p>
+                  </div>
+                </Col>
+                <Col lg={5} md={10} sm={12}>
+                  <div className="admin-box__message-content">
                     <p className="admin-box__message-detail">
                       Establishment Id:
                     </p>
@@ -75,25 +94,26 @@ function EnquiryDetail() {
                   </div>
                 </Col>
               </Row>
+
+              <Row className="justify-content-md-center">
+                <Col lg={5} md={5} sm={6}>
+                  <div className="admin-box__message-content admin-box__message-content--check-in">
+                    <p className="admin-box__message-detail">Check In:</p>
+                    <p className="admin-box__message-detail admin-box__message-detail--pink">
+                      <Moment format="DD MMMM YYYY">{enquiry.checkIn}</Moment>
+                    </p>
+                  </div>
+                </Col>
+                <Col lg={5} md={5} sm={6}>
+                  <div className="admin-box__message-content admin-box__message-content--check-out">
+                    <p className="admin-box__message-detail">Check-Out:</p>
+                    <p className="admin-box__message-detail admin-box__message-detail--pink">
+                      <Moment format="DD MMMM YYYY">{enquiry.checkOut}</Moment>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
             </div>
-            <Row className="justify-content-md-center">
-              <Col lg={5} md={5} sm={6}>
-                <div className="admin-box__message-content admin-box__message-content--check-in">
-                  <p className="admin-box__message-detail">Check In:</p>
-                  <p className="admin-box__message-detail admin-box__message-detail--pink">
-                    <Moment format="DD MMMM YYYY">{enquiry.checkIn}</Moment>
-                  </p>
-                </div>
-              </Col>
-              <Col lg={5} md={5} sm={6}>
-                <div className="admin-box__message-content admin-box__message-content--check-out">
-                  <p className="admin-box__message-detail">Check-Out:</p>
-                  <p className="admin-box__message-detail admin-box__message-detail--pink">
-                    <Moment format="DD MMMM YYYY">{enquiry.checkOut}</Moment>
-                  </p>
-                </div>
-              </Col>
-            </Row>
             <Row className="justify-content-md-center">
               <Col lg={10} md={10} sm={12}>
                 <DeleteEnquiry id={id} />

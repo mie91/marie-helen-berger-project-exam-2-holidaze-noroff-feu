@@ -83,10 +83,10 @@
         margin: 5px; 
 
         &--check-in {
-            background-color: rgba($pink, 0.1);
+            background-color: rgba($pink, 0.05);
         }
         &--check-out {
-            background-color: rgba($pink, 0.1);
+            background-color: rgba($pink, 0.05);
         }
     }
 
@@ -146,6 +146,7 @@
     @include header-style-1;
     margin-bottom: 20px;
     text-align: right;
+    padding: 5px;
   }
 
   &__card-subheader {
