@@ -127,10 +127,3 @@ function EnquiryDetail() {
 }
 
 export default EnquiryDetail;
-
-/*<p>Name: {enquiry.name}</p>
-                    <p>Email: {enquiry.email}</p>
-                    <p>Check In: {enquiry.checkIn}</p>
-                    <p>Check Out: {enquiry.checkOut}</p>
-                    <p>Sent: {enquiry.createdAt}</p>
-                    <DeleteEnquiry id={id} />*/

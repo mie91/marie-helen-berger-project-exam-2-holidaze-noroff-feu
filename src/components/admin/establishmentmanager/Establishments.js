@@ -32,7 +32,7 @@ function Establishments() {
 
     return (
     <>
-      <div className="main-container main-container--white-purple main-container main-container--admin">
+      <div className="main-container main-container main-container--admin">
         <Container>
           <div className="admin-box admin-box--enquiry-list">
             <Row className="justify-content-md-center">

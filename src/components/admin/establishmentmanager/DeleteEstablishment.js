@@ -10,14 +10,14 @@ function DeleteEstablishment(props) {
 
     function checkDelete() {
         confirmAlert({
-            title: "Confirm deletion",
+            title: "Are you sure you want to delete the establishment?",
             buttons: [
                 {
-                    label: "yes",
+                    label: "Yes",
                     onClick: () => deleteHotel(),
                 },
                 {
-                    label: "no",
+                    label: "No",
                 },
             ],
         });
@@ -31,9 +31,9 @@ function DeleteEstablishment(props) {
     }
 
     return (
-        <Button variant="danger" onClick={checkDelete}>
+        <button onClick={checkDelete}>
             Delete
-        </Button>
+        </button>
     );
 }
 
