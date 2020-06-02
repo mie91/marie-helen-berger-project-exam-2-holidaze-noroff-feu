@@ -1,0 +1,36 @@
+.react-confirm-alert-overlay {
+    background: rgba($dark, 0.7);
+}
+
+.react-confirm-alert-body {
+    background: rgba($purple, 0.9);
+    color: $white;
+    @include header-style-1;
+    @include basic-shadow;
+    text-align: center;
+    max-width: 90vw;
+    margin: auto;
+}
+
+
+.react-confirm-alert-button-group {
+    
+    button {
+        @include basic-button-dark-2;
+        margin: auto;
+        width: 40%;
+        padding: 10px;
+        @include header-style-1;
+        border-radius: 1px;  
+        :hover {
+            background: $orange;
+        }
+    }
+
+    button:nth-child(1) {
+        @include basic-button-pink;
+        color: $dark;
+
+        
+    }
+}

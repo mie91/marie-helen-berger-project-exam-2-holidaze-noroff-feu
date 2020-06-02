@@ -44,6 +44,28 @@
      }
  }
 
+  @mixin basic-button-dark-2 {
+     color: $orange;
+     background-color: $dark;
+     padding: 10px;
+     letter-spacing: 5px;
+     font-family: $headerFont;
+     text-align: center;
+    @include basic-shadow;
+
+     &:active {
+         color: $dark;
+     }
+
+     &:hover {
+         background-color: $orange;
+         color: $dark;
+         text-decoration: none;
+         transition: $basic-transition;
+         filter: none;
+     }
+ }
+
  @mixin basic-button-dark {
      color: $pink;
      background-color: $dark;

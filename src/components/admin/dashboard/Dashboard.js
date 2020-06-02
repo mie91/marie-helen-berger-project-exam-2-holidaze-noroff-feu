@@ -7,7 +7,6 @@ function Dashboard() {
     return (
         <>
             <div className="main-container main-container--white-purple main-container main-container--admin">
-                <div>hello</div>
                 <Container>
                     
                     <div className="admin-box admin-box--dashboard">

@@ -10,14 +10,14 @@ function DeleteEnquiry(props) {
 
     function checkDelete() {
         confirmAlert({
-            title: "Confirm deletion",
+            title: "Are you sure you want to delete?",
             buttons: [
                 {
-                    label: "yes",
+                    label: "Yes",
                     onClick: () => deleteEnquiry(),
                 },
                 {
-                    label: "no",
+                    label: "No",
                 },
             ],
         });
@@ -32,9 +32,12 @@ function DeleteEnquiry(props) {
 
     return (
         <>
-        <Button className="__delete-btn" variant="danger" onClick={checkDelete}>
+        < button className = "__delete-btn __delete-btn--enquiry"
+        onClick = {
+            checkDelete
+        } >
             Delete
-        </Button>
+        </button>
         </>
     );
 }

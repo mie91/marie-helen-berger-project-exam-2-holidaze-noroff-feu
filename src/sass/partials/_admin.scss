@@ -1,123 +1,174 @@
- .main-container--admin {
-     padding-bottom: 2vw;
- }
- 
- .admin-box {
-     color: $white;
-     padding: 3vw;
-     margin-top: 1vw;
-     background: $dark;
-     box-shadow: (7px 7px 50px 0px rgba(black, 0.95));
-     text-align: center;
-     border-radius: 5px;
-     
 
-     &__header{
-        @include header-style-1;
-        color: $pink;
-     }
+.main-container{
 
-     &__sub-header {
-         @include header-style-2;
-         text-transform: none;
-     }
+    &--admin {
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    }
+    
+}
 
-     &__image {
-         max-width: 300px;   
-     }
-
-     &__content-list {
-         text-align: left;
-         ul {
-             list-style: none;
-             padding: 0px;
-         }
-     }
-
-     &__content-list-item {
-         @include header-style-1;
-         box-shadow: (7px 7px 30px 0px rgba(black, 1));
-         font-size: 1.2em;
-         background-color: $dark;
-         margin: 30px 0px;
-         padding: 5px;
-         border-radius: 5px;
-         text-align: center;
-         transition: $basic-transition;
-         
-
-         a {
-             color: $pink;
-             text-decoration: none;
-         }
-
-         &:hover {
-             box-shadow: none;
-             background: $purple;
-         }
-     }
-
-    //Cards//
-     &__card-wrapper {
-         &:hover {
-             text-decoration: none;
-             
-         }
-     }
-
-     &__card {
-          color: $white;
-          padding: 20px;
-          margin: 2vw 1vw;
-          box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
-          border-radius: 10px;
-          text-decoration: none;
-          
-          
-          &:hover {
-              box-shadow: (7px 7px 20px 0px rgba($purple, 0.50));
-              background-color: rgba($purple, 0.1);
-              
-          }
-     }
-
-      &__card-header {
-          background-color: $purple;
-          @include header-style-1;
-          margin-bottom: 20px;
-          text-align: right;
-          
-      }
-
-      &__card-subheader {
-          text-align: right;
-          @include header-style-2;
-
-          &--italic {
-              text-align: right;
-              font-size: 0.9em;
-              font-style: italic;
-          }
-          
-      }
+.admin-box {
+  color: $white;
+  padding: 3vw;
+  margin-top: 1vw;
+  background: $dark;
+  box-shadow: (7px 7px 50px 0px rgba(black, 0.95));
+  text-align: center;
+  border-radius: 5px;
 
 
-      &__card-button {
-          @include basic-button-dark;
-          
-      }
+  &__header {
+    @include header-style-1;
+    color: $pink;
+  }
 
-     &__card-icon {
+  &__sub-header {
+    @include header-style-2;
+    text-transform: none;
+  }
 
-        &--person {
-            margin-top: 30px;
-            
+  &__date {
+    text-align: right;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  &__image {
+    max-width: 300px;
+  }
+
+  &__content-list {
+    text-align: left;
+    ul {
+      list-style: none;
+      padding: 0px;
+    }
+  }
+
+  &__content-list-item {
+    @include header-style-1;
+    box-shadow: (7px 7px 30px 0px rgba(black, 1));
+    font-size: 1.2em;
+    background-color: $dark;
+    margin: 30px 0px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    transition: $basic-transition;
+
+    a {
+      color: $pink;
+      text-decoration: none;
+    }
+
+    &:hover {
+      box-shadow: none;
+      background: $purple;
+    }
+
+    
+  }
+
+    &__message-wrap {
+
+        margin: auto;
+        text-align: left;
+        
+    }
+
+    &__message-content {
+        background-color: rgba($purple, 0.2);
+        padding: 10px;
+        margin: 5px; 
+
+        &--check-in {
+            background-color: rgba($pink, 0.1);
         }
-     }
+        &--check-out {
+            background-color: rgba($pink, 0.1);
+        }
+    }
+
+    &__message-detail {
+        font-size: 1.2em;
+        text-align: left;
+        margin-bottom: 10px;
+        @include header-style-1;
+        
+       
+
+        &--pink {
+            color: $pink;
+            @include header-style-2;
+            text-transform: none;
+            word-break: break-all;
+         
+        }
+
+       
+    }
 
 
- }
+    .__delete-btn {
+        
+        &--enquiry {
+            @include basic-button-pink;
+            border: none;
+            margin-top: 2vw;
+        }
+    }
 
 
+  //Cards//
+  &__card-wrapper {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
- /**/
+  &__card {
+    color: $white;
+    padding: 20px;
+    margin: 2vw 1vw;
+    box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
+    border-radius: 10px;
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: (7px 7px 20px 0px rgba($purple, 0.5));
+      background-color: rgba($purple, 0.1);
+    }
+  }
+
+  &__card-header {
+    background-color: $purple;
+    @include header-style-1;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+
+  &__card-subheader {
+    text-align: right;
+    @include header-style-2;
+
+    &--italic {
+      text-align: right;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
+
+  &__card-button {
+    @include basic-button-dark;
+  }
+
+  &__card-icon {
+    &--person {
+      margin-top: 30px;
+    }
+  }
+
+  
+}
+
