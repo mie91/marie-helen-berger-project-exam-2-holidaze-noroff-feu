@@ -1,11 +1,8 @@
-
-.main-container{
-
-    &--admin {
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-    }
-    
+.main-container {
+  &--admin {
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
 }
 
 .admin-box {
@@ -17,10 +14,10 @@
   text-align: center;
   border-radius: 5px;
 
-
   &__header {
     @include header-style-1;
     color: $pink;
+    word-break: break-all;
   }
 
   &__sub-header {
@@ -66,61 +63,79 @@
       box-shadow: none;
       background: $purple;
     }
+  }
 
+  //MESSAGE/ ENQUIRIES//
+  &__message-wrap {
+    margin: auto;
+    text-align: left;
+  }
+
+  &__message-content {
+    background-color: rgba($purple, 0.2);
+    padding: 10px;
+    margin: 5px;
+
+    &--check-in {
+      background-color: rgba($pink, 0.05);
+    }
+    &--check-out {
+      background-color: rgba($pink, 0.05);
+    }
+  }
+
+  &__message-detail {
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: 10px;
+    @include header-style-1;
+
+    &--pink {
+      color: $pink;
+      @include header-style-2;
+      text-transform: none;
+      word-break: break-all;
+    }
+  }
+
+  .__delete-btn {
+    @include basic-button-pink;
+    border: none;
+    &--enquiry {
+      margin-top: 2vw;
+    }
+
+    &--establishment {
+      margin-top: 2vw;
+      
+    }
+  }
+
+  &__update-btn {
+    @include basic-button-orange;
+    border: none;
+    margin-left: 10px;
     
   }
 
-    &__message-wrap {
+  &__validation {
+             margin: 10px;
+             text-align: center;
+             font-size: 1.2em;
+             color: $orange;
+             border-bottom: $basic-border-pink;
+             border-top: $basic-border-pink;
 
-        margin: auto;
-        text-align: left;
-        
-    }
+             font-family: $textFont;
+             transition: $basic-transition;
+             animation-name: bigger;
+             animation-duration: 250ms;
+             animation-iteration-count: 1;
+             animation-timing-function: linear;
 
-    &__message-content {
-        background-color: rgba($purple, 0.2);
-        padding: 10px;
-        margin: 5px; 
+         }
 
-        &--check-in {
-            background-color: rgba($pink, 0.05);
-        }
-        &--check-out {
-            background-color: rgba($pink, 0.05);
-        }
-    }
-
-    &__message-detail {
-        font-size: 1.2em;
-        text-align: left;
-        margin-bottom: 10px;
-        @include header-style-1;
-        
-       
-
-        &--pink {
-            color: $pink;
-            @include header-style-2;
-            text-transform: none;
-            word-break: break-all;
-         
-        }
-
-       
-    }
-
-
-    .__delete-btn {
-        
-        &--enquiry {
-            @include basic-button-pink;
-            border: none;
-            margin-top: 2vw;
-        }
-    }
-
-
-  //Cards//
+  //CARDS//
   &__card-wrapper {
     &:hover {
       text-decoration: none;
@@ -170,6 +185,49 @@
     }
   }
 
+  //FORMS//
+  &__form {
+    text-align: left;
+  }
+
+  &__form-label {
+    @include header-style-1;
+    color: $orange;
+  }
+
+  &__form-input {
+    @include form-base;
+    @include autofillFix;
+    padding: 10px;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+      border-bottom: $basic-border-white;
+      color: $white;
+    }
+
+    &::placeholder {
+      color: rgba($color: $white, $alpha: 0.5);
+    }
+
+    &--select{
+      
+      & option {
+        background-color:$pink;
+        color: $dark;
+
+        
+      }
+
+      &:focus {
+          background-color:$dark;
+        }
+    }
+
+    
+  }
+
   
 }
-

@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
-import Button from "react-bootstrap/Button";
 import { BASE_URL, headers, DELETE } from "../../../constants/api";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
@@ -32,10 +31,10 @@ function DeleteEnquiry(props) {
 
     return (
         <>
-        < button className = "__delete-btn __delete-btn--enquiry"
+        <button className = "__delete-btn __delete-btn--enquiry"
         onClick = {
             checkDelete
-        } >
+        }>
             Delete
         </button>
         </>

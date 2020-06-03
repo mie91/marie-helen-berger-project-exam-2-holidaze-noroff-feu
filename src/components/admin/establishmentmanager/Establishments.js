@@ -55,6 +55,15 @@ function Establishments() {
                       Labore labore occaecat commodo et.
                     </p>
                   </div>
+                  <div className="admin-box__content-list">
+                                <ul>
+                                        
+                                        <li className="admin-box__content-list-item admin-box__content-item--establishments">
+                                            <Link to="/admin/establishments/add">Add Establishment</Link>
+                                        </li>
+                                        
+                                </ul>
+                            </div>
                 </Col>
               </Row>
               <Row className="justify-content-md-center">

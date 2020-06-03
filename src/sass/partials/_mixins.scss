@@ -88,6 +88,28 @@
      }
  }
 
+  @mixin basic-button-orange {
+     color: $dark;
+     background-color: $orange;
+     padding: 10px;
+     letter-spacing: 5px;
+     font-family: $headerFont;
+     text-align: center;
+     @include basic-shadow;
+
+     &:active {
+         color: $pink;
+     }
+
+     &:hover {
+         background-color: $purple;
+         color: $orange;
+         text-decoration: none;
+          transition: $basic-transition;
+          filter: none;
+     }
+ }
+
   /***************
  * Typography*
  ***************/

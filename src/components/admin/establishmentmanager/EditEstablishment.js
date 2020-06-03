@@ -2,36 +2,69 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useParams, useHistory } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Col,
-  Spinner,
-  Image,
-  Form,
-  Button,
-} from "react-bootstrap";
+import { Container, Row, Col, Image, Form } from "react-bootstrap";
 import { BASE_URL, headers, PATCH } from "../../../constants/api";
 import DeleteEstablishment from "./DeleteEstablishment";
 import ErrorMessage from "../../layout/other/ErrorMessage";
 import Logo from "../../../assets/logo/logoLight_m.png";
 import { Link } from "react-router-dom";
 
+const schema = yup.object().shape({
+  name: yup
+    .string()
+    .required("A name is required")
+    .min(2, "The name is to short"),
+
+  email: yup.string().email("Please enter a valid email"),
+
+  price: yup.number(),
+
+  image: yup.string(),
+
+  maxGuests: yup.number().min(1, "Minimum 1 person"),
+
+  lat: yup
+    .number()
+    .min(-90, "Latitude must be between -90 and 90")
+    .max(90, "Latitude must be between -90 and 90"),
+
+  lng: yup
+    .number()
+    .min(-180, "Longitude must be between -180 and 180")
+    .max(180, "Longitude must be between -180 and 180"),
+
+  description: yup
+    .string()
+    .min(2, "The description is to short")
+    .max(200, "The description is to long"),
+});
+
+
 function EditEstablishment() {
   const defaultState = {
     name: "",
     email: "",
+    establishmentId: "",
+    price: "",
+    image: "",
+    maxGuests: "",
+    lat: "",
+    lng: "",
+    selfCatering: "",
+    description: "",
   };
 
   const history = useHistory();
-  const { register, handleSubmit } = useForm();
+  const [validated, setValidated] = useState(false);
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: schema,
+  });
+
   const [establishment, setEstablishment] = useState(defaultState);
 
   let { id } = useParams();
 
-  const options = {
-    headers,
-  };
+  const options = { headers };
   const fetchUrl = BASE_URL + "establishments/" + id;
 
   useEffect(() => {
@@ -50,7 +83,11 @@ function EditEstablishment() {
       body: JSON.stringify(data),
     };
     await fetch(fetchUrl, updateOptions);
-    history.push("/admin/establishments");
+    setValidated(true);
+    setTimeout(() => {
+      history.push("/admin/establishments");
+    }, 2000);
+    console.log("data", data);
   }
 
   return (
@@ -78,8 +115,8 @@ function EditEstablishment() {
               <Col lg={10} md={10} sm={12}>
                 <div className="admin-box__form">
                   <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Form.Row className="justify-content-md-center">
-                      <Col lg={7} md={12} sm={12}>
+                    <Row className="justify-content-md-center">
+                      <Col lg={6} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Name:
@@ -91,25 +128,28 @@ function EditEstablishment() {
                             placeholder="Enter name of establishment"
                             ref={register}
                           />
+                          {errors.name && (
+                            <ErrorMessage>{errors.name.message}</ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
-                      <Col lg={3} md={12} sm={12}>
+                      <Col lg={4} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
-                            Establishment ID:
+                            ID:
                           </Form.Label>
                           <Form.Control
                             className="admin-box__form-input"
-                            name="email"
+                            name="establishmentId"
                             defaultValue={establishment.id}
                             placeholder="Enter establishment ID"
                             ref={register}
                           />
                         </Form.Group>
                       </Col>
-                    </Form.Row>
-                    <Form.Row className="justify-content-md-center">
-                      <Col lg={7} md={12} sm={12}>
+                    </Row>
+                    <Row className="justify-content-md-center">
+                      <Col lg={6} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Email:
@@ -121,9 +161,12 @@ function EditEstablishment() {
                             placeholder="Enter establishment email"
                             ref={register}
                           />
+                          {errors.email && (
+                            <ErrorMessage>{errors.email.message}</ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
-                      <Col lg={3} md={12} sm={12}>
+                      <Col lg={4} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Price:
@@ -135,11 +178,14 @@ function EditEstablishment() {
                             placeholder="Enter price per night"
                             ref={register}
                           />
+                          {errors.price && (
+                            <ErrorMessage>{errors.price.message}</ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
-                    </Form.Row>
-                    <Form.Row className="justify-content-md-center">
-                      <Col lg={7} md={12} sm={12}>
+                    </Row>
+                    <Row className="justify-content-md-center">
+                      <Col lg={6} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Image:
@@ -153,7 +199,7 @@ function EditEstablishment() {
                           />
                         </Form.Group>
                       </Col>
-                      <Col lg={3} md={12} sm={12}>
+                      <Col lg={4} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Max guests:
@@ -162,13 +208,18 @@ function EditEstablishment() {
                             className="admin-box__form-input"
                             name="maxGuests"
                             defaultValue={establishment.maxGuests}
-                            placeholder="Enter maximum number of guests"
+                            placeholder="Max guests"
                             ref={register}
                           />
+                          {errors.maxGuests && (
+                            <ErrorMessage>
+                              {errors.maxGuests.message}
+                            </ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
-                    </Form.Row>
-                    <Form.Row className="justify-content-md-center">
+                    </Row>
+                    <Row className="justify-content-md-center">
                       <Col lg={3} md={12} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
@@ -181,6 +232,9 @@ function EditEstablishment() {
                             placeholder="Enter coordinate (latitude)"
                             ref={register}
                           />
+                          {errors.lat && (
+                            <ErrorMessage>{errors.lat.message}</ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
                       <Col lg={3} md={12} sm={12}>
@@ -195,6 +249,9 @@ function EditEstablishment() {
                             placeholder="Enter coordinate (longitude)"
                             ref={register}
                           />
+                          {errors.lng && (
+                            <ErrorMessage>{errors.lng.message}</ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
                       <Col lg={4} md={12} sm={12}>
@@ -203,7 +260,7 @@ function EditEstablishment() {
                             Self Catering:
                           </Form.Label>
                           <Form.Control
-                            className="admin-box__form-input"
+                            className="admin-box__form-input admin-box__form-input--select"
                             as="select"
                             defaultValue={establishment.selfCatering}
                             ref={register}
@@ -214,8 +271,8 @@ function EditEstablishment() {
                           </Form.Control>
                         </Form.Group>
                       </Col>
-                    </Form.Row>
-                    <Form.Row className="justify-content-md-center">
+                    </Row>
+                    <Row className="justify-content-md-center">
                       <Col lg={10} md={6} sm={12}>
                         <Form.Group>
                           <Form.Label className="admin-box__form-label">
@@ -230,11 +287,31 @@ function EditEstablishment() {
                             placeholder="Enter the establishment description here"
                             ref={register}
                           />
+                          {errors.description && (
+                            <ErrorMessage>
+                              {errors.description.message}
+                            </ErrorMessage>
+                          )}
                         </Form.Group>
                       </Col>
-                    </Form.Row>
+                    </Row>
                     <Row className="justify-content-md-center">
-                      <Button type="submit">Update</Button>
+                      <Col lg={10} md={6} sm={12}>
+                        {validated && (
+                          <div className="admin-box__validation">
+                            <h4>The establishment has been updated successfully!</h4>
+                            
+                          </div>
+                        )}
+                      </Col>
+                    </Row>
+                    <Row className="justify-content-md-end">
+                      <Col lg={4} md={6} sm={12}>
+                        <DeleteEstablishment id={id} />
+                        <button className="admin-box__update-btn" type="submit">
+                          Update
+                        </button>
+                      </Col>
                     </Row>
                   </Form>
                 </div>
@@ -248,23 +325,3 @@ function EditEstablishment() {
 }
 
 export default EditEstablishment;
-
-/* <>
-    <Form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Edit Hotel</h1>
-        <Form.Group>
-            <Form.Label>Name</Form.Label>
-            <Form.Control name="name" defaultValue={establishment.name} placeholder="Enter a name for the establishment"
-                ref={register} />
-        </Form.Group>
-
-        <Form.Group>
-            <Form.Label>Email</Form.Label>
-            <Form.Control name="email" defaultValue={establishment.email} placeholder="Enter an email address"
-                ref={register} />
-        </Form.Group>
-
-        <Button type="submit">Update</Button>
-    </Form>
-    <DeleteEstablishment id={id} />
-</> */

@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
-import Button from "react-bootstrap/Button";
 import { BASE_URL, headers, DELETE } from "../../../constants/api";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
@@ -14,7 +13,7 @@ function DeleteEstablishment(props) {
             buttons: [
                 {
                     label: "Yes",
-                    onClick: () => deleteHotel(),
+                    onClick: () => DeleteTheEstablishment(),
                 },
                 {
                     label: "No",
@@ -23,7 +22,7 @@ function DeleteEstablishment(props) {
         });
     }
 
-    async function deleteHotel() {
+    async function DeleteTheEstablishment() {
         const url = BASE_URL + "establishments/" + props.id;
         const options = { headers, method: DELETE };
         await fetch(url, options);
@@ -31,9 +30,14 @@ function DeleteEstablishment(props) {
     }
 
     return (
-        <button onClick={checkDelete}>
+        <>
+        <button className = "__delete-btn __delete-btn--establishment"
+        onClick = {
+            checkDelete
+        }>
             Delete
         </button>
+        </>
     );
 }
 
