@@ -44,6 +44,9 @@ function EnquiriesList() {
     <>
       <div className="main-container main-container--white-purple main-container main-container--admin">
         <Container>
+          <div className="basic-btn basic-btn--dark">
+            <Link to={"/admin"}>Dashboard</Link>
+          </div>
           <div className="admin-box admin-box--enquiry-list">
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>

@@ -31,6 +31,9 @@ function EnquiryDetail() {
     <>
       <div className="main-container main-container--white-purple main-container main-container--admin">
         <Container>
+          <div className="basic-btn basic-btn--dark">
+            <Link to={"/admin/enquiries"}>back</Link>
+          </div>
           <div className="admin-box admin-box--enquiry-detail">
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
