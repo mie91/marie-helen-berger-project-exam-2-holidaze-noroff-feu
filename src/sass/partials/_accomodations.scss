@@ -30,7 +30,8 @@
     &__description {
         text-align: left;
         margin-top: 5px;
-        height: 100px;
+        height: 120px;
+        word-break: break-all;
     }
 
     &__price {
@@ -145,6 +146,7 @@
     &__description {
         text-align: left;
         font-size: 1.5em;
+        
     }
 
     &__details {
