@@ -4,7 +4,6 @@ import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import Home from "./components/home/Home";
 import Login from "./components/admin/login/Login";
-import Register from "./components/admin/login/Register";
 import Establishments from "./components/admin/establishmentmanager/Establishments";
 import AddEstablishment from "./components/admin/establishmentmanager/AddEstablishment";
 import EditEstablishment from "./components/admin/establishmentmanager/EditEstablishment";
@@ -36,7 +35,7 @@ function App() {
             <Route path="/establishments/inquiry/:id" component={AccomodationInquiry} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/login" component={Login}/>
-            <Route path="/register" component={Register}/>
+            
             <ProtectedRoute path="/admin" exact component={Dashboard} />
             <ProtectedRoute path="/admin/establishments" exact component={Establishments} />
             <ProtectedRoute path="/admin/establishments/add" exact component={AddEstablishment} />
