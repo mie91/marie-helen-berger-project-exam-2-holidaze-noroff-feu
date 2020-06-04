@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
-import { BASE_URL, headers, PATCH } from "../../../constants/api";
-import DeleteEstablishment from "./DeleteEstablishment";
+import { BASE_URL, headers } from "../../../constants/api";
 import ErrorMessage from "../../layout/other/ErrorMessage";
 import Logo from "../../../assets/logo/logoLight_m.png";
 import { Link } from "react-router-dom";
@@ -237,7 +236,6 @@ function AddEstablishment() {
                         {validated && (
                           <div className="admin-box__validation">
                             <h4>The establishment has been created successfully!</h4>
-                            
                           </div>
                         )}
                       </Col>

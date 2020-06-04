@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { BASE_URL, headers, DELETE } from "../../../constants/api";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-function DeleteEnquiry(props) {
+function DeleteMessage(props) {
     const history = useHistory();
 
     function checkDelete() {
@@ -14,7 +14,7 @@ function DeleteEnquiry(props) {
             buttons: [
                 {
                     label: "yes",
-                    onClick: () => deleteEnquiry(),
+                    onClick: () => DeleteMessage(),
                 },
                 {
                     label: "no",
@@ -23,21 +23,24 @@ function DeleteEnquiry(props) {
         });
     }
 
-    async function deleteEnquiry() {
+    async function DeleteMessage() {
         const id = "id-of-contact-to-delete";
-        const url = BASE_URL + "messages/" + id;
-        const options = { headers, method: "DELETE" };
+        const url = BASE_URL + "contacts/" + props.id;
+        const options = { headers, method: DELETE };
         await fetch(url, options);
         history.push("/admin/contacts");
     }
 
     return (
-        <>
-            <Button variant="danger" onClick={checkDelete}>
-                Delete
-        </Button>
+         <>
+        <button className = "__delete-btn __delete-btn--enquiry"
+        onClick = {
+            checkDelete
+        }>
+            Delete
+        </button>
         </>
     );
 }
 
-export default DeleteEnquiry;
+export default DeleteMessage;
