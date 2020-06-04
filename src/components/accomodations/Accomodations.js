@@ -15,11 +15,6 @@ function Accomodations() {
         window.scrollTo({ behavior: "smooth", top: ref.current.offsetTop });
     };
 
-    function refreshPage() {
-        window.location.reload();
-    };
-
-
     const [establishments, setEstablishments] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const url = BASE_URL + "establishments";
@@ -74,8 +69,6 @@ function Accomodations() {
                          </div>
                          
 
-                                <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
-
                          </Col>
                          </Row>
                          </Container>
@@ -108,7 +101,6 @@ function Accomodations() {
                     <div id="tag1"><section ref={refA}/></div>
 
                     <Search doSearch={handleSearch} />
-                    <div className="search__btn"><Link onClick={refreshPage}>Refresh</Link></div>
                     <Row>
                         {filteredResults.map(function (establishments) {
                             const {id, name, image, price, description } = establishments;

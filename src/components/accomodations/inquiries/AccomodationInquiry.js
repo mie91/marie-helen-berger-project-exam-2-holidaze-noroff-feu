@@ -35,7 +35,7 @@ const schema = yup.object().shape({
 });
 
 
-function AccomodationDetail() {
+function AccomodationInquiry() {
     const [validated, setValidated] = useState(false);
     const { register, handleSubmit, errors, control } = useForm({
         validationSchema: schema});
@@ -177,4 +177,4 @@ function AccomodationDetail() {
     )
 }
 
-export default AccomodationDetail;
+export default AccomodationInquiry;
