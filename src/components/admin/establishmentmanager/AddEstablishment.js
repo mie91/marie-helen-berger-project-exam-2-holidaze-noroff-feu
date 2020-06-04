@@ -236,7 +236,7 @@ function AddEstablishment() {
                       <Col lg={10} md={6} sm={12}>
                         {validated && (
                           <div className="admin-box__validation">
-                            <h4>The establishment has been updated successfully!</h4>
+                            <h4>The establishment has been created successfully!</h4>
                             
                           </div>
                         )}

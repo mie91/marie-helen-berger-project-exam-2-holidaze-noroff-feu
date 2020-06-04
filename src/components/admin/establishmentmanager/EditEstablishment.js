@@ -15,27 +15,36 @@ const schema = yup.object().shape({
     .required("A name is required")
     .min(2, "The name is to short"),
 
-  email: yup.string().email("Please enter a valid email"),
+  email: yup
+  .string()
+  .email("Please enter a valid email"),
 
-  price: yup.number(),
+  price: yup
+  .number()
+  .typeError("Must be a number"),
 
-  image: yup.string(),
+  image: yup
+  .string(),
 
-  maxGuests: yup.number().min(1, "Minimum 1 person"),
+  maxGuests: yup
+    .number()
+    .typeError("Must be a number")
+    .min(1, "Minimum 1 person"),
 
   lat: yup
     .number()
+    .typeError("Must be a number")
     .min(-90, "Latitude must be between -90 and 90")
     .max(90, "Latitude must be between -90 and 90"),
 
   lng: yup
     .number()
+    .typeError("Must be a number")
     .min(-180, "Longitude must be between -180 and 180")
     .max(180, "Longitude must be between -180 and 180"),
 
   description: yup
     .string()
-    .min(2, "The description is to short")
     .max(200, "The description is to long"),
 });
 
