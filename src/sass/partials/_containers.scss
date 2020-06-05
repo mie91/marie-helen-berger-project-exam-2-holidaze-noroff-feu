@@ -1,20 +1,25 @@
+/***************
+ * Main wrap container*
+ ***************/
+
 .main-container {
     background-color: $dark;
     padding-bottom: 20px;
-
 
     &--dark-pink {
         background-color: $dark;
         background: linear-gradient(180deg, rgba(11, 0, 29, 1) 30%, rgba(247, 41, 85, 0.4) 100%);
     }
 
-    &--white-purple{
+    &--dark-purple{
         background-color: $dark;
         background: linear-gradient(180deg, rgba($purple, 1) 0%, rgba($dark, 0.4) 60%);
     }
 }
 
-
+/***************
+ * Basic text content - used on "Home" and "Accomodation" page*
+ ***************/
 .text-content {
     padding: 10px;
     margin-top: 20px;
@@ -30,18 +35,4 @@
             color: $orange;
         }
     }
-}
-
-
-
-/***************
- * Media Quiries*
- ***************/
-@media screen and (min-width: 770px) {
-   
-}
-
-@media screen and (max-width: 769px) {
-   
-
 }

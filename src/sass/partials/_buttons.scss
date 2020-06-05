@@ -3,31 +3,6 @@
  * Buttons*
  ***************/
 //Basic Buttons//
-/*
-.basic-btn {
-    max-width: 200px;
-    cursor: pointer;
-    &--dark {
-        @include basic-button-dark;
-
-        a {
-            color: $pink;
-        }
-    }
-
-    &--pink {
-        @include basic-button-pink;
-
-        a {
-            color: $dark;
-        }
-
-        :hover {
-            color: $pink;
-        }
-    
-    }
-}*/
 
 .basic-btn {
     max-width: 250px;
@@ -42,6 +17,7 @@
             @include basic-button-dark;
         }
     }
+
    
 }
 //The "Back To Top" Button//

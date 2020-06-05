@@ -6,7 +6,7 @@ import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstr
 function Dashboard() {
     return (
         <>
-            <div className="main-container main-container--white-purple main-container main-container--admin">
+            <div className="main-container main-container--dark-purple main-container main-container--admin">
                 <Container>
                     
                     <div className="admin-box admin-box--dashboard">

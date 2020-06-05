@@ -33,11 +33,13 @@ const schema = yup.object().shape({
     .required("A valid email is required"),
 
   checkIn: yup
-    .date("Please select a valid date")
+    .date()
+    .typeError("Select a valid date (eg: May 5 2020)")
     .required("Select check-in date"),
 
   checkOut: yup
-    .date("Please select a valid date")
+    .date()
+    .typeError("Select a valid date (eg: May 5 2020)")
     .required("Select check-out date"),
 });
 
@@ -92,7 +94,7 @@ function AccomodationInquiry() {
   return (
     <div className="main-container main-container--dark-pink">
       <Container>
-        <div className="basic-btn basic-btn--dark">
+        <div className="basic-btn">
           <Link to={"/accomodations"}>back</Link>
         </div>
         <div className="form-box">

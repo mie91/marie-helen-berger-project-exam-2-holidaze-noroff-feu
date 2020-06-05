@@ -1,5 +1,5 @@
 import React from "react";
-import IconUp from "../../../assets/icons/black/icon_up.png";
+import { FiArrowUp } from "react-icons/fi"
 
 const BackToTop = function () {
     function ScrollToTop() {
@@ -7,7 +7,9 @@ const BackToTop = function () {
     }
 
     return  <div className="toTop">
-                <button className="toTop__button" onClick={ScrollToTop}><img className="toTop__icon" src={IconUp} alt="Up arrow" /></button>
+                <button className="toTop__button" onClick={ScrollToTop}>
+                    <FiArrowUp size={30}/>
+                </button>
             </div>;
 };
 

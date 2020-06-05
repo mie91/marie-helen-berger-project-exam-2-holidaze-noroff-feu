@@ -42,7 +42,7 @@ function EnquiriesList() {
 
   return (
     <>
-      <div className="main-container main-container--white-purple main-container main-container--admin">
+      <div className="main-container main-container--dark-purple main-container main-container--admin">
         <Container>
           <div className="basic-btn basic-btn--dark">
             <Link to={"/admin"}>Dashboard</Link>
