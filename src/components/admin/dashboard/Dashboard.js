@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/logo/logoLight_m.png";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { FiMail, FiPlusCircle } from "react-icons/fi";
+import { FiMail, FiPlusCircle, FiHome} from "react-icons/fi";
+import { BsQuestionCircle } from "react-icons/bs";
 
 function Dashboard() {
     
@@ -33,7 +34,9 @@ function Dashboard() {
                 <div className="admin-box__content-list">
                   <ul>
                     <li className="admin-box__content-list-item admin-box__content-item--enquiries">
-                      <Link to="/admin/enquiries">See Enquiries</Link>
+                      <Link to="/admin/enquiries">
+                        <BsQuestionCircle size={25} /> Enquiries
+                      </Link>
                     </li>
                     <li className="admin-box__content-list-item admin-box__content-item--messages">
                       <Link to="/admin/contacts">
@@ -41,7 +44,9 @@ function Dashboard() {
                       </Link>
                     </li>
                     <li className="admin-box__content-list-item admin-box__content-item--establishments">
-                      <Link to="/admin/establishments">See Establishments</Link>
+                      <Link to="/admin/establishments">
+                        <FiHome size={25} /> Establishments
+                      </Link>
                     </li>
                     <li className="admin-box__content-list-item admin-box__content-item--establishments">
                       <Link to="/admin/establishments/add">
