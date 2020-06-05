@@ -113,7 +113,7 @@ function Login() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={12} md={6} sm={12}>
+                      <Col lg={2} md={12} sm={12}>
                         <button className="admin-box__basic-btn" type="submit">
                           Login
                         </button>
