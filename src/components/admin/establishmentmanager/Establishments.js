@@ -48,7 +48,7 @@ function Establishments() {
             </Row>
             <Row className="justify-content-md-center">
               <Col lg={6} md={10} sm={12}>
-                <h1 className="admin-box__header">Establishments</h1>
+                < h1 className = "admin-box__header admin-box__header--breakable" > Establishments < /h1>
 
                 <div className="admin-box__info-text">
                   <p>

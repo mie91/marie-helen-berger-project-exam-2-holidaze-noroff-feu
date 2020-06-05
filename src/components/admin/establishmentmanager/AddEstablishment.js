@@ -13,34 +13,31 @@ const schema = yup.object().shape({
     .string()
     .required("A name is required")
     .min(2, "The name is to short"),
-
 });
 
-
 function AddEstablishment() {
-    const { register, handleSubmit, errors } = useForm({
-      validationSchema: schema,
-    });
-    const [validated, setValidated] = useState(false);
-    const history = useHistory();
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: schema,
+  });
+  const [validated, setValidated] = useState(false);
+  const history = useHistory();
 
-    async function onSubmit(data) {
-        console.log("data", data);
+  async function onSubmit(data) {
+    console.log("data", data);
 
-        const url = BASE_URL + "establishments";
+    const url = BASE_URL + "establishments";
 
-        const options = { headers, method: "POST", body: JSON.stringify(data) };
+    const options = { headers, method: "POST", body: JSON.stringify(data) };
 
-        await fetch(url, options);
-        setValidated(true);
-        setTimeout(() => {
-        history.push("/admin/establishments");
-        }, 2000);
-        
-    }
+    await fetch(url, options);
+    setValidated(true);
+    setTimeout(() => {
+      history.push("/admin/establishments");
+    }, 2000);
+  }
 
-    return (
-        <>
+  return (
+    <>
       <div className="main-container main-container--white-purple main-container main-container--admin">
         <Container>
           <div className="basic-btn basic-btn--dark">
@@ -56,8 +53,9 @@ function AddEstablishment() {
             </Row>
             <Row className="justify-content-md-center">
               <Col lg={8} md={10} sm={12}>
-                <h1 className="admin-box__header">Add Establishment</h1>
-                
+                <h1 className="admin-box__header admin-box__header--breakable">
+                  Add Establishment
+                </h1>
               </Col>
             </Row>
             <Row className="justify-content-md-center">
@@ -73,7 +71,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="name"
-                            
                             placeholder="Enter name of establishment"
                             ref={register}
                           />
@@ -82,7 +79,6 @@ function AddEstablishment() {
                           )}
                         </Form.Group>
                       </Col>
-                      
                     </Row>
                     <Row className="justify-content-md-center">
                       <Col lg={6} md={12} sm={12}>
@@ -93,7 +89,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="email"
-                            
                             placeholder="Enter establishment email"
                             ref={register}
                           />
@@ -110,7 +105,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="price"
-                            
                             placeholder="Enter price per night"
                             ref={register}
                           />
@@ -129,7 +123,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="image"
-                            
                             placeholder="Enter image URL"
                             ref={register}
                           />
@@ -143,7 +136,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="maxGuests"
-                            
                             placeholder="Max guests"
                             ref={register}
                           />
@@ -181,7 +173,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="lng"
-                            
                             placeholder="Enter coordinate (longitude)"
                             ref={register}
                           />
@@ -198,7 +189,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input admin-box__form-input--select"
                             as="select"
-                            
                             ref={register}
                             name="selfCatering"
                           >
@@ -219,7 +209,6 @@ function AddEstablishment() {
                             as="textarea"
                             rows="5"
                             name="description"
-                            
                             placeholder="Enter the establishment description here"
                             ref={register}
                           />
@@ -235,14 +224,15 @@ function AddEstablishment() {
                       <Col lg={10} md={6} sm={12}>
                         {validated && (
                           <div className="admin-box__validation">
-                            <h4>The establishment has been created successfully!</h4>
+                            <h4>
+                              The establishment has been created successfully!
+                            </h4>
                           </div>
                         )}
                       </Col>
                     </Row>
                     <Row className="justify-content-md-end">
                       <Col lg={4} md={6} sm={12}>
-                        
                         <button className="admin-box__update-btn" type="submit">
                           Create
                         </button>
@@ -256,23 +246,8 @@ function AddEstablishment() {
         </Container>
       </div>
     </>
-    );
+  );
 }
 
 export default AddEstablishment;
 
-
-/*<Form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Add Establishment</h1>
-            <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control name="name" placeholder="Enter the name of the establishment" ref={register} />
-            </Form.Group>
-
-            <Form.Group>
-                <Form.Label>Email</Form.Label>
-                <Form.Control name="email" placeholder="Enter an email address" ref={register} />
-            </Form.Group>
-
-            <Button type="submit">Submit</Button>
-        </Form> */

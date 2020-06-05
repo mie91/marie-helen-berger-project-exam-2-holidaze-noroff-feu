@@ -17,7 +17,10 @@
   &__header {
     @include header-style-1;
     color: $pink;
-    word-break: break-all;
+    
+    &--breakable {
+      word-break: break-all;
+    }
   }
 
   &__sub-header {
@@ -102,6 +105,11 @@
       text-transform: none;
       word-break: break-all;
     }
+  }
+
+  &__basic-btn {
+    @include basic-button-dark;
+    border: none;
   }
 
   .__delete-btn {
