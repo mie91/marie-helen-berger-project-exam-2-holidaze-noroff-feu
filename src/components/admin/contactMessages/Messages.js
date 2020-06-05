@@ -8,7 +8,6 @@ import BackToTop from "../../layout/other/BackToTop";
 import { BsPeopleCircle } from "react-icons/bs";
 
 function Messages() {
-    
   const [contact, setContact] = useState([]);
 
   const url = BASE_URL + "contacts";
@@ -25,13 +24,12 @@ function Messages() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const sortedMessages = contact.sort((a, b) => b.createdAt - a.createdAt);
 
-   const sortedMessages = contact.sort((a, b) => b.createdAt - a.createdAt)
-
-   console.log(sortedMessages);
+  console.log(sortedMessages);
 
   if (loading) {
     return (
@@ -40,8 +38,6 @@ function Messages() {
       </div>
     );
   }
-
- 
 
   return (
     <>
@@ -61,7 +57,9 @@ function Messages() {
             <Row className="justify-content-md-center">
               <Col lg={6} md={10} sm={12}>
                 <h1 className="admin-box__header">Messages</h1>
-                <h4 className="admin-box__sub-header">Received from contact form</h4>
+                <h4 className="admin-box__sub-header">
+                  Received from contact form
+                </h4>
                 <div className="admin-box__info-text">
                   <p>
                     Ex dolore excepteur sint consequat proident culpa do id.
@@ -117,4 +115,3 @@ function Messages() {
 }
 
 export default Messages;
-

@@ -45,7 +45,7 @@ function Login() {
       <div className="main-container main-container--dark-purple main-container main-container--admin">
         <Container>
           <div className="basic-btn basic-btn--dark">
-            <Link to={"/admin/establishments"}>back </Link>{" "}
+            <Link to="/admin/establishments">back </Link>{" "}
           </div>{" "}
           <div className="admin-box admin-box--establishment-edit">
             <Row className="justify-content-md-center">

@@ -81,7 +81,7 @@ function AddEstablishment() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={6} md={12} sm={12}>
+                      <Col lg={6} md={6} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Email:
@@ -97,7 +97,7 @@ function AddEstablishment() {
                           )}
                         </Form.Group>
                       </Col>
-                      <Col lg={4} md={12} sm={12}>
+                      <Col lg={4} md={6} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Price:
@@ -115,7 +115,7 @@ function AddEstablishment() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={6} md={12} sm={12}>
+                      <Col lg={6} md={8} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Image:
@@ -128,7 +128,7 @@ function AddEstablishment() {
                           />
                         </Form.Group>
                       </Col>
-                      <Col lg={4} md={12} sm={12}>
+                      <Col lg={4} md={4} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Max guests:
@@ -148,7 +148,7 @@ function AddEstablishment() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={3} md={12} sm={12}>
+                      <Col lg={3} md={3} sm={6}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Latitude:
@@ -165,7 +165,7 @@ function AddEstablishment() {
                           )}
                         </Form.Group>
                       </Col>
-                      <Col lg={3} md={12} sm={12}>
+                      <Col lg={3} md={3} sm={6}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Longitude:
@@ -181,7 +181,7 @@ function AddEstablishment() {
                           )}
                         </Form.Group>
                       </Col>
-                      <Col lg={4} md={12} sm={12}>
+                      <Col lg={4} md={6} sm={12}>
                         <Form.Group className="admin-box__form-group">
                           <Form.Label className="admin-box__form-label">
                             Self Catering:
@@ -199,7 +199,7 @@ function AddEstablishment() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={10} md={6} sm={12}>
+                      <Col lg={10} md={12} sm={12}>
                         <Form.Group>
                           <Form.Label className="admin-box__form-label">
                             Description
@@ -221,7 +221,7 @@ function AddEstablishment() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={10} md={6} sm={12}>
+                      <Col lg={10} md={12} sm={12}>
                         {validated && (
                           <div className="admin-box__validation">
                             <h4>
@@ -232,11 +232,9 @@ function AddEstablishment() {
                       </Col>
                     </Row>
                     <Row className="justify-content-md-end">
-                      <Col lg={4} md={6} sm={12}>
-                        <button className="admin-box__update-btn" type="submit">
-                          Create
-                        </button>
-                      </Col>
+                      <button className="admin-box__update-btn" type="submit">
+                        Create
+                      </button>
                     </Row>
                   </Form>
                 </div>
@@ -250,4 +248,3 @@ function AddEstablishment() {
 }
 
 export default AddEstablishment;
-

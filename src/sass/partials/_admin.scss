@@ -1,7 +1,10 @@
+/***************
+ * Admin - Main container*
+ ***************/
+
 .main-container {
   &--admin {
-    padding-top: 3vw;
-    padding-bottom: 3vw;
+    padding-bottom: 6vw;
   }
 }
 
@@ -17,7 +20,7 @@
   &__header {
     @include header-style-1;
     color: $pink;
-    
+
     &--breakable {
       word-break: break-all;
     }
@@ -68,88 +71,9 @@
     }
   }
 
-  //MESSAGE/ ENQUIRIES//
-  &__message-wrap {
-    margin: auto;
-    text-align: left;
-  }
-
-  &__message-content {
-    background-color: rgba($purple, 0.2);
-    padding: 10px;
-    margin: 5px;
-
-    &--check-in {
-      background-color: rgba($pink, 0.05);
-    }
-    &--check-out {
-      background-color: rgba($pink, 0.05);
-    }
-
-    &--textbox {
-      background-color: rgba($orange, 0.05);
-      
-      
-    }
-  }
-
-  &__message-detail {
-    font-size: 1.2em;
-    text-align: left;
-    margin-bottom: 10px;
-    @include header-style-1;
-
-    &--pink {
-      color: $pink;
-      @include header-style-2;
-      text-transform: none;
-      word-break: break-all;
-    }
-  }
-
-  &__basic-btn {
-    @include basic-button-dark;
-    border: none;
-  }
-
-  .__delete-btn {
-    @include basic-button-pink;
-    border: none;
-    &--enquiry {
-      margin-top: 2vw;
-    }
-
-    &--establishment {
-      margin-top: 2vw;
-      
-    }
-  }
-
-  &__update-btn {
-    @include basic-button-orange;
-    border: none;
-    margin-left: 10px;
-    
-  }
-
-  &__validation {
-             margin: 10px;
-             text-align: center;
-             font-size: 1.2em;
-             color: $orange;
-             border-bottom: $basic-border-pink;
-             border-top: $basic-border-pink;
-
-             font-family: $textFont;
-             transition: $basic-transition;
-             animation-name: bigger;
-             animation-duration: 250ms;
-             animation-iteration-count: 1;
-             animation-timing-function: linear;
-
-         }
-
-  //CARDS//
+  /***************
+ * Admin - Message/Enquiry list cards*
+ ***************/
   &__card-wrapper {
     &:hover {
       text-decoration: none;
@@ -163,10 +87,11 @@
     box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
     border-radius: 10px;
     text-decoration: none;
+    transition: $basic-transition;
 
     &:hover {
       box-shadow: (7px 7px 20px 0px rgba($purple, 0.5));
-      background-color: rgba($purple, 0.1);
+      background-color: rgba($purple, 0.2);
     }
   }
 
@@ -199,7 +124,98 @@
     }
   }
 
-  //FORMS//
+  /***************
+ * Admin - Enquiries/Messages*
+ ***************/
+  &__message-wrap {
+    margin: auto;
+    text-align: left;
+  }
+
+  &__message-content {
+    background-color: rgba($purple, 0.2);
+    padding: 10px;
+    margin: 5px;
+
+    &--check-in {
+      background-color: rgba($pink, 0.05);
+    }
+    &--check-out {
+      background-color: rgba($pink, 0.05);
+    }
+
+    &--textbox {
+      background-color: rgba($orange, 0.05);
+    }
+  }
+
+  &__message-detail {
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: 10px;
+    @include header-style-1;
+
+    &--pink {
+      color: $pink;
+      @include header-style-2;
+      text-transform: none;
+      word-break: break-all;
+    }
+  }
+
+  &__basic-btn {
+    @include basic-button-dark;
+    border: none;
+  }
+
+  .__delete-btn {
+    @include basic-button-pink;
+    border: none;
+    &--enquiry {
+      margin-top: 2vw;
+      &:hover {
+        background-color: $purple;
+        color: $pink;
+      }
+    }
+
+    &--establishment {
+      margin-top: 2vw;
+    }
+  }
+
+  &__update-btn {
+    @include basic-button-dark;
+    border: none;
+    margin: auto;
+    transition: $basic-transition;
+
+    &:hover {
+      box-shadow: (7px 7px 20px 0px rgba($dark, 0.5));
+      background-color: rgba($purple, 1);
+      color: $pink;
+    }
+  }
+
+  &__validation {
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    color: $orange;
+    border-bottom: $basic-border-pink;
+    border-top: $basic-border-pink;
+
+    font-family: $textFont;
+    transition: $basic-transition;
+    animation-name: bigger;
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+
+  /***************
+ * Admin - Create/Update establishment forms*
+ ***************/
   &__form {
     text-align: left;
   }
@@ -226,22 +242,15 @@
       color: rgba($color: $white, $alpha: 0.5);
     }
 
-    &--select{
-      
+    &--select {
       & option {
-        background-color:$pink;
+        background-color: $pink;
         color: $dark;
-
-        
       }
 
       &:focus {
-          background-color:$dark;
-        }
+        background-color: $dark;
+      }
     }
-
-    
   }
-
-  
 }
