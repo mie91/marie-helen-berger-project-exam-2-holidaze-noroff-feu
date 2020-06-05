@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navlink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import Logo from "../../../assets/logo/logoLight_m.png";
 import { Container, Row, Col, Spinner, Image } from "react-bootstrap";
@@ -25,6 +25,7 @@ function Messages() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 

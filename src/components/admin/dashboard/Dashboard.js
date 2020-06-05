@@ -1,7 +1,7 @@
 import React from "react";
 import { Link} from "react-router-dom";
 import Logo from "../../../assets/logo/logoLight_m.png"
-import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 function Dashboard() {
     return (
@@ -52,9 +52,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
-/*<h1>Admin Dashboard</h1>
-            <ul>
-                
-            </ul> */

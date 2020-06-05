@@ -1,230 +1,219 @@
 /***************
- * Accomodation Cards*
+ * Accomodation-list Cards*
  ***************/
 .accomodation-card {
+  height: 500px;
+  color: $white;
+  padding: 20px;
+  text-align: center;
+  margin: 2vw 1vw;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
+  border-radius: 10px;
+  text-decoration: none;
 
-    height: 450px;
-    color: $white;
-    padding: 20px;
-    text-align: center;
-    margin: 2vw 1vw;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
-    border-radius: 10px;
-    text-decoration: none;
+  &:hover {
+    box-shadow: (7px 7px 50px 0px rgba($orange, 0.15));
+  }
+
+  &__link-wrap {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__header {
+    @include header-style-1;
+    font-size: 1em;
+  }
+
+  &__image {
+    height: 150px;
+  }
+
+  &__description {
+    text-align: left;
+    margin-top: 5px;
+    height: 120px;
+    
+  }
+
+  &__detail {
+    margin: 20px;
+    background-color: $pink;
+    color: $dark;
+    padding: 5px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    @include header-style-1;
+
+    &--orange {
+        background-color: $orange;
+    }
+  }
+
+  &__btn {
+    @include basic-button-pink;
+    padding: 10px 50px;
+    @include basic-shadow;
 
     &:hover {
-        box-shadow: (7px 7px 50px 0px rgba($pink, 0.05));
+      transition: $basic-transition;
+      filter: none;
     }
-
-
-    &__header {
-        @include header-style-1;
-        font-size: 1em;   
-    }
-
-    &__image {
-        height: 150px;
-    }
-
-    &__description {
-        text-align: left;
-        margin-top: 5px;
-        height: 120px;
-        word-break: break-all;
-    }
-
-    &__price {
-        margin: 20px;
-        background-color: $orange;
-        color: $dark;
-        width: 150px;
-        margin-left: auto;
-        margin-right: auto;
-        @include header-style-1;
-    }
-
-    &__btn {
-        @include basic-button-pink;
-        padding: 10px 50px;
-        @include basic-shadow;
-
-        &:hover {
-            transition: $basic-transition;
-            filter: none;
-        }
-    }
-    
+  }
 }
 
-
- /***************
+/***************
  * Accomodation Search*
  ***************/
 .search {
+  text-align: center;
+
+  &__field {
+    padding: 10px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-left: $basic-border-pink;
+    border-bottom: $basic-border-pink;
+    color: $orange;
+    font-size: 1.2em;
+
+    &::placeholder {
+      color: rgba($color: $orange, $alpha: 1);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-left: $basic-border-white;
+      border-bottom: $basic-border-white;
+      transition: $basic-transition;
+    }
+  }
+
+  &__no-results {
+    color: $orange;
+    text-align: right;
+    border-right: $basic-border-pink;
+    padding: 5px;
+  }
+
+  &__btn {
+    margin: 2vw;
     text-align: center;
 
-    &__field {
-        padding: 10px;
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        border-left: $basic-border-pink;
-        border-bottom: $basic-border-pink;
-        color: $orange;
-        font-size: 1.2em;
-
-        &::placeholder {
-            color: rgba($color: $orange, $alpha: 1);
-        }
-
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            border-left: $basic-border-white;
-            border-bottom: $basic-border-white;
-            transition: $basic-transition;
-        }
-
+    a {
+      @include basic-button-pink;
+      @include basic-shadow;
+      transition: $basic-transition;
     }
-
-    &__no-results {
-        color: $orange;
-        text-align: right;
-        border-right: $basic-border-pink;
-        padding: 5px;
-    }
-
-    &__btn {
-        margin: 2vw;
-        text-align: center;
-
-        a {
-            @include basic-button-pink;
-            @include basic-shadow;
-            transition: $basic-transition;
-        }
-    }
-
+  }
 }
 
- /***************
+/***************
  * Accomodation Detail Page*
  ***************/
-.main-container {
-    &__accomodation-detail {
-        padding-bottom: 30px;
-    }
-}
-
 .accomodation-detail {
-    color: white;
-    padding: 3vw;
-    margin: 2vw 1vw;
-    background: linear-gradient(180deg, rgba($dark, 1.0) 50%, rgba($white, 0) 100%);
-    text-align: center;
-    box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
-    
-    
+  color: white;
+  padding: 3vw;
+  margin: 2vw 1vw;
+  background: linear-gradient(180deg, rgba($dark, 1) 50%, rgba($white, 0) 100%);
+  text-align: center;
+  box-shadow: (7px 7px 50px 0px rgba(0, 0, 0, 0.75));
 
-    &__header {
-        color: $orange;
-        @include header-style-1;
-        letter-spacing: 5px;
-        margin: 10px 0px;
+  &__header {
+    color: $orange;
+    @include header-style-1;
+    letter-spacing: 5px;
+    margin: 10px 0px;
 
-        &--sub {
-            border-bottom: $basic-border-pink;      
-        }
+    &--sub {
+      border-bottom: $basic-border-pink;
+    }
+  }
+
+  &__image {
+    @include basic-shadow;
+    border-radius: 5px;
+  }
+
+  &__description {
+    text-align: left;
+    font-size: 1.2em;
+  }
+
+  &__details {
+    @include header-style-1;
+    @include basic-shadow;
+    background-color: $pink;
+    color: $dark;
+    text-transform: none;
+
+    p {
+      padding: 3px;
+      margin: 20px 5px;
     }
 
-    &__image {
-      @include basic-shadow;
-      border-radius: 5px;
+    &--email {
+      text-align: center;
+      color: rgba($white, 0.7);
+      text-transform: none;
+      background-color: transparent;
+      font-family: $textFont;
+
+      &:hover {
+        color: rgba($white, 1);
+      }
+
+      p {
+        margin: 0px;
+        padding: 0px;
+        word-break: break-all;
+      }
     }
 
-    &__description {
-        text-align: left;
-        font-size: 1.5em;
-        
+    &--price {
+      background-color: $orange;
+      font-size: 1.5em;
+      margin-top: 10px;
+      text-transform: uppercase;
     }
+  }
 
-    &__details {
-        @include header-style-1;
-        @include basic-shadow;
-        background-color: $pink;
-        color: $dark;
-        text-transform: none;
-        
-        
+  &__btn {
+    margin: 50px 0px;
+    margin-left: auto;
 
-        p {
-            padding: 3px;
-            margin: 20px 5px;
-        }
-
-        &--email {
-            text-align: left;
-            color: rgba($white, 0.3);
-            text-transform: none;
-            background-color: transparent;
-            font-family: $textFont;
-            
-            
-
-            &:hover {
-                color: rgba($white, 1);
-            }
-            
-            p{
-                margin: 0px;
-                padding: 0px;
-                 word-break: break-all;
-                
-            } 
-        }
-
-        &--price {
-            background-color: $orange;
-            font-size: 1.5em;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-        
+    a {
+      padding: 20px;
     }
+  }
 
-    &__btn {
-        margin: 50px 0px;
-        margin-left: auto;
-        
-
-        a {
-            padding: 20px;
-        }
-    }
-
-    &__map {
-        padding: 10px;
-        margin: auto;
-        @include basic-shadow;
-        
-    }
+  &__map {
+    padding: 10px;
+    margin: auto;
+    @include basic-shadow;
+  }
 }
-
-
 
 /***************
  * Media Quiries*
  ***************/
 @media screen and (min-width: 770px) {
-    
 }
 
 @media screen and (max-width: 769px) {
-.accomodation-detail {
-        &__btn {
-            margin-left: auto;
-            margin-right: auto;
-        }
+  .accomodation-detail {
+    &__btn {
+      margin-left: auto;
+      margin-right: auto;
     }
+  }
 }

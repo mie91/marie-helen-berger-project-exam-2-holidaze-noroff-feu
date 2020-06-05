@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
-import { BASE_URL, headers } from "../../../constants/api";
+import { Container, Row, Col, Image, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
@@ -132,21 +131,3 @@ function Login() {
 }
 
 export default Login;
-
-
-
-/* <>
-            <Form onSubmit={handleSubmit(onSubmit)}>
-      <h1>Register</h1>
-      <Form.Group>
-        <Form.Label>User Name</Form.Label>
-        <Form.Control
-          name="username"
-          placeholder="Enter your username"
-          ref={register}
-        />
-      </Form.Group>
-
-      <Button type="submit">Register</Button>
-    </Form>
-        </> */

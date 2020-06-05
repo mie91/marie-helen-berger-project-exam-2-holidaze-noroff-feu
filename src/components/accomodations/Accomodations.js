@@ -114,7 +114,7 @@ function Accomodations() {
           <Search doSearch={handleSearch} />
           <Row>
             {filteredResults.map(function (establishments) {
-              const { id, name, image, price, description } = establishments;
+              const { id, name, image, price, description, maxGuests } = establishments;
               return (
                 <AccomodationItem
                   key={establishments.id}
@@ -122,6 +122,7 @@ function Accomodations() {
                   name={name}
                   image={image}
                   price={price}
+                  maxGuests={maxGuests}
                   description={description}
                 />
               );
