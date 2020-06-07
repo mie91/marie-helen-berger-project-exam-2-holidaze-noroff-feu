@@ -20,7 +20,7 @@ function Navigation() {
               <img alt="Holidaze logo" src={NavLogo} />
             </Navbar.Brand>
           </NavLink>
-          <Nav className="navbar-nav ml-auto container__navLinks">
+          <Nav className="navbar-nav ml-auto container__nav-links">
             <NavLink id="nav-link" to="/" exact>
               Home
             </NavLink>
@@ -31,25 +31,25 @@ function Navigation() {
               Contact Us
             </NavLink>
           </Nav>
-          <Nav className="navbar-nav ml-auto flex-column container__navLinksAdmin">
+          <Nav className="navbar-nav ml-auto flex-column container__nav-links-admin">
             {user ? (
               <>
                 <NavLink id="nav-link__admin" to="/admin">
-                  Manage <AiOutlineTool />
+                  Manage <AiOutlineTool aria-label="Wrench/options icon" />
                 </NavLink>
                 <LogOut />
               </>
             ) : (
               <>
                 <NavLink id="nav-link__admin" to="/login">
-                  Login <GrUserAdmin />
+                  Login <GrUserAdmin aria-label="Admin user icon" />
                 </NavLink>
               </>
             )}
           </Nav>
         </Navbar.Collapse>
         <NavLink className="ml-auto" to="/" exact>
-          <img alt="" src={NavLogo} className="second-brand" />
+          <img alt="The Holidaze logo" src={NavLogo} className="second-brand" />
         </NavLink>
       </Container>
     </Navbar>

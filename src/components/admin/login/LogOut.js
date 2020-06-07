@@ -13,7 +13,7 @@ function Login() {
         history.push("/");
     }
 
-    return <Link id="nav-link__admin" onClick={doLogout}>Log Out<IoIosLogOut /></Link>;
+    return <Link id="nav-link__admin" onClick={doLogout}>Log Out<IoIosLogOut aria-label="Logout icon"/></Link>;
 }
 
 export default Login;

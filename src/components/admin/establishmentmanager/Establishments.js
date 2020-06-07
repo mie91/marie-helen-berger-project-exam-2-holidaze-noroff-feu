@@ -21,6 +21,7 @@ function Establishments() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
@@ -42,13 +43,14 @@ function Establishments() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid></Image>
+                  <Image src={Logo} fluid alt="The Holidaze logo"/>
                 </div>
               </Col>
             </Row>
             <Row className="justify-content-md-center">
               <Col lg={6} md={10} sm={12}>
-                < h1 className = "admin-box__header admin-box__header--breakable" > Establishments < /h1>
+                <h1 className="admin-box__header admin-box__header--breakable"> Establishments
+                </h1>
 
                 <div className="admin-box__info-text">
                   <p>
@@ -73,14 +75,15 @@ function Establishments() {
                   {establishments.map((establishment) => {
                     return (
                       <Link
+                        key={establishment.id}
                         className="admin-box__card-wrapper"
                         to={`/admin/establishments/edit/${establishment.id}`}
                       >
                         {" "}
-                        <div key={establishment.id} className="admin-box__card">
+                        <div className="admin-box__card">
                           <Row className="justify-content-md-center">
                             <Col lg={2} md={9} sm={9} xs={9}>
-                              <Image fluid src={establishment.image}></Image>
+                              <Image fluid src={establishment.image} alt="image of the establishment"/>
                             </Col>
                             <Col lg={10} md={9} sm={9} xs={9}>
                               <h4 className="admin-box__card-header">

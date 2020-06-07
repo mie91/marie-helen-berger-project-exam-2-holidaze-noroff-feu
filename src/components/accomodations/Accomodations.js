@@ -81,7 +81,7 @@ function Accomodations() {
 
   return (
     <>
-      <div className="header-image header-image--accomodations">
+      <div className="header-image header-image--accomodations" aria-label="image of Bergen in the night">
         <div className="header-image__text-box header-image__text-box--dark">
           <MainHeader title="Hotel? B&B? Apartment?" />
 

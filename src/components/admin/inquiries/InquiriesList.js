@@ -30,6 +30,7 @@ function EnquiriesList() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
@@ -51,7 +52,7 @@ function EnquiriesList() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid></Image>
+                  <Image src={Logo} fluid alt="The Holidaze logo"/>
                 </div>
               </Col>
             </Row>
@@ -73,15 +74,16 @@ function EnquiriesList() {
                   {enquiries.map((enquiry) => {
                     return (
                       <Link
+                        key={enquiry.id} 
                         className="admin-box__card-wrapper"
                         to={`/admin/enquiries/${enquiry.id}`}
                       >
                         {" "}
-                        <div key={enquiry.id} className="admin-box__card">
+                        <div className="admin-box__card">
                           <Row className="justify-content-md-center">
                             <Col lg={2} md={3} sm={3} xs={3}>
                               <div className="admin-box__card-icon admin-box__card-icon--person">
-                                <BsPeopleCircle size={55} />
+                                <BsPeopleCircle size={55} aria-label="Person icon"/>
                               </div>
                             </Col>
                             <Col lg={10} md={9} sm={9} xs={9}>

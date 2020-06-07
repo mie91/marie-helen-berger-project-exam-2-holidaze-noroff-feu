@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstrap";
-import { useParams, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as yup from "yup";
 import ErrorMessage from "../layout/other/ErrorMessage";
 import { Link } from "react-router-dom";
+
 
 const schema = yup.object().shape({
 
@@ -30,7 +30,7 @@ const schema = yup.object().shape({
 
 function Contact () {
     const [validated, setValidated] = useState(false);
-    const { register, handleSubmit, errors, control } = useForm({
+    const { register, handleSubmit, errors } = useForm({
         validationSchema: schema});
     const history = useHistory();
 

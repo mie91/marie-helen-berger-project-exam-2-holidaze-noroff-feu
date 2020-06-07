@@ -81,6 +81,7 @@ function EditEstablishment() {
       .then((response) => response.json())
       .then((json) => setEstablishment(json))
       .catch((error) => console.log(error));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function onSubmit(data) {
@@ -110,7 +111,7 @@ function EditEstablishment() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid></Image>
+                  <Image src={Logo} fluid alt="The Holidaze logo"/>
                 </div>
               </Col>
             </Row>

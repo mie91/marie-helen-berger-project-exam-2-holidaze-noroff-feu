@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import DeleteEnquiry from "./DeleteEnquiry";
-import { Container, Row, Col, Spinner, Image } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import Logo from "../../../assets/logo/logoLight_m.png";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
@@ -39,7 +39,7 @@ function EnquiryDetail() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid></Image>
+                  <Image src={Logo} fluid alt="The Holidaze logo"/>
                 </div>
               </Col>
             </Row>

@@ -51,7 +51,7 @@ function Login() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid></Image>
+                  <Image src={Logo} fluid alt="The Holidaze Logo"/>
                 </div>
               </Col>
             </Row>

@@ -15,7 +15,7 @@ function Dashboard() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid></Image>
+                  <Image src={Logo} fluid alt="Holidaze Logo"/>
                 </div>
               </Col>
             </Row>
@@ -35,22 +35,22 @@ function Dashboard() {
                   <ul>
                     <li className="admin-box__content-list-item admin-box__content-item--enquiries">
                       <Link to="/admin/enquiries">
-                        <BsQuestionCircle size={25} /> Enquiries
+                        <BsQuestionCircle aria-label="Questionmark Icon" size={25} /> Enquiries
                       </Link>
                     </li>
                     <li className="admin-box__content-list-item admin-box__content-item--messages">
                       <Link to="/admin/contacts">
-                        <FiMail size={25} /> Messages
+                        <FiMail aria-label="Letter/Mail Icon" size={25} /> Messages
                       </Link>
                     </li>
                     <li className="admin-box__content-list-item admin-box__content-item--establishments">
                       <Link to="/admin/establishments">
-                        <FiHome size={25} /> Establishments
+                        <FiHome aria-label="House Icon" size={25} /> Establishments
                       </Link>
                     </li>
                     <li className="admin-box__content-list-item admin-box__content-item--establishments">
                       <Link to="/admin/establishments/add">
-                        <FiPlusCircle size={25} /> Add Establishment
+                        <FiPlusCircle aria-label="Plus Icon" size={25} /> Add Establishment
                       </Link>
                     </li>
                   </ul>
