@@ -9,7 +9,7 @@ function AccomodationItem({ id, name, image, price, description, maxGuests }) {
         <div className="accomodation-card">
           <h4 className="accomodation-card__header">{name}</h4>
 
-          <Image fluid className="accomodation-card__image" src={image}></Image>
+          <Image fluid className="accomodation-card__image" src={image} alt="image of the establishment"></Image>
           <p className="accomodation-card__description">{description}</p>
           <div className="accomodation-card__detail accomodation-card__detail--orange">
             Max Guests: {maxGuests}{" "}

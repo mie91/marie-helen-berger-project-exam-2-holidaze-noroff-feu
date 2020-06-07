@@ -96,7 +96,7 @@ function AccomodationInquiry() {
     <div className="main-container main-container--dark-pink">
       <Container>
         <div className="basic-btn">
-          <Link to={"/accomodations"}>back</Link>
+          <Link  to={"/accomodations/" + id}>back</Link>
         </div>
         <div className="form-box">
           <Row className="justify-content-md-center">
@@ -107,6 +107,7 @@ function AccomodationInquiry() {
                   fluid
                   src={detail.image}
                   rounded
+                  alt="image of the establishment"
                 ></Image>
               </div>
               <h1 className="form-box__header">Send Enquiry</h1>

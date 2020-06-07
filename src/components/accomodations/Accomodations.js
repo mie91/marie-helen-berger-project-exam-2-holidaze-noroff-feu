@@ -31,6 +31,7 @@ function Accomodations() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleSearch(inputValue) {

@@ -31,7 +31,7 @@ function DeleteEstablishment(props) {
 
     return (
         <>
-        <button className = "__delete-btn __delete-btn--establishment"
+        <button type="button" className = "__delete-btn __delete-btn--establishment"
         onClick = {
             checkDelete
         }>
