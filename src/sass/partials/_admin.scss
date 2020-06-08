@@ -10,7 +10,7 @@
 
 .admin-box {
   color: $white;
-  padding: 3vw;
+  padding: 50px;
   margin-top: 1vw;
   background: $dark;
   box-shadow: (7px 7px 50px 0px rgba(black, 0.95));
@@ -70,6 +70,9 @@
       background: $purple;
     }
   }
+
+  
+
 
   /***************
  * Admin - Message/Enquiry list cards*
@@ -163,9 +166,11 @@
     }
   }
 
+
   &__basic-btn {
     @include basic-button-dark;
     border: none;
+    text-align: center;
   }
 
   .__delete-btn {

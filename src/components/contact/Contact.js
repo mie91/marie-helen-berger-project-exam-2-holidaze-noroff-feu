@@ -90,7 +90,7 @@ function Contact () {
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center">
-                            <Col lg={8} md={6} sm={12}>
+                            <Col lg={8} md={12} sm={12}>
                                 <Form.Group>
                                     <Form.Label>Message</Form.Label>
                                     <Form.Control className="form-box__field" as="textarea" rows="5" name="message"

@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { Container, Row, Col, Image, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import ErrorMessage from "../../layout/other/ErrorMessage";
@@ -44,14 +43,11 @@ function Login() {
     <>
       <div className="main-container main-container--dark-purple main-container main-container--admin">
         <Container>
-          <div className="basic-btn basic-btn--dark">
-            <Link to="/admin/establishments">back </Link>{" "}
-          </div>{" "}
           <div className="admin-box admin-box--establishment-edit">
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid alt="The Holidaze Logo"/>
+                  <Image src={Logo} fluid alt="The Holidaze Logo" />
                 </div>
               </Col>
             </Row>
@@ -77,7 +73,9 @@ function Login() {
                             ref={register}
                           />
                           {errors.username && (
-                            <ErrorMessage>{errors.username.message}</ErrorMessage>
+                            <ErrorMessage>
+                              {errors.username.message}
+                            </ErrorMessage>
                           )}
                         </Form.Group>
                       </Col>
@@ -95,28 +93,30 @@ function Login() {
                             ref={register}
                           />
                           {errors.password && (
-                            <ErrorMessage>{errors.password.message}</ErrorMessage>
+                            <ErrorMessage>
+                              {errors.password.message}
+                            </ErrorMessage>
                           )}
                         </Form.Group>
                       </Col>
                     </Row>
 
                     <Row className="justify-content-md-center">
-                      <Col lg={5} md={6} sm={12}>
+                      <Col lg={6} md={6} sm={12}>
                         {validated && (
                           <div className="admin-box__validation">
-                            <h4>
-                              Logged in successfully!
-                            </h4>
+                            <h4>Logged in successfully!</h4>
                           </div>
                         )}
                       </Col>
                     </Row>
                     <Row className="justify-content-md-center">
-                      <Col lg={2} md={12} sm={12}>
-                        <button className="admin-box__basic-btn" type="submit">
+                      <Col lg={3} md={6} sm={12}>
+                        <div className="form-box__btn-container">
+                        <Button className="admin-box__basic-btn" type="submit">
                           Login
-                        </button>
+                        </Button>
+                        </div>
                       </Col>
                     </Row>
                   </Form>
