@@ -105,19 +105,31 @@
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 770px) {}
 
-@media screen and (max-width: 769px) {
+@media (max-width: 992px) {
     .header-image {
-    
      &__text-box {
-         margin-top: 20vw;
+         margin-top: 25vh;
+         width: 80%;
      }
-    
-    &__btn {
-        
-        font-size: 1em;
-        }
 
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) { 
+     .header-image {
+     &__text-box {
+         margin-top: 35vh;
+         
+     }
+
+     &__btn {
+        font-size: 1em;
+
+     }
     }
 }
