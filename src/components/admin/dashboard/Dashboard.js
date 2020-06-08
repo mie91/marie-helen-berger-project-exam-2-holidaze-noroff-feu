@@ -13,7 +13,7 @@ function Dashboard() {
         <Container>
           <div className="admin-box admin-box--dashboard">
             <Row className="justify-content-md-center">
-              <Col lg={3} md={10} sm={12}>
+              <Col lg={12} md={10} sm={12}>
                 <div className="admin-box__image">
                   <Image src={Logo} fluid alt="Holidaze Logo"/>
                 </div>
@@ -21,7 +21,7 @@ function Dashboard() {
             </Row>
             <Row className="justify-content-md-center">
               <Col lg={6} md={10} sm={12}>
-                <h1 className="admin-box__header">Admin Dashboard</h1>
+                <h1 className="admin-box__header">Dashboard</h1>
                 <h4 className="admin-box__sub-header">
                   What do you want to do?
                 </h4>

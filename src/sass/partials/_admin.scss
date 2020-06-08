@@ -20,10 +20,7 @@
   &__header {
     @include header-style-1;
     color: $pink;
-
-    &--breakable {
-      word-break: break-all;
-    }
+    font-size: auto;
   }
 
   &__sub-header {
@@ -39,6 +36,7 @@
 
   &__image {
     max-width: 300px;
+    margin: auto;
   }
 
   &__content-list {
@@ -52,10 +50,10 @@
   &__content-list-item {
     @include header-style-1;
     box-shadow: (7px 7px 30px 0px rgba(black, 1));
-    font-size: 1.2em;
+    font-size: 1.3em;
     background-color: $dark;
     margin: 30px 0px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     text-align: center;
     transition: $basic-transition;
@@ -70,9 +68,6 @@
       background: $purple;
     }
   }
-
-  
-
 
   /***************
  * Admin - Message/Enquiry list cards*
@@ -166,7 +161,6 @@
     }
   }
 
-
   &__basic-btn {
     @include basic-button-dark;
     border: none;
@@ -256,6 +250,43 @@
       &:focus {
         background-color: $dark;
       }
+    }
+  }
+}
+
+/***************
+ * Media Quiries*
+ ***************/
+@media screen and (min-width: 577px) {
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 577px) {
+  .admin-box {
+    &__header {
+      font-size: 1.3em;
+      
+    }
+
+    &__sub-header {
+      font-size: 1em;
+    }
+
+    &__content-list-item {
+      font-size: 1em;
+    }
+
+    &__card {
+      margin: 40px 0px;
+    }
+
+    &__card-header {
+      font-size: 1em;
+      text-align: center;
+      margin-top: 20px;
+      
     }
   }
 }
