@@ -23,7 +23,6 @@ function DeleteMessage(props) {
   }
 
   async function DeleteMessage() {
-    const id = "id-of-contact-to-delete";
     const url = BASE_URL + "contacts/" + props.id;
     const options = { headers, method: DELETE };
     await fetch(url, options);

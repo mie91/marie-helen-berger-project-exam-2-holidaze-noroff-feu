@@ -11,13 +11,13 @@ function Footer() {
   return (
     <footer className="footer">
       <Container>
-        <Row>
-          <Col className="col-md-4">
+        <Row className="justify-content-md-center">
+          <Col lg={4} md={4} sm={12}>
             <div className="footer-newsletter">
               <Newsletter mainheader="Join our newsletter!" />
             </div>
           </Col>
-          <Col className="col-md-4">
+          <Col lg={4} md={4} sm={6}>
             <div className="footer-socialmedia">
               <h2 className="footer-socialmedia__header">Follow us on:</h2>
               <a target="blank" href="https://facebook.com">
@@ -43,12 +43,12 @@ function Footer() {
               </div>
             </div>
           </Col>
-          <Col className="col-md-4">
+          <Col lg={4} md={4} sm={6}>
             <div className="footer-contact">
               <h2 className="footer-contact__header">Find us here:</h2>
               <ul className="footer-contact__list">
                 <li className="footer-contact__list-item">HOLIDAZE A/S</li>
-                <li className="footer-contact__item">Torgalmenningen 1</li>
+                <li className="footer-contact__item">Torgalmenningen 123</li>
                 <li className="footer-contact__list-item">5020 Bergen</li>
                 <br></br>
                 <li className="footer-contact__item">holidaze@mail.com</li>
@@ -57,8 +57,8 @@ function Footer() {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col className="col-sm-12">
+        <Row className="justify-content-md-center">
+          <Col lg={12} md={12} sm={12}>
             <div className="footer-bottom">
               <Image
                 className="footer-bottom__logo"
