@@ -31,7 +31,7 @@ function Accomodations() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleSearch(inputValue) {
@@ -57,31 +57,22 @@ function Accomodations() {
     );
   }
 
-  if (filteredResults.length === 0) {
-    return (
-      <>
-        <div className="main-container main-container--dark-pink">
-          <Container>
-            <Row>
-              <Col className="col-sm-12">
-                <div className="text-content text-content--light">
-                  <SubHeader title="Whoops!" />
-                </div>
-                <Search doSearch={handleSearch}></Search>
-                <div className="search__no-results">
-                  Your search gave no results
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      </>
-    );
+  function noResults() {
+    if (filteredResults.length === 0) {
+      return (
+        <>
+          <div className="search__no-results">Your search gave no results</div>
+        </>
+      );
+    }
   }
 
   return (
     <>
-      <div className="header-image header-image--accomodations" aria-label="image of Bergen in the night">
+      <div
+        className="header-image header-image--accomodations"
+        aria-label="image of Bergen in the night"
+      >
         <div className="header-image__text-box header-image__text-box--dark">
           <MainHeader title="Hotel? B&B? Apartment?" />
 
@@ -113,9 +104,17 @@ function Accomodations() {
           </div>
 
           <Search doSearch={handleSearch} />
+          {noResults()}
           <Row>
             {filteredResults.map(function (establishments) {
-              const { id, name, image, price, description, maxGuests } = establishments;
+              const {
+                id,
+                name,
+                image,
+                price,
+                description,
+                maxGuests,
+              } = establishments;
               return (
                 <AccomodationItem
                   key={establishments.id}

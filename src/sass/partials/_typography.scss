@@ -1,33 +1,33 @@
 /***************
  * Typography*
  ***************/
-//Main Header//
 
-.main-header {
-  font-family: $headerFont;
-  text-transform: uppercase;
-  font-size: 2.3em;
-  letter-spacing: 3px;
-}
 
-.sub-header {
-  font-family: $headerFont;
-  font-size: 1.8em;
-}
+ //Main Header//
 
-/***************
- * Media Quiries*
- ***************/
-@media screen and (min-width: 770px) {
-}
+ .mainHeader {
+     font-family: $headerFont;
+     text-transform: uppercase;
+     font-size: 2.3em;
+     letter-spacing: 3px;
+ }
 
-@media screen and (max-width: 769px) {
-  .mainHeader {
-    font-size: 1.7em;
-  }
 
   .subHeader {
-    font-family: $headerFont;
-    font-size: 1.2em;
+      font-family: $headerFont;
+      font-size: 1.8em;
   }
-}
+
+
+ /***************
+ * Media Quiries*
+ ***************/
+ @media screen and (min-width: 770px) {
+ 
+ }
+
+ @media screen and (max-width: 769px) {
+     .mainHeader {
+         font-size: 1.7em;
+     }
+ }
