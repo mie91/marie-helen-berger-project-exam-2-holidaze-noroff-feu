@@ -172,11 +172,13 @@
     border: none;
     &--enquiry {
       margin-top: 2vw;
-      &:hover {
-        background-color: $purple;
-        color: $pink;
-      }
+     
     }
+
+     &:hover {
+        background-color: $orange;
+        color: $dark;
+      }
 
     &--establishment {
       margin-top: 2vw;

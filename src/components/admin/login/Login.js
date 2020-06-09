@@ -90,6 +90,7 @@ function Login() {
                             className="admin-box__form-input"
                             name="password"
                             placeholder="Enter password"
+                            type="password"
                             ref={register}
                           />
                           {errors.password && (

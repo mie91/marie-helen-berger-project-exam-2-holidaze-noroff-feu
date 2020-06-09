@@ -1,12 +1,30 @@
 body {
-    background-color:$dark;
-    font-family: $textFont;
+  background-color: $dark;
+  font-family: $textFont;
+}
+a:focus {
+  outline: none;
+  border-bottom: $basic-border-pink;
 }
 
+.btn:focus {
+  outline: none;
+  border: none;
+  background-color: $purple;
+  outline: solid $pink 4px;
+}
+
+.btn:active,
+.btn:focus {
+  background-color: $dark !important;
+  color: $pink !important;
+}
 
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 770px) {}
+@media screen and (min-width: 770px) {
+}
 
-@media screen and (max-width: 769px) {}
+@media screen and (max-width: 769px) {
+}

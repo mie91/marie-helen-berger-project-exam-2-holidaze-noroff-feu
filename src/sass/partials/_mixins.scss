@@ -66,6 +66,28 @@
      }
  }
 
+ @mixin basic-button-purple {
+     color: $pink;
+     background-color: $purple;
+     padding: 10px;
+     letter-spacing: 5px;
+     font-family: $headerFont;
+     text-align: center;
+    @include basic-shadow;
+
+     &:active {
+         color: $pink;
+     }
+
+     &:hover {
+         background-color: $dark;
+         color: $orange;
+         text-decoration: none;
+         transition: $basic-transition;
+         filter: none;
+     }
+ }
+
  @mixin basic-button-dark {
      color: $pink;
      background-color: $dark;
