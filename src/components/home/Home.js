@@ -14,7 +14,6 @@ function Home() {
         title="Image of Bergen, and Bryggen in nighttime">
         <div className="header-image__text-box header-image__text-box--dark">
           <MainHeader title="Find your perfect place to stay in Bergen" />
-
           <div className="header-image__btn header-image__btn--dark">
             <Link to="/accomodations">Explore</Link>
           </div>

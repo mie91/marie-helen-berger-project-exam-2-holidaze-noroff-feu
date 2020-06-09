@@ -2,97 +2,99 @@
  *Footer Styling*
  ***************/
 footer {
-    background-color: $dark;
-    padding: 20px 0px;
-   
+  background-color: $dark;
+  padding: 20px 0px;
 }
 
-
 .footer-socialmedia {
-    text-align: center;
+  text-align: center;
+  margin: 10px;
+
+  &__header {
+    color: $orange;
+    @include header-style-1;
+    font-size: 1.2em;
+  }
+
+  &__icons {
     margin: 10px;
 
-    &__header {
-        color: $orange;
-        @include header-style-1;
-        font-size: 1.2em;
+    &:hover {
+      animation-name: beat;
+      animation-duration: 1000ms;
+      animation-iteration-count: infinite;
     }
+  }
 
-    &__icons {
-        margin: 10px;
+  &__link a {
+    color: $pink;
+    text-decoration: underline;
+
+    &:hover {
+      color: $orange;
     }
-
-    &__link a {
-        color: $pink;
-        text-decoration: underline;
-
-        &:hover {
-            color: $orange;
-        }
-    }
+  }
 }
 
 .footer-contact {
-    text-align: right;
-    margin: 10px;
+  text-align: right;
+  margin: 10px;
 
-    &__header {
-        color: $pink;
-        @include header-style-1;
-        font-size: 1.2em;
-    }
+  &__header {
+    color: $pink;
+    @include header-style-1;
+    font-size: 1.2em;
+  }
 
-    &__list {
-        list-style: none;
-        color: $orange;
-
-    }
+  &__list {
+    list-style: none;
+    color: $orange;
+  }
 }
 
 .footer-bottom {
-    text-align: center;
-    color: $pink;
-    margin-top: 10px;
+  text-align: center;
+  color: $pink;
+  margin-top: 10px;
 
-
-    &__logo {
-        max-width: 200px;
-        margin-bottom: 1vw;
-    }
+  &__logo {
+    max-width: 200px;
+    margin-bottom: 1vw;
+  }
 }
 
 /***************
  * Media Quiries*
  ***************/
-@media screen and (min-width: 577px) {}
+@media screen and (min-width: 577px) {
+}
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+}
 
 @media screen and (max-width: 577px) {
-
-    .footer-socialmedia {
+  .footer-socialmedia {
     margin: 20px 0px;
 
     &__header {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
-}
-    
-    .footer-contact {
+  }
+
+  .footer-contact {
     text-align: center;
     margin: 20px 0px;
 
     &__header {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
 
     &__list {
-        padding: 0px;
+      padding: 0px;
     }
-}
+  }
 
-.footer-bottom {
+  .footer-bottom {
     margin: 20px 0px;
-}
-
+  }
 }
