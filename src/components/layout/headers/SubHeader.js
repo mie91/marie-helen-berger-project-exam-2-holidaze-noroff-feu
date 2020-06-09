@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function SubHeader ({title}) {
     return (
-        <h2 className="subHeader">{title}</h2>
+        <h2 className="sub-header">{title}</h2>
     );
 }
 

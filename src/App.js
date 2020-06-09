@@ -16,7 +16,7 @@ import Navigation from "./components/layout/navigation/Navigation";
 import Footer from "./components/layout/navigation/Footer";
 
 import "./sass/style.scss";
-import InquiriesList from "./components/admin/inquiries/InquiriesList";
+import EnquiriesList from "./components/admin/inquiries/EnquiriesList";
 import Messages from "./components/admin/contactMessages/Messages";
 import MessageDetail from "./components/admin/contactMessages/MessageDetail";
 import EnquiryDetail from "./components/admin/inquiries/EnquiryDetail";
@@ -40,7 +40,7 @@ function App() {
             <ProtectedRoute path="/admin/establishments" exact component={Establishments} />
             <ProtectedRoute path="/admin/establishments/add" exact component={AddEstablishment} />
             <ProtectedRoute path="/admin/establishments/edit/:id" exact component={EditEstablishment} />
-            <ProtectedRoute path="/admin/enquiries" exact component={InquiriesList} />
+            <ProtectedRoute path="/admin/enquiries" exact component={EnquiriesList} />
             <ProtectedRoute path="/admin/enquiries/:id" exact component={EnquiryDetail} />
             <ProtectedRoute path="/admin/contacts" exact component={Messages} />
             <ProtectedRoute path="/admin/contacts/:id" exact component={MessageDetail} />

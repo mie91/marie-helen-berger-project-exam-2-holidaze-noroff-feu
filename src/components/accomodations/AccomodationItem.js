@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Image, Col } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 function AccomodationItem({ id, name, image, price, description, maxGuests }) {
   return (
@@ -9,7 +10,12 @@ function AccomodationItem({ id, name, image, price, description, maxGuests }) {
         <div className="accomodation-card">
           <h4 className="accomodation-card__header">{name}</h4>
 
-          <Image fluid className="accomodation-card__image" src={image} alt="image of the establishment"></Image>
+          <Image
+            fluid
+            className="accomodation-card__image"
+            src={image}
+            alt="image of the establishment"
+          />
           <p className="accomodation-card__description">{description}</p>
           <div className="accomodation-card__detail accomodation-card__detail--orange">
             Max Guests: {maxGuests}{" "}
@@ -20,5 +26,14 @@ function AccomodationItem({ id, name, image, price, description, maxGuests }) {
     </Col>
   );
 }
+
+AccomodationItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  maxGuests: PropTypes.number.isRequired,
+};
 
 export default AccomodationItem;
