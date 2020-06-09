@@ -16,7 +16,6 @@ $white: rgba(255, 255, 255, 1);
 #FF9455; orange
 #FFFFFF; white
 }
-
 */
 
  /***************
@@ -24,13 +23,13 @@ $white: rgba(255, 255, 255, 1);
  ***************/
 $dark-pink-gradient: linear-gradient(180deg, rgba(11, 0, 29, 1) 40%, rgba(247, 41, 85, 0.6) 100%);
 
+$dark-pink-dark-gradient: linear-gradient(180deg, rgba(11,0,29,1) 0%, rgba(247,41,85,1) 35%, rgba(11,0,29,1) 100%);
 
  /***************
  * Typography *
  ***************/
 $headerFont: 'Quicksand', sans-serif;
 $textFont: 'Montserrat',sans-serif;
-
 
  /***************
  * Borders *
@@ -44,10 +43,6 @@ $basic-border-pink: solid 2px $pink;
 $basic-border-orange: solid 2px $orange;
 
 $basic-border-white: solid 2px $white;
-
-
-
-
 
 $test: solid 5px $pink;
 

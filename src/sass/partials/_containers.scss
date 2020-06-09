@@ -9,8 +9,14 @@
 
     &--dark-pink {
         background-color: $dark;
-        background: linear-gradient(180deg, rgba(11, 0, 29, 1) 30%, rgba(247, 41, 85, 0.4) 100%);
+        background: linear-gradient(180deg, rgba(11,0,29,1) 0%, rgba(247,41,85, 0.3) 50%, rgba(11,0,29,1) 100%);
     }
+
+    &--dark-pink-2 {
+        background-color: $dark;
+        background: linear-gradient(180deg, rgba($dark, 1) 10%, rgba($pink, 0.4) 100%);
+    }
+
 
     &--dark-purple{
         background-color: $dark;

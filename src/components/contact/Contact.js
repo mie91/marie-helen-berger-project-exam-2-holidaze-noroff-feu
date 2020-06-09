@@ -47,7 +47,7 @@ function Contact() {
   }
 
   return (
-    <div className="main-container main-container--dark-pink main-container--enquiry-form">
+    <div className="main-container main-container--dark-pink-2 main-container--enquiry-form">
       <Container>
         <div className="basic-btn basic-btn--dark">
           <Link to={"/"}>back</Link>

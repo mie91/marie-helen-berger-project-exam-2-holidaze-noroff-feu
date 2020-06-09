@@ -56,7 +56,7 @@
 
   .second-brand {
     max-width: 250px;
-    text-align: center;
+    
   }
 
   .container__nav-links-admin {
@@ -67,6 +67,7 @@
   #nav-link {
     margin: 5px 0px;
     font-size: 1.5em;
+    
 
     &__admin {
       text-align: left;
@@ -85,15 +86,15 @@
     &:focus {
       outline: none;
       border-radius: 0px;
+      border-right: dotted $pink 10px;
+      
       transition: $basic-transition;
-      animation-name: beat;
-      animation-duration: 800ms;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
     }
   }
 
   .navbar-toggler-icon {
     padding: 20px;
+    float: right;
+    
   }
 }

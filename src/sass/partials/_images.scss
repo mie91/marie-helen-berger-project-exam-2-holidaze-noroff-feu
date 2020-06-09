@@ -6,6 +6,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     height: 500px;
     max-width: 100%;
 
@@ -29,6 +30,7 @@
         backdrop-filter: blur(4px);
         padding: 20px;
         border-radius: 20px;
+       
         
 
         &--dark {
@@ -105,31 +107,3 @@
 /***************
  * Media Quiries*
  ***************/
-
-@media (max-width: 992px) {
-    .header-image {
-     &__text-box {
-         margin-top: 25vh;
-         width: 80%;
-     }
-
-    }
-}
-
-@media (max-width: 768px) {
-
-}
-
-@media (max-width: 576px) { 
-     .header-image {
-     &__text-box {
-         margin-top: 35vh;
-         
-     }
-
-     &__btn {
-        font-size: 1em;
-
-     }
-    }
-}
