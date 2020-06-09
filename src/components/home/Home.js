@@ -23,7 +23,7 @@ function Home() {
       <div className="main-container main-container--dark-pink">
         <Container>
           <Row>
-            <Col className="col-sm-6">
+            <Col lg={6} md={12} sm={12}>
               <div className="text-content text-content--light">
                 <MainHeader title="Experience Bergen" />
                 <SubHeader title="Gateway to the Fjords" />
@@ -37,7 +37,7 @@ function Home() {
                 </p>
               </div>
             </Col>
-            <Col className="col-sm-6">
+            <Col lg={6} md={12} sm={12}>
               <div className="text-content text-content--light">
                 <MainHeader title="Let us help you" />
                 <SubHeader title="Finding the perfect place" />

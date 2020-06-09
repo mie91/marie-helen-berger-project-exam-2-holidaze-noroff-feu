@@ -2,73 +2,98 @@
  *Navigation Bar Styling*
  ***************/
 
- //General Navbar Syles//
+//General Navbar Syles//
 .navbar {
-    background-color: $white;
-    z-index: 999;
+  background-color: $white;
+  z-index: 999;
 }
 
 //The Admin part of navbar//
 .container__nav-links-admin {
-    text-align: right;
+  text-align: right;
 }
 //Navbar - Links//
 #nav-link {
-    @include basic-link;
-    text-transform: uppercase;
-    font-size: 1.2em;
-    margin: 5px 15px;
+  @include basic-link;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin: 5px 15px;
 
-    &:hover {
-        transition: $basic-transition;
-    }
+  &:hover {
+    transition: $basic-transition;
+  }
 }
 
- #nav-link__admin {
-     @include basic-link;
-     text-transform: uppercase;
-     font-size: 0.8em;
+#nav-link__admin {
+  @include basic-link;
+  text-transform: uppercase;
+  font-size: 0.8em;
 
-     &:hover {
-         transition: $basic-transition;
-     }
- }
-    
+  &:hover {
+    transition: $basic-transition;
+  }
+}
 
 //Navbar - Brand//
 
-.navbar-brand img{
-    max-width: 200px;
+.navbar-brand img {
+  max-width: 200px;
 }
-
 
 /***************
  * Media Quiries*
  ***************/
 @media screen and (min-width: 992px) {
-    .second-brand {
-        display: none;
-    }
-
+  .second-brand {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 991px) {
-    .navbar-brand {
-        display: none;
-    }
+  .navbar-brand {
+    display: none;
+  }
 
-    .second-brand {
-        max-width: 250px;
-    }
+  .second-brand {
+    max-width: 250px;
+    text-align: center;
+  }
 
-    .container__navLinksAdmin {
-        float: left;
-        text-align: left;
-        margin-top: 4vw;
-    }
+  .container__nav-links-admin {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
 
-    #nav-link {
-        margin: 5px 0px;
-    }
+  #nav-link {
+    margin: 5px 0px;
+    font-size: 1.5em;
 
+    &__admin {
+      text-align: left;
+      font-size: 1.5em;
+      color: rgba($dark, 0.7);
+    }
+  }
+
+  .navbar-toggler {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    transition: $basic-transition;
+    border: none;
+
+    &:focus {
+      outline: none;
+      border-radius: 0px;
+      transition: $basic-transition;
+      animation-name: beat;
+      animation-duration: 800ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .navbar-toggler-icon {
+    padding: 20px;
+  }
 }
