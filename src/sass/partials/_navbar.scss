@@ -56,7 +56,6 @@
 
   .second-brand {
     max-width: 250px;
-    
   }
 
   .container__nav-links-admin {
@@ -67,7 +66,6 @@
   #nav-link {
     margin: 5px 0px;
     font-size: 1.5em;
-    
 
     &__admin {
       text-align: left;
@@ -88,13 +86,11 @@
       border-radius: 0px;
       border-right: dotted $pink 10px;
       transition: $basic-transition;
-    
     }
   }
 
   .navbar-toggler-icon {
     padding: 20px;
     float: right;
-    
   }
 }

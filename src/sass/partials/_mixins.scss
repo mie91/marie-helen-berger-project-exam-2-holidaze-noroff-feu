@@ -1,209 +1,207 @@
 /***************
  * Mixins*
  ***************/
- /***************
+/***************
  * Buttons*
  ***************/
 
- @mixin basic-link {
-     color: $dark;
-     letter-spacing: 5px;
-     font-weight: 600;
-     font-family: $headerFont;
+@mixin basic-link {
+  color: $dark;
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-family: $headerFont;
 
-     &.active {
-         color: $pink;
-     }
+  &.active {
+    color: $pink;
+  }
 
-     &:hover {
-         color: $orange;
-         text-decoration: none;
-     }
- }
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+}
 
+@mixin basic-button-pink {
+  color: $dark;
+  background-color: $pink;
+  padding: 10px;
+  letter-spacing: 5px;
+  font-family: $headerFont;
+  text-align: center;
+  @include basic-shadow;
 
- @mixin basic-button-pink {
-     color: $dark;
-     background-color: $pink;
-     padding: 10px;
-     letter-spacing: 5px;
-     font-family: $headerFont;
-     text-align: center;
-    @include basic-shadow;
+  &:active {
+    color: $dark;
+  }
 
-     &:active {
-         color: $dark;
-     }
+  &:hover {
+    background-color: $dark;
+    color: $pink;
+    text-decoration: none;
+    transition: $basic-transition;
+    filter: none;
+  }
+}
 
-     &:hover {
-         background-color: $dark;
-         color: $pink;
-         text-decoration: none;
-         transition: $basic-transition;
-         filter: none;
-     }
- }
+@mixin basic-button-dark-2 {
+  color: $orange;
+  background-color: $dark;
+  padding: 10px;
+  letter-spacing: 5px;
+  font-family: $headerFont;
+  text-align: center;
+  @include basic-shadow;
 
-  @mixin basic-button-dark-2 {
-     color: $orange;
-     background-color: $dark;
-     padding: 10px;
-     letter-spacing: 5px;
-     font-family: $headerFont;
-     text-align: center;
-    @include basic-shadow;
+  &:active {
+    color: $dark;
+  }
 
-     &:active {
-         color: $dark;
-     }
+  &:hover {
+    background-color: $orange;
+    color: $dark;
+    text-decoration: none;
+    transition: $basic-transition;
+    filter: none;
+  }
+}
 
-     &:hover {
-         background-color: $orange;
-         color: $dark;
-         text-decoration: none;
-         transition: $basic-transition;
-         filter: none;
-     }
- }
+@mixin basic-button-purple {
+  color: $pink;
+  background-color: $purple;
+  padding: 10px;
+  letter-spacing: 5px;
+  font-family: $headerFont;
+  text-align: center;
+  @include basic-shadow;
 
- @mixin basic-button-purple {
-     color: $pink;
-     background-color: $purple;
-     padding: 10px;
-     letter-spacing: 5px;
-     font-family: $headerFont;
-     text-align: center;
-    @include basic-shadow;
+  &:active {
+    color: $pink;
+  }
 
-     &:active {
-         color: $pink;
-     }
+  &:hover {
+    background-color: $dark;
+    color: $orange;
+    text-decoration: none;
+    transition: $basic-transition;
+    filter: none;
+  }
+}
 
-     &:hover {
-         background-color: $dark;
-         color: $orange;
-         text-decoration: none;
-         transition: $basic-transition;
-         filter: none;
-     }
- }
+@mixin basic-button-dark {
+  color: $pink;
+  background-color: $dark;
+  padding: 10px;
+  letter-spacing: 5px;
+  font-family: $headerFont;
+  text-align: center;
+  @include basic-shadow;
 
- @mixin basic-button-dark {
-     color: $pink;
-     background-color: $dark;
-     padding: 10px;
-     letter-spacing: 5px;
-     font-family: $headerFont;
-     text-align: center;
-     @include basic-shadow;
+  &:active {
+    color: $pink;
+  }
 
-     &:active {
-         color: $pink;
-     }
+  &:hover {
+    background-color: $pink;
+    color: $dark;
+    text-decoration: none;
+    transition: $basic-transition;
+    filter: none;
+  }
+}
 
-     &:hover {
-         background-color: $pink;
-         color: $dark;
-         text-decoration: none;
-          transition: $basic-transition;
-          filter: none;
-     }
- }
+@mixin basic-button-orange {
+  color: $dark;
+  background-color: $orange;
+  padding: 10px;
+  letter-spacing: 5px;
+  font-family: $headerFont;
+  text-align: center;
+  @include basic-shadow;
 
-  @mixin basic-button-orange {
-     color: $dark;
-     background-color: $orange;
-     padding: 10px;
-     letter-spacing: 5px;
-     font-family: $headerFont;
-     text-align: center;
-     @include basic-shadow;
+  &:active {
+    color: $pink;
+  }
 
-     &:active {
-         color: $pink;
-     }
+  &:hover {
+    background-color: $purple;
+    color: $orange;
+    text-decoration: none;
+    transition: $basic-transition;
+    filter: none;
+  }
+}
 
-     &:hover {
-         background-color: $purple;
-         color: $orange;
-         text-decoration: none;
-          transition: $basic-transition;
-          filter: none;
-     }
- }
-
-  /***************
+/***************
  * Typography*
  ***************/
 
- //Header Styling// 
- @mixin header-style-1 {
-        font-family: $headerFont;
-        text-transform: uppercase;
-        letter-spacing: 3px;
- }
+//Header Styling//
+@mixin header-style-1 {
+  font-family: $headerFont;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
-  @mixin header-style-2 {
-      font-family: $textFont;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-  }
+@mixin header-style-2 {
+  font-family: $textFont;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
- //Box Shadow effect//
- @mixin basic-shadow {
-     filter: drop-shadow(7px 7px 7px #000000);
-     -webkit-filter: drop-shadow(7px 7px 7px #000000);
- }
+//Box Shadow effect//
+@mixin basic-shadow {
+  filter: drop-shadow(7px 7px 7px #000000);
+  -webkit-filter: drop-shadow(7px 7px 7px #000000);
+}
 
-  /***************
+/***************
  * Forms*
  ***************/
 
-  //Fix Chrome autofill input background
-  @mixin autofillFix {
-      &:-webkit-autofill {
-          -webkit-text-fill-color: $white;
-          transition: background-color 5000s ease-in-out 0s;
-      }
+//Fix Chrome autofill input background
+@mixin autofillFix {
+  &:-webkit-autofill {
+    -webkit-text-fill-color: $white;
+    transition: background-color 5000s ease-in-out 0s;
   }
+}
 
-  @mixin form-base {
-      background-color: transparent;
-      border: none;
-      border-radius: 0%;
-      border-bottom: $basic-border-pink;
-      border-left: $basic-border-pink;
-      color: $white;
-      padding: 3px;
-  }
+@mixin form-base {
+  background-color: transparent;
+  border: none;
+  border-radius: 0%;
+  border-bottom: $basic-border-pink;
+  border-left: $basic-border-pink;
+  color: $white;
+  padding: 3px;
+}
 
-  /***************
+/***************
  * Animations*
  ***************/
- //Animated size increased
- @keyframes bigger {
-     0% {
-         transform: scale(0.05);
-     }
+//Animated size increased
 
-     100% {
-         transform: scale(1.0);
-     }
- }
+@keyframes bigger {
+  0% {
+    transform: scale(0.05);
+  }
 
- //Animated Beat
- @keyframes beat {
-     0% {
-         transform: scale(1.0);
-     }
+  100% {
+    transform: scale(1);
+  }
+}
 
-     30% {
-         transform: scale(1.2);
-     }
+//Animated Beat
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
 
-     70% {
-         transform: scale(1.0);
-     }
- }
+  30% {
+    transform: scale(1.2);
+  }
 
-
+  70% {
+    transform: scale(1);
+  }
+}

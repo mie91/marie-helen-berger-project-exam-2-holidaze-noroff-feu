@@ -2,10 +2,6 @@ body {
   background-color: $dark;
   font-family: $textFont;
 }
-a:focus {
-  outline: none;
-  border-bottom: $basic-border-pink;
-}
 
 .btn:focus {
   outline: none;
