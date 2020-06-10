@@ -28,12 +28,12 @@ function AccomodationItem({ id, name, image, price, description, maxGuests }) {
 }
 
 AccomodationItem.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
-  maxGuests: PropTypes.number.isRequired,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  description: PropTypes.string,
+  maxGuests: PropTypes.number
 };
 
 export default AccomodationItem;

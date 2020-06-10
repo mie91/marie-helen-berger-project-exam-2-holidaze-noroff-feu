@@ -16,7 +16,7 @@ function Maps({ latitude, longitude }) {
 
 Maps.propTypes = {
   latitude: PropTypes.number.isRequired,
-  longitude: PropTypes.number.isRequired,
+  longitude: PropTypes.number.isRequired
 };
 
 export default Maps;

@@ -156,7 +156,6 @@ function AddEstablishment() {
                           <Form.Control
                             className="admin-box__form-input"
                             name="lat"
-                            d
                             placeholder="Enter coordinate (latitude)"
                             ref={register}
                           />
