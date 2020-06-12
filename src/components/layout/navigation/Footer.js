@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { GrInstagram, GrFacebook, GrTwitter } from "react-icons/gr"
+import { GrInstagram, GrFacebook, GrTwitter } from "react-icons/gr";
 import FooterLogo from "../../../assets/logo/logoLight_m.png";
 import Newsletter from "../other/Newsletter";
 
@@ -19,13 +19,28 @@ function Footer() {
             <div className="footer-socialmedia">
               <h2 className="footer-socialmedia__header">Follow us on:</h2>
               <a target="blank" href="https://facebook.com">
-                <GrFacebook size={48} color="white" className="footer-socialmedia__icons" aria-label="Facebook logo"/>
+                <GrFacebook
+                  size={48}
+                  color="white"
+                  className="footer-socialmedia__icons"
+                  aria-label="Facebook logo"
+                />
               </a>
               <a target="blank" href="https://twitter.com">
-                <GrTwitter size={48} color="white" className="footer-socialmedia__icons" aria-label="Twitter logo"/>
+                <GrTwitter
+                  size={48}
+                  color="white"
+                  className="footer-socialmedia__icons"
+                  aria-label="Twitter logo"
+                />
               </a>
               <a target="blank" href="https://instagram.com">
-                <GrInstagram size={48} color="white" className="footer-socialmedia__icons" aria-label="Instagram logo"/>
+                <GrInstagram
+                  size={48}
+                  color="white"
+                  className="footer-socialmedia__icons"
+                  aria-label="Instagram logo"
+                />
               </a>
               <div className="footer-socialmedia__link">
                 <Link to="/login">Admin Login</Link>

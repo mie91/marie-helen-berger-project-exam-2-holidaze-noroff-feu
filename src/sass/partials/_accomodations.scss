@@ -29,7 +29,6 @@
   &__header {
     @include header-style-1;
     font-size: 1em;
-    
   }
 
   &__image {
@@ -40,7 +39,6 @@
     text-align: left;
     margin-top: 5px;
     height: 150px;
-    
   }
 
   &__detail {
@@ -54,7 +52,7 @@
     @include header-style-1;
 
     &--orange {
-        background-color: $orange;
+      background-color: $orange;
     }
   }
 
@@ -221,12 +219,10 @@
   .accomodation-card {
     height: auto;
 
-      &__description {
-    text-align: left;
-    margin-top: 5px;
-    height: auto;
-    
+    &__description {
+      text-align: left;
+      margin-top: 5px;
+      height: auto;
+    }
   }
-  }
-  
 }

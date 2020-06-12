@@ -3,116 +3,102 @@
  ***************/
 
 .header-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 500px;
-    max-width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 500px;
+  max-width: 100%;
 
+  &--home {
+    background-image: url("../../assets/images/gradient/momentista-reR1qazgsBM-unsplash_2.jpg");
+  }
 
-    &--home {
-        background-image: url("../../assets/images/gradient/momentista-reR1qazgsBM-unsplash_2.jpg");
+  &--accomodations {
+    background-image: url("../../assets/images/gradient/fredrik-bedsvaag-JsjUVS_V2R8-unsplash.jpg");
+  }
+
+  &__text-box {
+    background-color: rgba($color: $white, $alpha: 0.5);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    border-radius: 20px;
+
+    &--dark {
+      color: $dark;
     }
 
-    &--accomodations {
-        background-image: url("../../assets/images/gradient/fredrik-bedsvaag-JsjUVS_V2R8-unsplash.jpg");
+    .mainHeader {
+      font-family: $textFont;
+    }
+  }
+
+  &__btn {
+    font-family: $headerFont;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 20px;
+    text-align: center;
+
+    &--dark a {
+      background-color: $purple;
+      color: $white;
+      padding: 15px;
+      @include basic-shadow;
+
+      &:hover {
+        text-decoration: none;
+        filter: none;
+        transition: $basic-transition;
+        background-color: $pink;
+      }
     }
 
+    &--pink a {
+      background-color: $pink;
+      color: $dark;
+      padding: 15px;
+      @include basic-shadow;
 
-    &__text-box {
-        background-color: rgba($color: $white, $alpha: 0.5);
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        backdrop-filter: blur(4px);
-        padding: 20px;
-        border-radius: 20px;
-        
-       
-        
-
-        &--dark {
-            color:$dark;
-        }
-
-        .mainHeader {
-            font-family: $textFont;
-        }
-        
+      &:hover {
+        text-decoration: none;
+        filter: none;
+        transition: $basic-transition;
+        background-color: $dark;
+        color: $pink;
+      }
     }
-
-    &__btn {
-        font-family: $headerFont;
-        font-size: 1.5em;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin: 20px;
-        text-align: center;
-        
-
-        &--dark a{
-            background-color: $purple;
-            color: $white;
-            padding: 15px;
-            @include basic-shadow;
-            
-            
-            &:hover {
-                text-decoration: none;
-                filter: none;
-                transition: $basic-transition;
-                background-color: $pink;
-            }
-        }
-
-        &--pink a {
-            background-color: $pink;
-            color: $dark;
-            padding: 15px;
-            @include basic-shadow;
-
-            &:hover {
-                text-decoration: none;
-                filter: none;
-                transition: $basic-transition;
-                background-color: $dark;
-                color: $pink;
-            }
-        }
-    }
-
+  }
 }
-
 
 /***************
  *Loading Spinner*
  ***************/
 
- .spinner-container {
-     text-align: center;
-     margin-top: 5%;
- }
-.spinner {
-    text-align: center;
-    color: $pink;
-    width: 6rem;
-    height: 6rem;
+.spinner-container {
+  text-align: center;
+  margin-top: 5%;
 }
-
-
+.spinner {
+  text-align: center;
+  color: $pink;
+  width: 6rem;
+  height: 6rem;
+}
 
 /***************
  * Media Quiries*
  ***************/
 @media screen and (max-width: 769px) {
-
-    .header-image {
-        &__btn {
-            font-size: 1em;
-        }
-
+  .header-image {
+    &__btn {
+      font-size: 1em;
     }
+  }
 }

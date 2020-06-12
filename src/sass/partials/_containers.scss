@@ -3,47 +3,59 @@
  ***************/
 
 .main-container {
+  background-color: $dark;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+
+  &--dark-pink {
     background-color: $dark;
-    padding-top: 3vw;
-    padding-bottom: 3vw;
+    background: linear-gradient(
+      180deg,
+      rgba(11, 0, 29, 1) 0%,
+      rgba(247, 41, 85, 0.3) 50%,
+      rgba(11, 0, 29, 1) 100%
+    );
+  }
 
-    &--dark-pink {
-        background-color: $dark;
-        background: linear-gradient(180deg, rgba(11,0,29,1) 0%, rgba(247,41,85, 0.3) 50%, rgba(11,0,29,1) 100%);
-    }
+  &--dark-pink-2 {
+    background-color: $dark;
+    background: linear-gradient(
+      180deg,
+      rgba($dark, 1) 10%,
+      rgba($pink, 0.4) 100%
+    );
+  }
 
-    &--dark-pink-2 {
-        background-color: $dark;
-        background: linear-gradient(180deg, rgba($dark, 1) 10%, rgba($pink, 0.4) 100%);
-    }
-
-
-    &--dark-purple{
-        background-color: $dark;
-        background: linear-gradient(180deg, rgba($purple, 1) 0%, rgba($dark, 0.4) 60%);
-    }
+  &--dark-purple {
+    background-color: $dark;
+    background: linear-gradient(
+      180deg,
+      rgba($purple, 1) 0%,
+      rgba($dark, 0.4) 60%
+    );
+  }
 }
 
 /***************
  * Basic text content - used on "Home" and "Accomodation" page*
  ***************/
 .text-content {
-    padding: 10px;
-    margin-top: 20px;
+  padding: 10px;
+  margin-top: 20px;
 
-    &--light {
-        color: $white;
+  &--light {
+    color: $white;
 
-        .mainHeader{
-            color: $pink;
-        }
-
-        .subHeader {
-            color: $orange;
-        }
+    .mainHeader {
+      color: $pink;
     }
 
-    &--center {
-        text-align: center;
+    .subHeader {
+      color: $orange;
     }
+  }
+
+  &--center {
+    text-align: center;
+  }
 }

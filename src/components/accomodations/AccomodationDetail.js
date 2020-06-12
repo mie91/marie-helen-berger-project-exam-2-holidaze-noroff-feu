@@ -22,7 +22,7 @@ function AccomodationDetail() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
@@ -64,7 +64,6 @@ function AccomodationDetail() {
               <Row className="justify-content-md-center">
                 <Col lg={6} md={6} sm={6} xs={12}>
                   <div className="accomodation-detail__details accomodation-detail__details--email">
-                    
                     <p>Email: {detail.email}</p>
                   </div>
                   <div className="accomodation-detail__details accomodation-detail__details--guests">

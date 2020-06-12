@@ -19,8 +19,6 @@ const schema = yup.object().shape({
     .min(5, "The password is to short"),
 });
 
-
-
 function Login() {
   const { register, handleSubmit, errors } = useForm({
     validationSchema: schema,
@@ -114,9 +112,12 @@ function Login() {
                     <Row className="justify-content-md-center">
                       <Col lg={3} md={6} sm={12}>
                         <div className="form-box__btn-container">
-                        <Button className="admin-box__basic-btn" type="submit">
-                          Login
-                        </Button>
+                          <Button
+                            className="admin-box__basic-btn"
+                            type="submit"
+                          >
+                            Login
+                          </Button>
                         </div>
                       </Col>
                     </Row>

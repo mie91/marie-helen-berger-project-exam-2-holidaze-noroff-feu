@@ -35,7 +35,7 @@ function Navigation() {
             {user ? (
               <>
                 <NavLink id="nav-link__admin" to="/admin">
-                  Manage <AiOutlineTool aria-label="Wrench/options icon" />
+                  Admin <AiOutlineTool aria-label="Wrench/options icon" />
                 </NavLink>
                 <LogOut />
               </>

@@ -25,7 +25,7 @@ function EnquiryDetail() {
       .then((response) => response.json())
       .then((json) => setEnquiries(json))
       .catch((error) => console.log(error));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -39,7 +39,7 @@ function EnquiryDetail() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid alt="The Holidaze logo"/>
+                  <Image src={Logo} fluid alt="The Holidaze logo" />
                 </div>
               </Col>
             </Row>

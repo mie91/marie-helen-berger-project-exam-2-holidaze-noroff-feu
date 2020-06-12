@@ -8,7 +8,6 @@ $pink: rgba(247, 41, 85, 1);
 $orange: rgba(255, 148, 85, 1);
 $white: rgba(255, 255, 255, 1);
 
-
 /* Color Theme Swatches in Hex 
 #0B001D; dark
 #2B0148; purple
@@ -18,20 +17,29 @@ $white: rgba(255, 255, 255, 1);
 }
 */
 
- /***************
+/***************
  * Gradients *
  ***************/
-$dark-pink-gradient: linear-gradient(180deg, rgba(11, 0, 29, 1) 40%, rgba(247, 41, 85, 0.6) 100%);
+$dark-pink-gradient: linear-gradient(
+  180deg,
+  rgba(11, 0, 29, 1) 40%,
+  rgba(247, 41, 85, 0.6) 100%
+);
 
-$dark-pink-dark-gradient: linear-gradient(180deg, rgba(11,0,29,1) 0%, rgba(247,41,85,1) 35%, rgba(11,0,29,1) 100%);
+$dark-pink-dark-gradient: linear-gradient(
+  180deg,
+  rgba(11, 0, 29, 1) 0%,
+  rgba(247, 41, 85, 1) 35%,
+  rgba(11, 0, 29, 1) 100%
+);
 
- /***************
+/***************
  * Typography *
  ***************/
-$headerFont: 'Quicksand', sans-serif;
-$textFont: 'Montserrat',sans-serif;
+$headerFont: "Quicksand", sans-serif;
+$textFont: "Montserrat", sans-serif;
 
- /***************
+/***************
  * Borders *
  ***************/
 $basic-border-dark: solid 2px $dark;
@@ -46,7 +54,7 @@ $basic-border-white: solid 2px $white;
 
 $test: solid 5px $pink;
 
- /***************
+/***************
  * Transitions *
  ***************/
- $basic-transition: 0.3s ease-in-out;
+$basic-transition: 0.3s ease-in-out;

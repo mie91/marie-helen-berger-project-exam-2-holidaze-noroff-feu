@@ -84,7 +84,7 @@
     &:focus {
       outline: none;
       border-radius: 0px;
-      border-right: dotted $pink 10px;
+      border-right: solid $dark 10px;
       transition: $basic-transition;
     }
   }

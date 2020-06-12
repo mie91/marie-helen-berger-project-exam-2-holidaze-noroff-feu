@@ -4,15 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useParams, useHistory } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Col,
-  Spinner,
-  Image,
-  Button,
-  Form,
-} from "react-bootstrap";
+import { Container, Row, Col, Spinner, Image, Button, Form } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ErrorMessage from "../../layout/other/ErrorMessage";
@@ -67,7 +59,7 @@ function AccomodationInquiry() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
@@ -95,8 +87,8 @@ function AccomodationInquiry() {
   return (
     <div className="main-container main-container--dark-pink">
       <Container>
-        <div className="basic-btn">
-          <Link  to={"/accomodations/" + id}>back</Link>
+        <div className="basic-btn basic-btn--dark">
+          <Link to={"/accomodations/" + id}>back</Link>
         </div>
         <div className="form-box">
           <Row className="justify-content-md-center">

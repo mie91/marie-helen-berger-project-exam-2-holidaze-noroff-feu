@@ -27,7 +27,7 @@ function MessageDetail() {
       .then((response) => response.json())
       .then((json) => setContacts(json))
       .catch((error) => console.log(error));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -41,7 +41,7 @@ function MessageDetail() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid alt="Holidaze Logo"/>
+                  <Image src={Logo} fluid alt="Holidaze Logo" />
                 </div>
               </Col>
             </Row>

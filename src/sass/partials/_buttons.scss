@@ -1,88 +1,65 @@
-
- /***************
+/***************
  * Buttons*
  ***************/
 //Basic Button//
 
 .basic-btn {
-    max-width: 250px;
-    margin: 20px 0px;
-    cursor: pointer;
-    
-        a {
-        @include basic-button-pink;
-        }
+  max-width: 250px;
+  margin: 20px 0px;
+  cursor: pointer;
 
-    &--dark {
-        a{
-            @include basic-button-dark;
-        }
-    }
+  a {
+    @include basic-button-pink;
+  }
 
-    &--center {
-        margin-left: auto;
-        margin-right: auto;
+  &--dark {
+    a {
+      @include basic-button-dark;
     }
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 //The "Back To Top" Button//
 .to-top {
-    display: block;
-    text-align: center;
-    padding-bottom: 20px;
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
 
+  &__button {
+    background-color: rgba($color: $white, $alpha: 0.5);
+    padding: 5px;
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
 
-    &__button {
-        background-color: rgba($color: $white, $alpha: 0.5);
-        padding: 5px;
-        border: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 99;
-
-
-
-        &:visited {
-            background-color: rgba($color: $white, $alpha: 0.5);
-        }
-
-        &:hover {
-            background-color: rgba($color: $white, $alpha: 0.9);
-            transition: $basic-transition;
-            animation-name: beat;
-            animation-duration: 800ms;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        &:focus {
-            outline: none;
-            background-color: rgba($color: $white, $alpha: 0.9);
-        }
-
+    &:visited {
+      background-color: rgba($color: $white, $alpha: 0.5);
     }
 
-    &__icon {
-        width: 40px;
-        height: 40px;
+    &:hover {
+      background-color: rgba($color: $white, $alpha: 0.9);
+      transition: $basic-transition;
+      animation-name: beat;
+      animation-duration: 800ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
 
+    &:focus {
+      outline: none;
+      background-color: rgba($color: $white, $alpha: 0.9);
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
 }
-
-/***************
- * Breadcrumbs*
- ***************/
-
-/* .breadcrumb {
-     background-color: transparent;
-     @include header-style-1;
-     padding: 2px;
-     
-    
-     a {
-          color: rgba($color: $white, $alpha: 1);
-     }
- }
-
- */

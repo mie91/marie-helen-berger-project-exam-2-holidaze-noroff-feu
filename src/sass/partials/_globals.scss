@@ -1,3 +1,7 @@
+/***************
+ * Global tags style*
+ ***************/
+
 body {
   background-color: $dark;
   font-family: $textFont;
@@ -7,7 +11,7 @@ body {
   outline: none;
   border: none;
   background-color: $purple;
-  outline: solid $pink 4px;
+  outline: solid $pink 4px; 
 }
 
 .btn:active,
@@ -16,11 +20,3 @@ body {
   color: $pink !important;
 }
 
-/***************
- * Media Quiries*
- ***************/
-@media screen and (min-width: 770px) {
-}
-
-@media screen and (max-width: 769px) {
-}

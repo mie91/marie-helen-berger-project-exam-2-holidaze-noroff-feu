@@ -2,13 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import Logo from "../../../assets/logo/logoLight_m.png";
-import {
-  Container,
-  Row,
-  Col,
-  Spinner,
-  Image
-} from "react-bootstrap";
+import { Container, Row, Col, Spinner, Image } from "react-bootstrap";
 import Moment from "react-moment";
 import BackToTop from "../../layout/other/BackToTop";
 import { BsPeopleCircle } from "react-icons/bs";
@@ -30,7 +24,7 @@ function EnquiriesList() {
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
@@ -52,7 +46,7 @@ function EnquiriesList() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid alt="The Holidaze logo"/>
+                  <Image src={Logo} fluid alt="The Holidaze logo" />
                 </div>
               </Col>
             </Row>
@@ -74,7 +68,7 @@ function EnquiriesList() {
                   {enquiries.map((enquiry) => {
                     return (
                       <Link
-                        key={enquiry.id} 
+                        key={enquiry.id}
                         className="admin-box__card-wrapper"
                         to={`/admin/enquiries/${enquiry.id}`}
                       >
@@ -83,7 +77,10 @@ function EnquiriesList() {
                           <Row className="justify-content-md-center">
                             <Col lg={2} md={3} sm={3} xs={3}>
                               <div className="admin-box__card-icon admin-box__card-icon--person">
-                                <BsPeopleCircle size={55} aria-label="Person icon"/>
+                                <BsPeopleCircle
+                                  size={55}
+                                  aria-label="Person icon"
+                                />
                               </div>
                             </Col>
                             <Col lg={10} md={9} sm={9} xs={9}>
