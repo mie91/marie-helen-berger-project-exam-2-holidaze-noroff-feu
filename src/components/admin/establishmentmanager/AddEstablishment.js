@@ -47,7 +47,7 @@ function AddEstablishment() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid alt="Image of the Holidaze Logo"/>
+                  <Image src={Logo} fluid alt="Image of the Holidaze Logo" />
                 </div>
               </Col>
             </Row>

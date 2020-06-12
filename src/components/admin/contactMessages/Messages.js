@@ -50,7 +50,7 @@ function Messages() {
             <Row className="justify-content-md-center">
               <Col lg={3} md={10} sm={12}>
                 <div className="admin-box__image">
-                  <Image src={Logo} fluid alt="Holidaze Logo"/>
+                  <Image src={Logo} fluid alt="Holidaze Logo" />
                 </div>
               </Col>
             </Row>
@@ -82,7 +82,10 @@ function Messages() {
                           <Row className="justify-content-md-center">
                             <Col lg={2} md={3} sm={3} xs={3}>
                               <div className="admin-box__card-icon admin-box__card-icon--person">
-                                <BsPeopleCircle size={55} aria-label="Icon of a person" />
+                                <BsPeopleCircle
+                                  size={55}
+                                  aria-label="Icon of a person"
+                                />
                               </div>
                             </Col>
                             <Col lg={10} md={9} sm={9} xs={9}>

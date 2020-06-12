@@ -172,13 +172,12 @@
     border: none;
     &--enquiry {
       margin-top: 2vw;
-     
     }
 
-     &:hover {
-        background-color: $orange;
-        color: $dark;
-      }
+    &:hover {
+      background-color: $orange;
+      color: $dark;
+    }
 
     &--establishment {
       margin-top: 2vw;
@@ -269,7 +268,6 @@
   .admin-box {
     &__header {
       font-size: 1.3em;
-      
     }
 
     &__sub-header {
@@ -288,7 +286,6 @@
       font-size: 1em;
       text-align: center;
       margin-top: 20px;
-      
     }
   }
 }

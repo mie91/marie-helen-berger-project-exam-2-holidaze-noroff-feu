@@ -2,42 +2,38 @@
  * Alert message*
  ***************/
 .react-confirm-alert-overlay {
-    background: rgba($dark, 0.7);
+  background: rgba($dark, 0.7);
 }
 
 .react-confirm-alert-body {
-    background: rgba($purple, 0.6);
-    color: $white;
-    @include header-style-1;
-    @include basic-shadow;
-    text-align: center;
-    max-width: 90vw;
-    margin: auto;
+  background: rgba($purple, 0.6);
+  color: $white;
+  @include header-style-1;
+  @include basic-shadow;
+  text-align: center;
+  max-width: 90vw;
+  margin: auto;
 
-    h1 {
-        font-size: 2em;
-    }
+  h1 {
+    font-size: 2em;
+  }
 }
 
-
 .react-confirm-alert-button-group {
-    
-    button {
-        @include basic-button-pink;
-        margin: auto;
-        width: 40%;
-        padding: 10px;
-        @include header-style-1;
-        border-radius: 1px;
-        font-size: 1.2em;  
-        :hover {
-            background: $orange;
-        }
+  button {
+    @include basic-button-pink;
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+    @include header-style-1;
+    border-radius: 1px;
+    font-size: 1.2em;
+    :hover {
+      background: $orange;
     }
+  }
 
-    button:nth-child(1) {
-        @include basic-button-purple;
-       
-
-    }
+  button:nth-child(1) {
+    @include basic-button-purple;
+  }
 }
