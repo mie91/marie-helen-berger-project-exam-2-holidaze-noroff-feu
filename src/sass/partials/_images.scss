@@ -30,6 +30,7 @@
         backdrop-filter: blur(4px);
         padding: 20px;
         border-radius: 20px;
+        
        
         
 
@@ -49,7 +50,6 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         margin: 20px;
-        
         text-align: center;
         
 
@@ -107,3 +107,12 @@
 /***************
  * Media Quiries*
  ***************/
+@media screen and (max-width: 769px) {
+
+    .header-image {
+        &__btn {
+            font-size: 1em;
+        }
+
+    }
+}

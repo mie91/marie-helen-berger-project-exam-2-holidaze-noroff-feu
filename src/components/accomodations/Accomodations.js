@@ -96,6 +96,15 @@ function Accomodations() {
                   laborum nisi eiusmod esse minim quis laborum exercitation
                   tempor dolor reprehenderit.
                 </p>
+                <p>
+                  <i>
+                    Ut fugiat id exercitation ipsum irure culpa eu eiusmod
+                    eiusmod consectetur dolore elit aute. Adipisicing labore do
+                    veniam culpa in ea consectetur exercitation ipsum nisi id
+                    ut. In eu ullamco ullamco labore elit sint ex deserunt
+                    consectetur consectetur.
+                  </i>
+                </p>
               </div>
             </Col>
           </Row>
@@ -127,6 +136,17 @@ function Accomodations() {
                 />
               );
             })}
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col className="col-sm-12">
+              <div className="text-content text-content--light text-content--center">
+                <MainHeader title="Need help? Any questions?" />
+                <SubHeader title="Do not hesitate to contact us!" />
+                <div className="basic-btn basic-btn--center">
+                  <Link to={"/contact/"}>Contact</Link>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </div>
